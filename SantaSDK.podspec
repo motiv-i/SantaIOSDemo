@@ -16,7 +16,6 @@ Pod::Spec.new do |s|
         :git => 'https://github.com/motiv-i/SantaIOSDemo.git',
         :tag => '1.0.0'
     }
-    s.source_files  = 'xcframework/*'
 
     s.platforms = {
         'ios' => '12.0'
