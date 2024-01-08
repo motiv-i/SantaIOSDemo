@@ -42,10 +42,6 @@ class STAdTableViewController: UITableViewController {
             if let controller = segue.destination as? STNativeAdViewController {
                 controller.info = info
             }
-        } else if segue.identifier == "AdTag" {
-            if let controller = segue.destination as? STAdTagViewController {
-                controller.info = info
-            }
         }
     }
 
@@ -83,8 +79,6 @@ class STAdTableViewController: UITableViewController {
                 performSegue(withIdentifier: "Interstitial", sender: indexPath)
             case .Native:
                 performSegue(withIdentifier: "Native", sender: indexPath)
-            case .AdTag:
-                performSegue(withIdentifier: "AdTag", sender: indexPath)
         }
     }
 

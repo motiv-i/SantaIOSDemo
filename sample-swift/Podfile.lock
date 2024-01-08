@@ -1,0 +1,16 @@
+PODS:
+  - SantaSDK (1.0.0)
+
+DEPENDENCIES:
+  - SantaSDK
+
+SPEC REPOS:
+  trunk:
+    - SantaSDK
+
+SPEC CHECKSUMS:
+  SantaSDK: 684ab4d5a5ba9dee505ec4936fca9afd7dbaf27c
+
+PODFILE CHECKSUM: 041e5c3bea5148fc8297d3bcd8e9f96776bf59e4
+
+COCOAPODS: 1.14.3

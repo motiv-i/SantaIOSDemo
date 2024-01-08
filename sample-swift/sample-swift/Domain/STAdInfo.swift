@@ -26,7 +26,6 @@ struct STAdInfo {
     func etcAds() -> [STAdInfoModel] {
         
         return [
-            STAdInfoModel(title: "애드 태그", ID: "", type: .AdTag)
         ]
     }
 }

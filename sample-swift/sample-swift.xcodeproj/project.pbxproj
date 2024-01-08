@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D324E092B32CC6E00E5A0DF /* STAdTagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D324E082B32CC6E00E5A0DF /* STAdTagViewController.swift */; };
-		1D324E0C2B32CCFB00E5A0DF /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 1D324E0B2B32CCFB00E5A0DF /* index.html */; };
 		1D6071402B2FC85A0069F2F4 /* STNativeAdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D60713F2B2FC85A0069F2F4 /* STNativeAdViewController.swift */; };
 		1D6071602B3026210069F2F4 /* STNativeAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D60715F2B3026210069F2F4 /* STNativeAdView.swift */; };
 		1D84C3982B2BEF78003424D8 /* STUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D84C3972B2BEF78003424D8 /* STUIViewController.swift */; };
@@ -23,11 +21,10 @@
 		1DCAE88E2B2BD38B009B1EF3 /* STAdInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCAE8892B2BD28D009B1EF3 /* STAdInfo.swift */; };
 		1DCAE8902B2BD3D2009B1EF3 /* STBannerAdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCAE88F2B2BD3D2009B1EF3 /* STBannerAdViewController.swift */; };
 		1DCAE8922B2BD3F5009B1EF3 /* STInterstitialAdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCAE8912B2BD3F5009B1EF3 /* STInterstitialAdViewController.swift */; };
+		F320047E2A727C0870913841 /* Pods_sample_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7237037EC7037DD3C9B2706 /* Pods_sample_swift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1D324E082B32CC6E00E5A0DF /* STAdTagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STAdTagViewController.swift; sourceTree = "<group>"; };
-		1D324E0B2B32CCFB00E5A0DF /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		1D60713F2B2FC85A0069F2F4 /* STNativeAdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STNativeAdViewController.swift; sourceTree = "<group>"; };
 		1D60715F2B3026210069F2F4 /* STNativeAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STNativeAdView.swift; sourceTree = "<group>"; };
 		1D84C3972B2BEF78003424D8 /* STUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STUIViewController.swift; sourceTree = "<group>"; };
@@ -44,6 +41,9 @@
 		1DCAE88A2B2BD2D8009B1EF3 /* STAdTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STAdTableViewController.swift; sourceTree = "<group>"; };
 		1DCAE88F2B2BD3D2009B1EF3 /* STBannerAdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STBannerAdViewController.swift; sourceTree = "<group>"; };
 		1DCAE8912B2BD3F5009B1EF3 /* STInterstitialAdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STInterstitialAdViewController.swift; sourceTree = "<group>"; };
+		34D93FEF6BD7AB9BE761DF6C /* Pods-sample-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sample-swift.release.xcconfig"; path = "Target Support Files/Pods-sample-swift/Pods-sample-swift.release.xcconfig"; sourceTree = "<group>"; };
+		44CB7C3C6B0ECDF73DA704A1 /* Pods-sample-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sample-swift.debug.xcconfig"; path = "Target Support Files/Pods-sample-swift/Pods-sample-swift.debug.xcconfig"; sourceTree = "<group>"; };
+		D7237037EC7037DD3C9B2706 /* Pods_sample_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sample_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F320047E2A727C0870913841 /* Pods_sample_swift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,7 +61,6 @@
 		1D324E0A2B32CCCF00E5A0DF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				1D324E0B2B32CCFB00E5A0DF /* index.html */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -86,6 +86,8 @@
 			children = (
 				1DCAE8702B2BD058009B1EF3 /* sample-swift */,
 				1DCAE86F2B2BD058009B1EF3 /* Products */,
+				65136DC28D912DE1E19AB41E /* Pods */,
+				77209AC6E6C27E45E2702EE2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,9 +134,25 @@
 				1DCAE88F2B2BD3D2009B1EF3 /* STBannerAdViewController.swift */,
 				1DCAE8912B2BD3F5009B1EF3 /* STInterstitialAdViewController.swift */,
 				1D60713F2B2FC85A0069F2F4 /* STNativeAdViewController.swift */,
-				1D324E082B32CC6E00E5A0DF /* STAdTagViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		65136DC28D912DE1E19AB41E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				44CB7C3C6B0ECDF73DA704A1 /* Pods-sample-swift.debug.xcconfig */,
+				34D93FEF6BD7AB9BE761DF6C /* Pods-sample-swift.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		77209AC6E6C27E45E2702EE2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D7237037EC7037DD3C9B2706 /* Pods_sample_swift.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,9 +162,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1DCAE8822B2BD05A009B1EF3 /* Build configuration list for PBXNativeTarget "sample-swift" */;
 			buildPhases = (
+				3AF453E574ACA1F046513856 /* [CP] Check Pods Manifest.lock */,
 				1DCAE86A2B2BD058009B1EF3 /* Sources */,
 				1DCAE86B2B2BD058009B1EF3 /* Frameworks */,
 				1DCAE86C2B2BD058009B1EF3 /* Resources */,
+				049920DF6695ADACA5654743 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -196,7 +216,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DCAE87E2B2BD05A009B1EF3 /* LaunchScreen.storyboard in Resources */,
-				1D324E0C2B32CCFB00E5A0DF /* index.html in Resources */,
 				1DCAE87B2B2BD05A009B1EF3 /* Assets.xcassets in Resources */,
 				1DCAE8792B2BD058009B1EF3 /* Main.storyboard in Resources */,
 			);
@@ -204,13 +223,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		049920DF6695ADACA5654743 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-sample-swift/Pods-sample-swift-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-sample-swift/Pods-sample-swift-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-sample-swift/Pods-sample-swift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3AF453E574ACA1F046513856 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-sample-swift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1DCAE86A2B2BD058009B1EF3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				1DCAE8922B2BD3F5009B1EF3 /* STInterstitialAdViewController.swift in Sources */,
-				1D324E092B32CC6E00E5A0DF /* STAdTagViewController.swift in Sources */,
 				1DCAE8722B2BD058009B1EF3 /* AppDelegate.swift in Sources */,
 				1D84C3982B2BEF78003424D8 /* STUIViewController.swift in Sources */,
 				1DCAE8902B2BD3D2009B1EF3 /* STBannerAdViewController.swift in Sources */,
@@ -283,7 +343,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -346,7 +406,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -367,13 +427,14 @@
 		};
 		1DCAE8832B2BD05A009B1EF3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44CB7C3C6B0ECDF73DA704A1 /* Pods-sample-swift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = V8C32RL5V5;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "sample-swift/Info.plist";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "맞춤형 광고 제공을 위해 사용자의 위치 데이터를 받아오려고 합니다.";
@@ -400,13 +461,14 @@
 		};
 		1DCAE8842B2BD05A009B1EF3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34D93FEF6BD7AB9BE761DF6C /* Pods-sample-swift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = V8C32RL5V5;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "sample-swift/Info.plist";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "맞춤형 광고 제공을 위해 사용자의 위치 데이터를 받아오려고 합니다.";

@@ -17,7 +17,6 @@
   - [배너 광고](#배너-광고)
   - [전면 광고](#전면-광고)
   - [네이티브 광고](#네이티브-광고)
-  - [하이브리드 광고](#하이브리드-광고)
 - [광고 인스턴스 추가 옵션](#광고-인스턴스-추가-옵션)
 
 # Version History
@@ -337,65 +336,6 @@ func displayAd() {
         setAutoLayout2(view: adViewContainer, adView: adView)
     }
 }
-```
-
-
-
-### 하이브리드 광고
-자세한 사항은 하이브리드 광고 샘플을 참고해주세요.
-- [STAdTagViewController.swift](./sample-swift/sample-swift/Controller/STAdTagViewController.swift)
-
-**1. 광고 요청을 위한 변수 선언**
-```
-// WebView로 전달될 데이터 매니저 인스턴스  
-var adTagManager: STAdTagManager?
-
-// 광고가 표시될 웹뷰
-var webView: WKWebView!
-```
-
-**2. 광고 요청에 필요한 데이터 준비**
-```
-/**
- * @param adUnitId - 광고 유닛 ID
- * @param size - 원하는 광고 크기입니다.
- */
-adTagManager = STAdTagManager()
-
-// 광고식별자 요청은 광고 요청 전에 완료되야합니다.
-adTagManager?.requestTrackingAuthorization() { _ in
-    // 위치 - 사용자 승인 요청
-    self.adTagManager?.requestLocation()
-}
-```
-
-**3. WebView 페이지 로드 전 데이터 주입**
-```
-WKNavigationDelegate {
-    
-    // MARK: Javascript 주입 방법 - 페이지 로딩 전에 데이터를 주입 시킨다
-    // 웹 컨텐츠를 수신하기 시작할때 데이터 바인딩
-    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
-        // 기본 데이터 외 문서에 추가할 데이터
-        let source = self.adTagManager?.makeSource(["custom_key" : "custom_value"]) ?? ""
-        
-        // json 형태로 데이터 주입
-        webView.evaluateJavaScript("window.santa_sdk=\(source);", completionHandler: { result, error in
-            if error != nil {
-                print("ERROR : \(String(describing: error))")
-            } else {
-                // 성공
-            }
-        })
-    }
-
-}
-```
-
-#### WKNavigationDelegate Protocol
-```
-// 웹 컨텐츠를 수신하기 시작할때
-func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!)
 ```
 
 

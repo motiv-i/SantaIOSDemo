@@ -12,7 +12,7 @@
         <!--Ad Table View Controller-->
         <scene sceneID="a5b-5K-Nbz">
             <objects>
-                <tableViewController id="EhG-hc-A3h" customClass="STAdTableViewController" customModule="santa_ios_sdk_sample" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="EhG-hc-A3h" customClass="STAdTableViewController" customModule="sample_swift" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="qeR-9G-Cgx">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,7 +37,6 @@
                         <segue destination="3ut-Qu-A4v" kind="show" identifier="Banner" id="RiG-00-eam"/>
                         <segue destination="FBh-yK-VbU" kind="show" identifier="Interstitial" id="Lu5-5x-BYE"/>
                         <segue destination="Svr-g9-A1f" kind="show" identifier="Native" id="b44-cw-CeL"/>
-                        <segue destination="wSv-jh-vus" kind="show" identifier="AdTag" id="Kts-px-djE"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ea-vQ-kIu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -65,7 +64,7 @@
         <!--Banner Ad View-->
         <scene sceneID="b0z-1N-MNL">
             <objects>
-                <viewController id="3ut-Qu-A4v" customClass="STBannerAdViewController" customModule="santa_ios_sdk_sample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="3ut-Qu-A4v" customClass="STBannerAdViewController" customModule="sample_swift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="G6G-Nd-Inj">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -122,7 +121,7 @@
         <!--Interstitial Ad View-->
         <scene sceneID="mfq-AU-avL">
             <objects>
-                <viewController id="FBh-yK-VbU" customClass="STInterstitialAdViewController" customModule="santa_ios_sdk_sample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="FBh-yK-VbU" customClass="STInterstitialAdViewController" customModule="sample_swift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IYk-qq-3bp">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -186,7 +185,7 @@
         <!--Native Ad View-->
         <scene sceneID="YpM-2l-kYD">
             <objects>
-                <viewController id="Svr-g9-A1f" customClass="STNativeAdViewController" customModule="santa_ios_sdk_sample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Svr-g9-A1f" customClass="STNativeAdViewController" customModule="sample_swift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fta-6T-91J">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -239,41 +238,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yq8-F5-Gda" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1101.5267175572519" y="1404.9295774647887"/>
-        </scene>
-        <!--Ad Tag View-->
-        <scene sceneID="EY6-JH-Hx9">
-            <objects>
-                <viewController id="wSv-jh-vus" customClass="STAdTagViewController" customModule="santa_ios_sdk_sample" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="N94-4U-2jd">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BvM-zN-X4g">
-                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="1Qp-g7-7iI"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="BvM-zN-X4g" firstAttribute="top" secondItem="1Qp-g7-7iI" secondAttribute="top" id="5Uw-BT-iqA"/>
-                            <constraint firstItem="1Qp-g7-7iI" firstAttribute="bottom" secondItem="BvM-zN-X4g" secondAttribute="bottom" id="Ggp-5L-XsH"/>
-                            <constraint firstItem="1Qp-g7-7iI" firstAttribute="trailing" secondItem="BvM-zN-X4g" secondAttribute="trailing" id="Qy7-QZ-VSM"/>
-                            <constraint firstItem="BvM-zN-X4g" firstAttribute="leading" secondItem="1Qp-g7-7iI" secondAttribute="leading" id="bfu-TU-NIW"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Ad Tag View" id="cF5-NY-mK0"/>
-                    <connections>
-                        <outlet property="webView" destination="BvM-zN-X4g" id="gv4-Vy-qqc"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WZ2-bS-KIg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1102" y="2147"/>
         </scene>
     </scenes>
     <resources>

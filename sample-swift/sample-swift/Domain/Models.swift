@@ -15,7 +15,7 @@ struct STAdInfoModel: Identifiable {
     var keyWord: String?
     
     enum EBAdInfoType {
-        case Banner, Interstitial, Native, AdTag
+        case Banner, Interstitial, Native
     }
 }
 
