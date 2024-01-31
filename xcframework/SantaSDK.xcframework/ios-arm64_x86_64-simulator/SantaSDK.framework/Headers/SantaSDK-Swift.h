@@ -280,6 +280,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import CoreFoundation;
 @import CoreLocation;
 @import Foundation;
+@import ObjectiveC;
 @import UIKit;
 @import WebKit;
 #endif
@@ -311,10 +312,17 @@ SWIFT_CLASS("_TtC8SantaSDK14STAdTagManager")
 @interface STAdTagManager : WKUserScript
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+- (nonnull instancetype)initWithCoppa:(NSString * _Nullable)coppa keywords:(NSDictionary<NSString *, NSString *> * _Nullable)keywords OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithSource:(NSString * _Nonnull)source injectionTime:(WKUserScriptInjectionTime)injectionTime forMainFrameOnly:(BOOL)forMainFrameOnly SWIFT_UNAVAILABLE;
 - (nonnull instancetype)initWithSource:(NSString * _Nonnull)source injectionTime:(WKUserScriptInjectionTime)injectionTime forMainFrameOnly:(BOOL)forMainFrameOnly inContentWorld:(WKContentWorld * _Nonnull)contentWorld SWIFT_UNAVAILABLE;
 @end
 
+
+@interface STAdTagManager (SWIFT_EXTENSION(SantaSDK))
+- (void)requestTrackingAuthorizationWithHandler:(void (^ _Nonnull)(NSString * _Nullable))handler;
+- (void)requestLocation;
+- (NSString * _Nonnull)makeSource:(NSDictionary<NSString *, id> * _Nullable)data SWIFT_WARN_UNUSED_RESULT;
+@end
 
 @class CLLocationManager;
 @class CLLocation;
@@ -328,11 +336,79 @@ SWIFT_CLASS("_TtC8SantaSDK14STAdTagManager")
 
 
 
+@interface STAdTagManager (SWIFT_EXTENSION(SantaSDK))
+/// Children’s Online Privacy Protection Act (COPPA)
+@property (nonatomic, copy) NSString * _Nonnull coppa;
+@property (nonatomic, copy) NSString * _Nullable yob;
+@property (nonatomic, copy) NSString * _Nullable gender;
+/// 관련성이 더 높은 광고를 수신하기 위해 광고 서버로 전달되어야하는 키워드 세트를 나타내는 문자열입니다.
+/// 키워드는 일반적으로 특정 사용자 세그먼트에서 광고 캠페인을 타겟팅하는 데 사용됩니다. 쉼표로 구분 된 키-값 쌍 형식이어야합니다 (e.g. “marital:single,age:24”).
+/// 웹 사이트의 키워드 타겟팅 옵션은 캠페인 관리시 “고급 타겟팅”섹션에서 찾을 수 있습니다.
+- (void)keywords:(NSDictionary<NSString *, NSString *> * _Nullable)keywords;
+- (void)keywords:(NSString * _Nonnull)key :(NSString * _Nonnull)value;
+@end
+
+@protocol STAdViewDelegate;
 @class NSCoder;
 
 SWIFT_CLASS("_TtC8SantaSDK8STAdView")
 @interface STAdView : UIView
+@property (nonatomic, strong) id <STAdViewDelegate> _Nullable delegate;
+@property (nonatomic, strong) UIView * _Nullable adContentView;
+/// 광고 유닛 ID
+@property (nonatomic, copy) NSString * _Nullable adUnitId;
+/// 광고 포맷
+@property (nonatomic, copy) NSArray<NSString *> * _Nullable adFormat;
+/// 관련성이 더 높은 광고를 수신하기 위해 광고 서버로 전달되어야하는 키워드 세트를 나타내는 딕셔너리입니다..
+/// 키워드는 일반적으로 특정 사용자 세그먼트에서 광고 캠페인을 타겟팅하는 데 사용됩니다.
+@property (nonatomic, copy) NSDictionary<NSString *, NSString *> * _Nullable keywords;
+/// 사용자의 위치를 나타내는<code>CLLocation</code> 개체입니다.
+@property (nonatomic, strong) CLLocation * _Nullable location;
+/// Children’s Online Privacy Protection Rule
+/// 아동 온라인 프라이버시 보호법 여부를 결정하는 값입니다. (0 : No, 1: Yes)
+@property (nonatomic, copy) NSString * _Nonnull coppa;
+/// 지면의 리워드 여부 (default : No)
+@property (nonatomic, copy) NSString * _Nullable rewarded;
+/// FullSizeWebView (default : false)
+@property (nonatomic) BOOL fullWebView;
+/// 광고보기가 테스트 모드에서 광고를 요청해야하는지 여부를 결정하는 Boolean 값입니다.
+@property (nonatomic) BOOL testing;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+/// 광고 ID와 배너 크기로 AdView를 초기화합니다.
+/// @param adUnitId  광고 유닛 ID를 나타내는 문자열입니다.
+/// @param size  원하는 광고 크기입니다.
+/// @return 주어진 광고  ID 및 크기에 따라 새로 초기화 된 광고보기입니다.
+- (nonnull instancetype)initWithAdUnitId:(NSString * _Nonnull)adUnitId size:(CGSize)size OBJC_DESIGNATED_INITIALIZER;
+/// 광고 서버에서 새 광고를 요청합니다.
+/// 광고보기가 이미 광고를로드중인 경우이 호출은 무시됩니다. 기존 광고 요청을 취소하고 새 광고를 강제로로드하려면<code>forceRefreshAd</code>를 사용할 수 있습니다.
+- (void)loadAd;
+/// 광고를 중지 한다
+/// 광고를 중지할때 호출 (리로드 타임이 중지 됩니다. 화면에서 나갈때 실행하면 됩니다.)
+- (void)stopAd;
+/// 기존 광고 요청을 취소하고 광고 서버에서 새 광고를 요청합니다.
+- (void)forceRefreshAd;
+/// 광고보기에 기기 방향이 변경되었음을 알립니다.
+/// 일부 타사 광고 네트워크의 배너는 방향에 따라 작동합니다. 미디에이션 된 광고가 새로운 방향을 인식하도록하려면 애플리케이션의 방향이 변경 될 때이 메서드를 호출해야합니다.
+/// 조정 된 광고의 크기에 따라 애플리케이션 레이아웃을 변경해야하는 경우 방향 변경으로 인해 조정 된 광고의 크기가 조정되는 경우이 메소드를 호출 한 후 ‘adContentViewSize’값을 확인하는 것이 좋습니다.
+/// @param newOrientation 새 인터페이스 방향 (방향 변경이 발생한 후).
+- (void)rotateToOrientation:(UIInterfaceOrientation)newOrientation;
+/// 타사 네이티브 광고 네트워크에서 모든 방향에 맞는 크기의 광고를 사용할 수 있습니다.
+/// 이전에<code>lockNativeAdsToOrientation :</code>을 호출 한 적이 없으면이 메소드를 호출 할 필요가 없습니다.
+/// @see lockNativeAdsToOrientation:
+/// @see allowedNativeAdsOrientation
+- (void)unlockNativeAdsOrientation;
+/// 광고보기가 주기적으로 새 광고를로드하지 못하도록합니다.
+/// 기본적으로 광고보기는 웹 사이트에서 새로 고침 간격이 구성된 경우 새 광고를 자동으로로드 할 수 있습니다.
+/// 이 방법은 새로 고침 간격이 지정된 경우에도 새 광고가 자동으로로드되지 않도록합니다.
+/// 가장 좋은 방법은 불필요한 광고 요청을 방지하기 위해 광고보기가 사용자에게 표시되지 않을 때마다이 메소드를 호출하는 것입니다.
+/// 그런 다음<code>startAutomaticallyRefreshingContents</code>를 호출하여 광고보기가 표시 될 때 새로 고침 동작을 다시 사용하도록 설정할 수 있습니다.
+/// @see startAutomaticallyRefreshingContents
+- (void)stopAutomaticallyRefreshingContents;
+/// 웹 사이트의 사용자 정의 새로 고침 설정에 따라 광고보기가 주기적으로 새 광고를로드하도록합니다.
+/// 이전에<code>stopAutomaticallyRefreshingContents</code>를 사용하여 광고보기의 새로 고침 동작을 중지 한 경우에만이 메서드를 호출해야합니다.
+/// 기본적으로 광고보기는 웹 사이트에서 새로 고침 간격이 구성된 경우 새 광고를 자동으로로드 할 수 있습니다. 이 방법은 새로 고침 간격이 설정되지 않은 경우 효과가 없습니다.
+/// @see stopAutomaticallyRefreshingContents
+- (void)startAutomaticallyRefreshingContents;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 
@@ -366,16 +442,66 @@ SWIFT_PROTOCOL("_TtP8SantaSDK16STAdViewDelegate_")
 - (void)willLeaveApplicationFromAd:(STAdView * _Nullable)view;
 @end
 
+@protocol STInterstitialAdViewDelegate;
 @class NSBundle;
 
 SWIFT_CLASS("_TtC8SantaSDK20STInterstitialAdView")
 @interface STInterstitialAdView : UIViewController
+/// 지정된 광고 ID와 일치하는 전면 광고 개체를 반환합니다.
+/// 광고 ID에 대해이 메서드가 처음 호출되면 새 전면 광고가 생성되고 공유 풀에 저장되고 반환됩니다.
+/// 동일한 광고 단위 ID에 대한 후속 호출은<code>removeSharedInterstitialAdController :</code>를 사용하여 개체를 삭제하지 않는 한 해당 개체를 반환합니다.
+/// 주어진 시간에 광고 ID에 대해 하나의 전면 광고 개체 만있을 수 있습니다.
+/// @param adUnitId 광고 ID를 나타내는 문자열입니다.
++ (STInterstitialAdView * _Nonnull)interstitialAdControllerForAdUnitId:(NSString * _Nonnull)adUnitId SWIFT_WARN_UNUSED_RESULT;
+/// The delegate (<code>STInterstitialAdViewDelegate</code>) of the interstitial ad object.
+@property (nonatomic, strong) id <STInterstitialAdViewDelegate> _Nullable delegate;
+/// 이 전면 광고의 광고 ID입니다.
+/// 광고 단위 ID는 웹 사이트에서 생성됩니다. 광고 단위는 광고용으로 따로 설정 한 애플리케이션의 정의 된 배치입니다. 광고 단위 ID가 설정되지 않은 경우 광고 개체는 테스트 광고 만 수신하는 기본 ID를 사용합니다.
+@property (nonatomic, copy) NSString * _Nullable adUnitId;
+/// 광고 포맷
+@property (nonatomic, copy) NSArray<NSString *> * _Nullable adFormat;
+/// 관련성이 더 높은 광고를 수신하기 위해 광고 서버로 전달되어야하는 키워드 세트를 나타내는 딕셔너리입니다..
+/// 키워드는 일반적으로 특정 사용자 세그먼트에서 광고 캠페인을 타겟팅하는 데 사용됩니다.
+@property (nonatomic, copy) NSDictionary<NSString *, NSString *> * _Nullable keywords;
+/// 더 관련성 높은 광고를 수신하기 위해 광고 서버로 전달되어야하는 사용자의 위치를 나타내는<code>CLLocation</code> 개체입니다.
+@property (nonatomic, strong) CLLocation * _Nullable location;
+/// 광고보기가 테스트 모드에서 광고를 요청해야하는지 여부를 결정하는 Boolean 값입니다.
+/// The default value is NO.
+@property (nonatomic) BOOL testing;
+/// Children’s Online Privacy Protection Rule
+/// 아동 온라인 프라이버시 보호법 여부를 결정하는 값입니다. (0 : Off, 1: On)
+@property (nonatomic, copy) NSString * _Nullable coppa;
+/// 전면 광고에 대한 광고 콘텐츠로드를 시작합니다.
+/// 로드 성공 또는 실패 알림을 받으려면<code>STInterstitialAdViewDelegate</code>의<code>interstitialDidLoadAd :</code>및<code>interstitialDidFailToLoadAd :</code>메소드를 구현할 수 있습니다.
+- (void)loadAd;
+/// 지정된 뷰 컨트롤러에서 모달로 전면 광고를 표시합니다.
+/// 이 메소드는 삽입 광고가로드되지 않은 경우 아무 작업도 수행하지 않습니다 (즉, ‘ready’속성 값이 NO 임).
+/// <code>STInterstitialAdViewDelegate</code>는 전면 광고가 화면을 차지하거나 포기할 때 알림을 받기 위해 구현할 수있는 선택적 메소드를 제공합니다.
+/// @param controller 전면 광고를 표시하는 데 사용해야하는 뷰 컨트롤러입니다.
+- (void)showFromViewController:(UIViewController * _Nullable)controller;
+/// 응용 프로그램에서 사용할 수있는 삽입 광고의 공유 풀에서 지정된 삽입 광고 개체를 제거합니다.
+/// 이 방법은 삽입 광고의 광고 단위 ID로 삽입 광고 개체에 대한 매핑을 제거합니다.
+/// 즉, 동일한 광고  ID에 나중에<code>interstitialAdViewForAdUnitId :</code>를 호출하면 다른 광고 오브젝트를받습니다.
+/// @warning * 중요 ** :이 방법은 삽입 광고 개체가 불필요하게되었을 때 할당을 해제하는 데 사용하는 것을 목적으로하고 있습니다.
+/// 이 메소드를 호출 한 후 개체에 대한 참조를 “nil”해야합니다.
+/// @param controller The interstitial ad object that should be disposed.
+- (void)removeSharedInterstitialAdView:(STInterstitialAdView * _Nonnull)controller;
 - (void)viewDidLoad;
 @property (nonatomic, readonly) BOOL prefersStatusBarHidden;
+/// 지정된 광고 ID와 일치하는 전면 광고 개체를 반환합니다.
+/// 광고 ID에 대해이 메서드가 처음 호출되면 새 전면 광고가 생성되고 공유 풀에 저장되고 반환됩니다.
+/// 동일한 광고 단위 ID에 대한 후속 호출은<code>removeSharedInterstitialAdView :</code>를 사용하여 개체를 삭제하지 않는 한 해당 개체를 반환합니다.
+/// 주어진 시간에 광고 ID에 대해 하나의 전면 광고 개체 만있을 수 있습니다.
+/// @param adUnitId 광고 ID를 나타내는 문자열입니다.
+- (nonnull instancetype)initWithAdUnitId:(NSString * _Nonnull)adUnitId OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 @end
 
+
+@interface STInterstitialAdView (SWIFT_EXTENSION(SantaSDK))
+- (BOOL)getReady SWIFT_WARN_UNUSED_RESULT;
+@end
 
 
 /// The delegate of an <code>STInterstitialAdView</code> object must adopt the
@@ -419,6 +545,73 @@ SWIFT_PROTOCOL("_TtP8SantaSDK28STInterstitialAdViewDelegate_")
 - (void)interstitialDidReceiveTapEvent:(STInterstitialAdView * _Nullable)interstitial;
 @end
 
+@protocol STNativeAdDelegate;
+
+/// <code>STNativeAd</code> 클래스는 네이티브 광고에 대한 이벤트를 렌더링하고 관리하는 데 사용됩니다.
+/// 이 클래스는 서버에서 반환 된 네이티브 광고 속성에 액세스하기위한 메서드와 URL 탐색 및
+/// 메트릭 수집을위한 편리한 메서드를 제공합니다.
+SWIFT_CLASS("_TtC8SantaSDK10STNativeAd")
+@interface STNativeAd : NSObject
+@property (nonatomic, strong) id <STNativeAdDelegate> _Nullable delegate;
+- (UIView * _Nullable)retrieveAdViewWithError:(NSError * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+
+
+
+
+SWIFT_PROTOCOL("_TtP8SantaSDK18STNativeAdDelegate_")
+@protocol STNativeAdDelegate
+/// 네이티브 광고가 모달 콘텐츠를 표시 할 때 전송됩니다.
+/// @param nativeAd 메시지를 보내는 네이티브 광고입니다.
+- (void)willLoadForNativeAd:(STNativeAd * _Nullable)nativeAd;
+/// 네이티브 광고가 모달 콘텐츠를 닫았을 때 전송되어 애플리케이션에 제어권을 반환합니다.
+/// @param nativeAd 메시지를 보내는 네이티브 광고입니다.
+- (void)didLoadForNativeAd:(STNativeAd * _Nullable)nativeAd;
+/// 사용자가이 기본 광고를 탭한 결과로 애플리케이션에서 나 가려고 할 때 전송됩니다.
+/// @param nativeAd 메시지를 보내는 네이티브 광고입니다.
+- (void)willLeaveApplicationFromNativeAd:(STNativeAd * _Nullable)nativeAd;
+/// 광고를 탭할 때 나타날 수있는 인앱 브라우저와 같은 모달 콘텐츠를 표시하는 데 사용할 뷰 컨트롤러를 대리인에게 요청합니다.
+/// @return 모달 콘텐츠를 표시하는 데 사용해야하는 뷰 컨트롤러입니다.
+- (UIViewController * _Nullable)viewControllerForPresentingModalView SWIFT_WARN_UNUSED_RESULT;
+@end
+
+@class NSSet;
+@class STNativeAdRequest;
+
+SWIFT_CLASS("_TtC8SantaSDK17STNativeAdManager")
+@interface STNativeAdManager : NSObject
+/// 광고 포맷
+/// 노출될 광고 포맷 유형
++ (void)adFormat:(NSArray<NSString *> * _Nonnull)adForamt;
+/// 관련성이 더 높은 광고를 수신하기 위해 광고 서버로 전달되어야하는 키워드 세트를 나타내는 문자열입니다.
+/// 키워드는 일반적으로 특정 사용자 세그먼트에서 광고 캠페인을 타겟팅하는 데 사용됩니다. 쉼표로 구분 된 키-값 쌍 형식이어야합니다 (e.g. “marital:single,age:24”).
+/// 웹 사이트의 키워드 타겟팅 옵션은 캠페인 관리시 “고급 타겟팅”섹션에서 찾을 수 있습니다.
++ (void)keywords:(NSDictionary<NSString *, NSString *> * _Nullable)keywords;
++ (void)keywords:(NSString * _Nonnull)key :(NSString * _Nonnull)value;
+/// 더 관련성 높은 광고를 수신하기 위해 광고 서버로 전달되어야하는 사용자의 위치를 나타내는<code>CLLocation</code> 개체입니다.
++ (void)location:(CLLocation * _Nonnull)location;
+/// 광고보기가 테스트 모드에서 광고를 요청해야하는지 여부를 결정하는 Boolean 값입니다.
+/// The default value is NO.
++ (void)testing:(BOOL)testing;
+/// Children’s Online Privacy Protection Rule
+/// 아동 온라인 프라이버시 보호법 여부를 결정하는 값입니다. (0 : Off, 1: On)
++ (void)coppa:(NSString * _Nonnull)coppa;
+/// 원하는 네이티브 광고 개체의 자산에 해당하는 미리 정의 된 문자열 세트.
+/// 광고 서버는 desiredAssets의 값들만 반환합니다.
++ (void)desiredAssets:(NSSet * _Nonnull)desiredAssets;
++ (void)initNativeAdWithAdUnitIdentifier:(NSString * _Nonnull)identifier :(Class _Nullable)adViewClass SWIFT_METHOD_FAMILY(none);
+/// 광고 서버에 대한 요청을 실행합니다.
+/// @param handler 요청이 완료 될 때 실행할 블록.
+/// 블록에는 요청 자체와 유효한 EBNativeAd 또는 실패를 나타내는 NSError 개체가 매개 변수로 포함됩니다.
++ (void)startWithCompletionHandler:(void (^ _Nullable)(STNativeAdRequest * _Nullable, STNativeAd * _Nullable, NSError * _Nullable))handler;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 @class UILabel;
 @class UIImageView;
 
@@ -456,6 +649,27 @@ SWIFT_PROTOCOL("_TtP8SantaSDK27STNativeAdRenderingDelegate_")
 /// @return개인 정보 아이콘에 사용되는 UIImageView
 - (UIImageView * _Nullable)nativePrivacyInformationIconImageView SWIFT_WARN_UNUSED_RESULT;
 @end
+
+
+/// *<code>STNativeAdRequest</code> 클래스는 기본 광고 서버에 대한 개별 요청을 관리하는 데 사용됩니다.
+/// *
+/// <ul>
+///   <li>
+///     @warning <em>Note:</em> 이 클래스는 기본 광고의 응답을 수동으로 처리하려는 일회성 요청을 대상으로하고 있습니다.
+///   </li>
+///   <li>
+///     <code>STTableViewAdPlacer</code> 또는<code>STCollectionViewAdPlacer</code>를 사용하여 광고를 표시하는 경우는이 클래스를 사용할 필요가 없습니다.
+///   </li>
+/// </ul>
+SWIFT_CLASS("_TtC8SantaSDK17STNativeAdRequest")
+@interface STNativeAdRequest : NSObject
+/// 광고 서버에 대한 요청을 실행합니다.
+/// @param handler 요청이 완료되면 실행할 블록. 블록에 매개 변수로 요청 자체와 실패의 유효한 STNativeAd 또는 NSError 객체 중 하나가 포함됩니다.
+- (void)startWithCompletionHandler:(void (^ _Nullable)(STNativeAdRequest * _Nullable, STNativeAd * _Nullable, NSError * _Nullable))handler;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 
 
 
@@ -756,6 +970,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import CoreFoundation;
 @import CoreLocation;
 @import Foundation;
+@import ObjectiveC;
 @import UIKit;
 @import WebKit;
 #endif
@@ -787,10 +1002,17 @@ SWIFT_CLASS("_TtC8SantaSDK14STAdTagManager")
 @interface STAdTagManager : WKUserScript
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+- (nonnull instancetype)initWithCoppa:(NSString * _Nullable)coppa keywords:(NSDictionary<NSString *, NSString *> * _Nullable)keywords OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithSource:(NSString * _Nonnull)source injectionTime:(WKUserScriptInjectionTime)injectionTime forMainFrameOnly:(BOOL)forMainFrameOnly SWIFT_UNAVAILABLE;
 - (nonnull instancetype)initWithSource:(NSString * _Nonnull)source injectionTime:(WKUserScriptInjectionTime)injectionTime forMainFrameOnly:(BOOL)forMainFrameOnly inContentWorld:(WKContentWorld * _Nonnull)contentWorld SWIFT_UNAVAILABLE;
 @end
 
+
+@interface STAdTagManager (SWIFT_EXTENSION(SantaSDK))
+- (void)requestTrackingAuthorizationWithHandler:(void (^ _Nonnull)(NSString * _Nullable))handler;
+- (void)requestLocation;
+- (NSString * _Nonnull)makeSource:(NSDictionary<NSString *, id> * _Nullable)data SWIFT_WARN_UNUSED_RESULT;
+@end
 
 @class CLLocationManager;
 @class CLLocation;
@@ -804,11 +1026,79 @@ SWIFT_CLASS("_TtC8SantaSDK14STAdTagManager")
 
 
 
+@interface STAdTagManager (SWIFT_EXTENSION(SantaSDK))
+/// Children’s Online Privacy Protection Act (COPPA)
+@property (nonatomic, copy) NSString * _Nonnull coppa;
+@property (nonatomic, copy) NSString * _Nullable yob;
+@property (nonatomic, copy) NSString * _Nullable gender;
+/// 관련성이 더 높은 광고를 수신하기 위해 광고 서버로 전달되어야하는 키워드 세트를 나타내는 문자열입니다.
+/// 키워드는 일반적으로 특정 사용자 세그먼트에서 광고 캠페인을 타겟팅하는 데 사용됩니다. 쉼표로 구분 된 키-값 쌍 형식이어야합니다 (e.g. “marital:single,age:24”).
+/// 웹 사이트의 키워드 타겟팅 옵션은 캠페인 관리시 “고급 타겟팅”섹션에서 찾을 수 있습니다.
+- (void)keywords:(NSDictionary<NSString *, NSString *> * _Nullable)keywords;
+- (void)keywords:(NSString * _Nonnull)key :(NSString * _Nonnull)value;
+@end
+
+@protocol STAdViewDelegate;
 @class NSCoder;
 
 SWIFT_CLASS("_TtC8SantaSDK8STAdView")
 @interface STAdView : UIView
+@property (nonatomic, strong) id <STAdViewDelegate> _Nullable delegate;
+@property (nonatomic, strong) UIView * _Nullable adContentView;
+/// 광고 유닛 ID
+@property (nonatomic, copy) NSString * _Nullable adUnitId;
+/// 광고 포맷
+@property (nonatomic, copy) NSArray<NSString *> * _Nullable adFormat;
+/// 관련성이 더 높은 광고를 수신하기 위해 광고 서버로 전달되어야하는 키워드 세트를 나타내는 딕셔너리입니다..
+/// 키워드는 일반적으로 특정 사용자 세그먼트에서 광고 캠페인을 타겟팅하는 데 사용됩니다.
+@property (nonatomic, copy) NSDictionary<NSString *, NSString *> * _Nullable keywords;
+/// 사용자의 위치를 나타내는<code>CLLocation</code> 개체입니다.
+@property (nonatomic, strong) CLLocation * _Nullable location;
+/// Children’s Online Privacy Protection Rule
+/// 아동 온라인 프라이버시 보호법 여부를 결정하는 값입니다. (0 : No, 1: Yes)
+@property (nonatomic, copy) NSString * _Nonnull coppa;
+/// 지면의 리워드 여부 (default : No)
+@property (nonatomic, copy) NSString * _Nullable rewarded;
+/// FullSizeWebView (default : false)
+@property (nonatomic) BOOL fullWebView;
+/// 광고보기가 테스트 모드에서 광고를 요청해야하는지 여부를 결정하는 Boolean 값입니다.
+@property (nonatomic) BOOL testing;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+/// 광고 ID와 배너 크기로 AdView를 초기화합니다.
+/// @param adUnitId  광고 유닛 ID를 나타내는 문자열입니다.
+/// @param size  원하는 광고 크기입니다.
+/// @return 주어진 광고  ID 및 크기에 따라 새로 초기화 된 광고보기입니다.
+- (nonnull instancetype)initWithAdUnitId:(NSString * _Nonnull)adUnitId size:(CGSize)size OBJC_DESIGNATED_INITIALIZER;
+/// 광고 서버에서 새 광고를 요청합니다.
+/// 광고보기가 이미 광고를로드중인 경우이 호출은 무시됩니다. 기존 광고 요청을 취소하고 새 광고를 강제로로드하려면<code>forceRefreshAd</code>를 사용할 수 있습니다.
+- (void)loadAd;
+/// 광고를 중지 한다
+/// 광고를 중지할때 호출 (리로드 타임이 중지 됩니다. 화면에서 나갈때 실행하면 됩니다.)
+- (void)stopAd;
+/// 기존 광고 요청을 취소하고 광고 서버에서 새 광고를 요청합니다.
+- (void)forceRefreshAd;
+/// 광고보기에 기기 방향이 변경되었음을 알립니다.
+/// 일부 타사 광고 네트워크의 배너는 방향에 따라 작동합니다. 미디에이션 된 광고가 새로운 방향을 인식하도록하려면 애플리케이션의 방향이 변경 될 때이 메서드를 호출해야합니다.
+/// 조정 된 광고의 크기에 따라 애플리케이션 레이아웃을 변경해야하는 경우 방향 변경으로 인해 조정 된 광고의 크기가 조정되는 경우이 메소드를 호출 한 후 ‘adContentViewSize’값을 확인하는 것이 좋습니다.
+/// @param newOrientation 새 인터페이스 방향 (방향 변경이 발생한 후).
+- (void)rotateToOrientation:(UIInterfaceOrientation)newOrientation;
+/// 타사 네이티브 광고 네트워크에서 모든 방향에 맞는 크기의 광고를 사용할 수 있습니다.
+/// 이전에<code>lockNativeAdsToOrientation :</code>을 호출 한 적이 없으면이 메소드를 호출 할 필요가 없습니다.
+/// @see lockNativeAdsToOrientation:
+/// @see allowedNativeAdsOrientation
+- (void)unlockNativeAdsOrientation;
+/// 광고보기가 주기적으로 새 광고를로드하지 못하도록합니다.
+/// 기본적으로 광고보기는 웹 사이트에서 새로 고침 간격이 구성된 경우 새 광고를 자동으로로드 할 수 있습니다.
+/// 이 방법은 새로 고침 간격이 지정된 경우에도 새 광고가 자동으로로드되지 않도록합니다.
+/// 가장 좋은 방법은 불필요한 광고 요청을 방지하기 위해 광고보기가 사용자에게 표시되지 않을 때마다이 메소드를 호출하는 것입니다.
+/// 그런 다음<code>startAutomaticallyRefreshingContents</code>를 호출하여 광고보기가 표시 될 때 새로 고침 동작을 다시 사용하도록 설정할 수 있습니다.
+/// @see startAutomaticallyRefreshingContents
+- (void)stopAutomaticallyRefreshingContents;
+/// 웹 사이트의 사용자 정의 새로 고침 설정에 따라 광고보기가 주기적으로 새 광고를로드하도록합니다.
+/// 이전에<code>stopAutomaticallyRefreshingContents</code>를 사용하여 광고보기의 새로 고침 동작을 중지 한 경우에만이 메서드를 호출해야합니다.
+/// 기본적으로 광고보기는 웹 사이트에서 새로 고침 간격이 구성된 경우 새 광고를 자동으로로드 할 수 있습니다. 이 방법은 새로 고침 간격이 설정되지 않은 경우 효과가 없습니다.
+/// @see stopAutomaticallyRefreshingContents
+- (void)startAutomaticallyRefreshingContents;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 
@@ -842,16 +1132,66 @@ SWIFT_PROTOCOL("_TtP8SantaSDK16STAdViewDelegate_")
 - (void)willLeaveApplicationFromAd:(STAdView * _Nullable)view;
 @end
 
+@protocol STInterstitialAdViewDelegate;
 @class NSBundle;
 
 SWIFT_CLASS("_TtC8SantaSDK20STInterstitialAdView")
 @interface STInterstitialAdView : UIViewController
+/// 지정된 광고 ID와 일치하는 전면 광고 개체를 반환합니다.
+/// 광고 ID에 대해이 메서드가 처음 호출되면 새 전면 광고가 생성되고 공유 풀에 저장되고 반환됩니다.
+/// 동일한 광고 단위 ID에 대한 후속 호출은<code>removeSharedInterstitialAdController :</code>를 사용하여 개체를 삭제하지 않는 한 해당 개체를 반환합니다.
+/// 주어진 시간에 광고 ID에 대해 하나의 전면 광고 개체 만있을 수 있습니다.
+/// @param adUnitId 광고 ID를 나타내는 문자열입니다.
++ (STInterstitialAdView * _Nonnull)interstitialAdControllerForAdUnitId:(NSString * _Nonnull)adUnitId SWIFT_WARN_UNUSED_RESULT;
+/// The delegate (<code>STInterstitialAdViewDelegate</code>) of the interstitial ad object.
+@property (nonatomic, strong) id <STInterstitialAdViewDelegate> _Nullable delegate;
+/// 이 전면 광고의 광고 ID입니다.
+/// 광고 단위 ID는 웹 사이트에서 생성됩니다. 광고 단위는 광고용으로 따로 설정 한 애플리케이션의 정의 된 배치입니다. 광고 단위 ID가 설정되지 않은 경우 광고 개체는 테스트 광고 만 수신하는 기본 ID를 사용합니다.
+@property (nonatomic, copy) NSString * _Nullable adUnitId;
+/// 광고 포맷
+@property (nonatomic, copy) NSArray<NSString *> * _Nullable adFormat;
+/// 관련성이 더 높은 광고를 수신하기 위해 광고 서버로 전달되어야하는 키워드 세트를 나타내는 딕셔너리입니다..
+/// 키워드는 일반적으로 특정 사용자 세그먼트에서 광고 캠페인을 타겟팅하는 데 사용됩니다.
+@property (nonatomic, copy) NSDictionary<NSString *, NSString *> * _Nullable keywords;
+/// 더 관련성 높은 광고를 수신하기 위해 광고 서버로 전달되어야하는 사용자의 위치를 나타내는<code>CLLocation</code> 개체입니다.
+@property (nonatomic, strong) CLLocation * _Nullable location;
+/// 광고보기가 테스트 모드에서 광고를 요청해야하는지 여부를 결정하는 Boolean 값입니다.
+/// The default value is NO.
+@property (nonatomic) BOOL testing;
+/// Children’s Online Privacy Protection Rule
+/// 아동 온라인 프라이버시 보호법 여부를 결정하는 값입니다. (0 : Off, 1: On)
+@property (nonatomic, copy) NSString * _Nullable coppa;
+/// 전면 광고에 대한 광고 콘텐츠로드를 시작합니다.
+/// 로드 성공 또는 실패 알림을 받으려면<code>STInterstitialAdViewDelegate</code>의<code>interstitialDidLoadAd :</code>및<code>interstitialDidFailToLoadAd :</code>메소드를 구현할 수 있습니다.
+- (void)loadAd;
+/// 지정된 뷰 컨트롤러에서 모달로 전면 광고를 표시합니다.
+/// 이 메소드는 삽입 광고가로드되지 않은 경우 아무 작업도 수행하지 않습니다 (즉, ‘ready’속성 값이 NO 임).
+/// <code>STInterstitialAdViewDelegate</code>는 전면 광고가 화면을 차지하거나 포기할 때 알림을 받기 위해 구현할 수있는 선택적 메소드를 제공합니다.
+/// @param controller 전면 광고를 표시하는 데 사용해야하는 뷰 컨트롤러입니다.
+- (void)showFromViewController:(UIViewController * _Nullable)controller;
+/// 응용 프로그램에서 사용할 수있는 삽입 광고의 공유 풀에서 지정된 삽입 광고 개체를 제거합니다.
+/// 이 방법은 삽입 광고의 광고 단위 ID로 삽입 광고 개체에 대한 매핑을 제거합니다.
+/// 즉, 동일한 광고  ID에 나중에<code>interstitialAdViewForAdUnitId :</code>를 호출하면 다른 광고 오브젝트를받습니다.
+/// @warning * 중요 ** :이 방법은 삽입 광고 개체가 불필요하게되었을 때 할당을 해제하는 데 사용하는 것을 목적으로하고 있습니다.
+/// 이 메소드를 호출 한 후 개체에 대한 참조를 “nil”해야합니다.
+/// @param controller The interstitial ad object that should be disposed.
+- (void)removeSharedInterstitialAdView:(STInterstitialAdView * _Nonnull)controller;
 - (void)viewDidLoad;
 @property (nonatomic, readonly) BOOL prefersStatusBarHidden;
+/// 지정된 광고 ID와 일치하는 전면 광고 개체를 반환합니다.
+/// 광고 ID에 대해이 메서드가 처음 호출되면 새 전면 광고가 생성되고 공유 풀에 저장되고 반환됩니다.
+/// 동일한 광고 단위 ID에 대한 후속 호출은<code>removeSharedInterstitialAdView :</code>를 사용하여 개체를 삭제하지 않는 한 해당 개체를 반환합니다.
+/// 주어진 시간에 광고 ID에 대해 하나의 전면 광고 개체 만있을 수 있습니다.
+/// @param adUnitId 광고 ID를 나타내는 문자열입니다.
+- (nonnull instancetype)initWithAdUnitId:(NSString * _Nonnull)adUnitId OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 @end
 
+
+@interface STInterstitialAdView (SWIFT_EXTENSION(SantaSDK))
+- (BOOL)getReady SWIFT_WARN_UNUSED_RESULT;
+@end
 
 
 /// The delegate of an <code>STInterstitialAdView</code> object must adopt the
@@ -895,6 +1235,73 @@ SWIFT_PROTOCOL("_TtP8SantaSDK28STInterstitialAdViewDelegate_")
 - (void)interstitialDidReceiveTapEvent:(STInterstitialAdView * _Nullable)interstitial;
 @end
 
+@protocol STNativeAdDelegate;
+
+/// <code>STNativeAd</code> 클래스는 네이티브 광고에 대한 이벤트를 렌더링하고 관리하는 데 사용됩니다.
+/// 이 클래스는 서버에서 반환 된 네이티브 광고 속성에 액세스하기위한 메서드와 URL 탐색 및
+/// 메트릭 수집을위한 편리한 메서드를 제공합니다.
+SWIFT_CLASS("_TtC8SantaSDK10STNativeAd")
+@interface STNativeAd : NSObject
+@property (nonatomic, strong) id <STNativeAdDelegate> _Nullable delegate;
+- (UIView * _Nullable)retrieveAdViewWithError:(NSError * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+
+
+
+
+SWIFT_PROTOCOL("_TtP8SantaSDK18STNativeAdDelegate_")
+@protocol STNativeAdDelegate
+/// 네이티브 광고가 모달 콘텐츠를 표시 할 때 전송됩니다.
+/// @param nativeAd 메시지를 보내는 네이티브 광고입니다.
+- (void)willLoadForNativeAd:(STNativeAd * _Nullable)nativeAd;
+/// 네이티브 광고가 모달 콘텐츠를 닫았을 때 전송되어 애플리케이션에 제어권을 반환합니다.
+/// @param nativeAd 메시지를 보내는 네이티브 광고입니다.
+- (void)didLoadForNativeAd:(STNativeAd * _Nullable)nativeAd;
+/// 사용자가이 기본 광고를 탭한 결과로 애플리케이션에서 나 가려고 할 때 전송됩니다.
+/// @param nativeAd 메시지를 보내는 네이티브 광고입니다.
+- (void)willLeaveApplicationFromNativeAd:(STNativeAd * _Nullable)nativeAd;
+/// 광고를 탭할 때 나타날 수있는 인앱 브라우저와 같은 모달 콘텐츠를 표시하는 데 사용할 뷰 컨트롤러를 대리인에게 요청합니다.
+/// @return 모달 콘텐츠를 표시하는 데 사용해야하는 뷰 컨트롤러입니다.
+- (UIViewController * _Nullable)viewControllerForPresentingModalView SWIFT_WARN_UNUSED_RESULT;
+@end
+
+@class NSSet;
+@class STNativeAdRequest;
+
+SWIFT_CLASS("_TtC8SantaSDK17STNativeAdManager")
+@interface STNativeAdManager : NSObject
+/// 광고 포맷
+/// 노출될 광고 포맷 유형
++ (void)adFormat:(NSArray<NSString *> * _Nonnull)adForamt;
+/// 관련성이 더 높은 광고를 수신하기 위해 광고 서버로 전달되어야하는 키워드 세트를 나타내는 문자열입니다.
+/// 키워드는 일반적으로 특정 사용자 세그먼트에서 광고 캠페인을 타겟팅하는 데 사용됩니다. 쉼표로 구분 된 키-값 쌍 형식이어야합니다 (e.g. “marital:single,age:24”).
+/// 웹 사이트의 키워드 타겟팅 옵션은 캠페인 관리시 “고급 타겟팅”섹션에서 찾을 수 있습니다.
++ (void)keywords:(NSDictionary<NSString *, NSString *> * _Nullable)keywords;
++ (void)keywords:(NSString * _Nonnull)key :(NSString * _Nonnull)value;
+/// 더 관련성 높은 광고를 수신하기 위해 광고 서버로 전달되어야하는 사용자의 위치를 나타내는<code>CLLocation</code> 개체입니다.
++ (void)location:(CLLocation * _Nonnull)location;
+/// 광고보기가 테스트 모드에서 광고를 요청해야하는지 여부를 결정하는 Boolean 값입니다.
+/// The default value is NO.
++ (void)testing:(BOOL)testing;
+/// Children’s Online Privacy Protection Rule
+/// 아동 온라인 프라이버시 보호법 여부를 결정하는 값입니다. (0 : Off, 1: On)
++ (void)coppa:(NSString * _Nonnull)coppa;
+/// 원하는 네이티브 광고 개체의 자산에 해당하는 미리 정의 된 문자열 세트.
+/// 광고 서버는 desiredAssets의 값들만 반환합니다.
++ (void)desiredAssets:(NSSet * _Nonnull)desiredAssets;
++ (void)initNativeAdWithAdUnitIdentifier:(NSString * _Nonnull)identifier :(Class _Nullable)adViewClass SWIFT_METHOD_FAMILY(none);
+/// 광고 서버에 대한 요청을 실행합니다.
+/// @param handler 요청이 완료 될 때 실행할 블록.
+/// 블록에는 요청 자체와 유효한 EBNativeAd 또는 실패를 나타내는 NSError 개체가 매개 변수로 포함됩니다.
++ (void)startWithCompletionHandler:(void (^ _Nullable)(STNativeAdRequest * _Nullable, STNativeAd * _Nullable, NSError * _Nullable))handler;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 @class UILabel;
 @class UIImageView;
 
@@ -932,6 +1339,27 @@ SWIFT_PROTOCOL("_TtP8SantaSDK27STNativeAdRenderingDelegate_")
 /// @return개인 정보 아이콘에 사용되는 UIImageView
 - (UIImageView * _Nullable)nativePrivacyInformationIconImageView SWIFT_WARN_UNUSED_RESULT;
 @end
+
+
+/// *<code>STNativeAdRequest</code> 클래스는 기본 광고 서버에 대한 개별 요청을 관리하는 데 사용됩니다.
+/// *
+/// <ul>
+///   <li>
+///     @warning <em>Note:</em> 이 클래스는 기본 광고의 응답을 수동으로 처리하려는 일회성 요청을 대상으로하고 있습니다.
+///   </li>
+///   <li>
+///     <code>STTableViewAdPlacer</code> 또는<code>STCollectionViewAdPlacer</code>를 사용하여 광고를 표시하는 경우는이 클래스를 사용할 필요가 없습니다.
+///   </li>
+/// </ul>
+SWIFT_CLASS("_TtC8SantaSDK17STNativeAdRequest")
+@interface STNativeAdRequest : NSObject
+/// 광고 서버에 대한 요청을 실행합니다.
+/// @param handler 요청이 완료되면 실행할 블록. 블록에 매개 변수로 요청 자체와 실패의 유효한 STNativeAd 또는 NSError 객체 중 하나가 포함됩니다.
+- (void)startWithCompletionHandler:(void (^ _Nullable)(STNativeAdRequest * _Nullable, STNativeAd * _Nullable, NSError * _Nullable))handler;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 
 
 

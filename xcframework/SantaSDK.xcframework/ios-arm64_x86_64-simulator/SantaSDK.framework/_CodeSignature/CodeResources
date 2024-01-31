@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/SantaSDK-Swift.h</key>
 		<data>
-		PtAZgrWi3wHymYqYswCF+bWreKQ=
+		9vnzv56kPHuwni7h7jhdgn4uZVE=
 		</data>
 		<key>Headers/SantaSDK.h</key>
 		<data>
@@ -14,47 +14,47 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		jg88CtKBkiBMdq/WeiZYvtw3NyI=
+		npQjBXIIdLv8OiCuis7XaCbfTx8=
 		</data>
 		<key>Modules/SantaSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		+s2p0ccW/LnzVy7F3eE9f8YY9Kc=
+		k5QhOrNIzpe86lh7kzLze4m55r8=
 		</data>
 		<key>Modules/SantaSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		TeSGuleunuMWnPDH3RelSu8NpXo=
+		jJjU0q8ozl7WU8zPz9eMQhYueLk=
 		</data>
 		<key>Modules/SantaSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		JMPlT2Jp467tZOmt8Re9kgMxujs=
+		IvsTNbpwx7tQ8z7yD0Y2WQiy1ic=
 		</data>
 		<key>Modules/SantaSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		TeSGuleunuMWnPDH3RelSu8NpXo=
+		jJjU0q8ozl7WU8zPz9eMQhYueLk=
 		</data>
 		<key>Modules/SantaSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		EP1h75335FNlkIfAweMQMcp78oQ=
+		tKTdKgJ24hNE5rTkVUj4+KKClY8=
 		</data>
 		<key>Modules/SantaSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		+s2p0ccW/LnzVy7F3eE9f8YY9Kc=
+		k5QhOrNIzpe86lh7kzLze4m55r8=
 		</data>
 		<key>Modules/SantaSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		M+fSPtzau98Db5eP3gRY71QVlfk=
+		MO5aEdvXGtzUE7Y694nw/wXJm3k=
 		</data>
 		<key>Modules/SantaSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		5sF7VL4BVjmqIjr23ebxh8ZtHAM=
+		wdh2JY1Ck8RBeXC2b5WFUalu6a4=
 		</data>
 		<key>Modules/SantaSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		M+fSPtzau98Db5eP3gRY71QVlfk=
+		MO5aEdvXGtzUE7Y694nw/wXJm3k=
 		</data>
 		<key>Modules/SantaSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		ZTCwoK8gj1XIkE4DU3V/0N8aq88=
+		RXFOWOHHqNmtlegS/rTjpASD8GY=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -91,7 +91,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			vnqoqrssm2wr3qe0VP85UK+28D1FlT+mtf3RElu1bdE=
+			iLUhH49w4XV13a7h1vyVLo5wuKbaaAzoIkTUOPDWi70=
 			</data>
 		</dict>
 		<key>Headers/SantaSDK.h</key>
@@ -105,70 +105,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			xNpho5j9mbNQbovJGCZgxCEfGqr7bpMvqlhVthh+EGM=
+			pKEOHMNNyROvEamBFbHmL2ZqJUBHN6wjsj/cUTWXaVs=
 			</data>
 		</dict>
 		<key>Modules/SantaSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			/yOWgPxyJmy0Ou2uH7qp96lEiQOep/aLMdIsuK3opUU=
+			7CmryTRIBSEa5+M7p2X2kKb56hru8WWeI9W5BsLcFbc=
 			</data>
 		</dict>
 		<key>Modules/SantaSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			dpJcBQq7jMbkGX9lZBda+lHk1XSVM7FdhAqXfxRQ9K4=
+			NUXikHA/wJ0Q2lyhpW0Y8hCUvj7OFkKLqKRpWsT7NYU=
 			</data>
 		</dict>
 		<key>Modules/SantaSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			/yOWgPxyJmy0Ou2uH7qp96lEiQOep/aLMdIsuK3opUU=
+			7CmryTRIBSEa5+M7p2X2kKb56hru8WWeI9W5BsLcFbc=
 			</data>
 		</dict>
 		<key>Modules/SantaSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Jw2yMeJ4uybQCIfnTt+3o5y4Cqtv9QQ7p1uea8zA/eQ=
+			oO/RmWjeAsIE44VyjA1HF6WZ2NF1k7rT3pySRyjG1yU=
 			</data>
 		</dict>
 		<key>Modules/SantaSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			xNpho5j9mbNQbovJGCZgxCEfGqr7bpMvqlhVthh+EGM=
+			pKEOHMNNyROvEamBFbHmL2ZqJUBHN6wjsj/cUTWXaVs=
 			</data>
 		</dict>
 		<key>Modules/SantaSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			AH0X1dd+/MQOQgbJYYjTaZ0c6l70BsqINWefFuRVfs4=
+			sNH9HqdHAsmslxRQxt41YJeJQ5wQkSS6Laa8wAADOIg=
 			</data>
 		</dict>
 		<key>Modules/SantaSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			EWeL3wIirA5WNoOOdLwgaubaQevr+sxgb0ejmKJxNYo=
+			U/4wmAfmcha2S+t3miJBFpe+1FF2haBz8PXQrd8w4Xk=
 			</data>
 		</dict>
 		<key>Modules/SantaSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			AH0X1dd+/MQOQgbJYYjTaZ0c6l70BsqINWefFuRVfs4=
+			sNH9HqdHAsmslxRQxt41YJeJQ5wQkSS6Laa8wAADOIg=
 			</data>
 		</dict>
 		<key>Modules/SantaSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			i78qwBpwSij/OEVkRc2OLeoHvj9CB1D8klxJMDCtb/o=
+			njR11xFVRE8p3oVUY0E13r6julP6DdYbowqpZAEMy0A=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

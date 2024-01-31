@@ -36,12 +36,12 @@ public var kAdStarRatingKey: Swift.String
 public var kAdPriceKey: Swift.String
 public class STNativeAdRequestTargeting {
   public static var targeting: SantaSDK.STNativeAdRequestTargeting
-  public var adFormat: [SantaSDK.STAdFormat]?
+  public var adFormat: [Swift.String]?
   public var keywords: [Swift.String : Swift.String]?
   public var location: CoreLocation.CLLocation?
   public var desiredAssets: Foundation.NSSet?
   public var testing: Swift.Bool
-  public var coppa: SantaSDK.STCoppa?
+  public var coppa: Swift.String?
   public init()
   public func setDesiredAssets(_ desiredAssets: Foundation.NSSet?)
   @objc deinit
@@ -62,15 +62,15 @@ public enum HTTPMethod : Swift.String {
     get
   }
 }
-public protocol STNativeAdDelegate {
-  func willLoadForNativeAd(_ nativeAd: SantaSDK.STNativeAd?)
-  func didLoadForNativeAd(_ nativeAd: SantaSDK.STNativeAd?)
-  func willLeaveApplicationFromNativeAd(_ nativeAd: SantaSDK.STNativeAd?)
-  func viewControllerForPresentingModalView() -> UIKit.UIViewController?
+@objc public protocol STNativeAdDelegate {
+  @objc func willLoadForNativeAd(_ nativeAd: SantaSDK.STNativeAd?)
+  @objc func didLoadForNativeAd(_ nativeAd: SantaSDK.STNativeAd?)
+  @objc func willLeaveApplicationFromNativeAd(_ nativeAd: SantaSDK.STNativeAd?)
+  @objc func viewControllerForPresentingModalView() -> UIKit.UIViewController?
 }
-@_hasMissingDesignatedInitializers public class STNativeAd {
-  public var delegate: (any SantaSDK.STNativeAdDelegate)?
-  public func retrieveAdViewWithError(_ error: (any Swift.Error)?) -> UIKit.UIView?
+@objc @_hasMissingDesignatedInitializers @objcMembers public class STNativeAd : ObjectiveC.NSObject {
+  @objc public var delegate: (any SantaSDK.STNativeAdDelegate)?
+  @objc public func retrieveAdViewWithError(_ error: (any Swift.Error)?) -> UIKit.UIView?
   @objc deinit
 }
 @objc public protocol STInterstitialAdViewDelegate {
@@ -84,27 +84,27 @@ public protocol STNativeAdDelegate {
   @objc optional func interstitialDidExpire(_ interstitial: SantaSDK.STInterstitialAdView?)
   @objc optional func interstitialDidReceiveTapEvent(_ interstitial: SantaSDK.STInterstitialAdView?)
 }
-@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class STInterstitialAdView : UIKit.UIViewController {
-  @_Concurrency.MainActor(unsafe) public static func interstitialAdControllerForAdUnitId(_ adUnitId: Swift.String) -> SantaSDK.STInterstitialAdView
-  @_Concurrency.MainActor(unsafe) public var delegate: (any SantaSDK.STInterstitialAdViewDelegate)?
-  @_Concurrency.MainActor(unsafe) public var adUnitId: Swift.String?
-  @_Concurrency.MainActor(unsafe) public var adFormat: [SantaSDK.STAdFormat]?
-  @_Concurrency.MainActor(unsafe) public var keywords: [Swift.String : Swift.String]?
-  @_Concurrency.MainActor(unsafe) public var location: CoreLocation.CLLocation?
-  @_Concurrency.MainActor(unsafe) public var testing: Swift.Bool
-  @_Concurrency.MainActor(unsafe) public var coppa: SantaSDK.STCoppa?
-  @_Concurrency.MainActor(unsafe) public func loadAd()
-  @_Concurrency.MainActor(unsafe) public var ready: Swift.Bool {
-    get
-  }
-  @_Concurrency.MainActor(unsafe) public func showFromViewController(_ controller: UIKit.UIViewController? = nil)
-  @_Concurrency.MainActor(unsafe) public func removeSharedInterstitialAdView(_ controller: SantaSDK.STInterstitialAdView)
+@objc @_hasMissingDesignatedInitializers @objcMembers @_Concurrency.MainActor(unsafe) public class STInterstitialAdView : UIKit.UIViewController {
+  @objc @_Concurrency.MainActor(unsafe) public static func interstitialAdControllerForAdUnitId(_ adUnitId: Swift.String) -> SantaSDK.STInterstitialAdView
+  @objc @_Concurrency.MainActor(unsafe) public var delegate: (any SantaSDK.STInterstitialAdViewDelegate)?
+  @objc @_Concurrency.MainActor(unsafe) public var adUnitId: Swift.String?
+  @objc @_Concurrency.MainActor(unsafe) public var adFormat: [Swift.String]?
+  @objc @_Concurrency.MainActor(unsafe) public var keywords: [Swift.String : Swift.String]?
+  @objc @_Concurrency.MainActor(unsafe) public var location: CoreLocation.CLLocation?
+  @objc @_Concurrency.MainActor(unsafe) public var testing: Swift.Bool
+  @objc @_Concurrency.MainActor(unsafe) public var coppa: Swift.String?
+  @objc @_Concurrency.MainActor(unsafe) public func loadAd()
+  @objc @_Concurrency.MainActor(unsafe) public func showFromViewController(_ controller: UIKit.UIViewController? = nil)
+  @objc @_Concurrency.MainActor(unsafe) public func removeSharedInterstitialAdView(_ controller: SantaSDK.STInterstitialAdView)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor(unsafe) @objc override dynamic public var prefersStatusBarHidden: Swift.Bool {
     @objc get
   }
-  @_Concurrency.MainActor(unsafe) public init(adUnitId: Swift.String)
+  @objc @_Concurrency.MainActor(unsafe) public init(adUnitId: Swift.String)
   @objc deinit
+}
+extension SantaSDK.STInterstitialAdView {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func getReady() -> Swift.Bool
 }
 @_hasMissingDesignatedInitializers public class STNativeAdRendererConfiguration {
   public var rendererSettings: (any SantaSDK.STNativeAdRendererSettings)?
@@ -208,84 +208,49 @@ extension SantaSDK.STReachability {
     get
   }
 }
-public enum STAdFormat : Swift.String, Swift.Codable {
-  case HTML, NATIVE
-  public init?(rawValue: Swift.String)
-  public typealias RawValue = Swift.String
-  public var rawValue: Swift.String {
-    get
-  }
-}
-public enum STCoppa : Swift.String, Swift.Codable {
-  case False
-  case True
-  public init?(rawValue: Swift.String)
-  public typealias RawValue = Swift.String
-  public var rawValue: Swift.String {
-    get
-  }
-}
-public enum STGender : Swift.String, Swift.Codable {
-  case Male
-  case Female
-  case Unkown
-  public init?(rawValue: Swift.String)
-  public typealias RawValue = Swift.String
-  public var rawValue: Swift.String {
-    get
-  }
-}
-public enum STReward : Swift.String, Swift.Codable {
-  case False
-  case True
-  public init?(rawValue: Swift.String)
-  public typealias RawValue = Swift.String
-  public var rawValue: Swift.String {
-    get
-  }
-}
 extension WebKit.WKWebView {
   @_Concurrency.MainActor(unsafe) @objc override dynamic open var safeAreaInsets: UIKit.UIEdgeInsets {
     @objc get
   }
 }
 public typealias STNativeAdRequestHandler = (_ request: SantaSDK.STNativeAdRequest?, _ response: SantaSDK.STNativeAd?, _ error: (any Swift.Error)?) -> Swift.Void
-@_hasMissingDesignatedInitializers final public class STNativeAdManager {
-  public static func adFormat(_ adForamt: [SantaSDK.STAdFormat])
-  public static func keywords(_ keywords: [Swift.String : Swift.String]?)
-  public static func keywords(_ key: Swift.String, _ value: Swift.String)
-  public static func location(_ location: CoreLocation.CLLocation)
-  public static func testing(_ testing: Swift.Bool)
-  public static func coppa(_ coppa: SantaSDK.STCoppa)
-  public static func desiredAssets(_ desiredAssets: Foundation.NSSet)
-  public static func initNativeAdWithAdUnitIdentifier(_ identifier: Swift.String, _ adViewClass: Swift.AnyClass?)
-  public static func startWithCompletionHandler(_ handler: SantaSDK.STNativeAdRequestHandler?)
+@objc @_inheritsConvenienceInitializers @objcMembers final public class STNativeAdManager : ObjectiveC.NSObject {
+  @objc public static func adFormat(_ adForamt: [Swift.String])
+  @objc public static func keywords(_ keywords: [Swift.String : Swift.String]?)
+  @objc public static func keywords(_ key: Swift.String, _ value: Swift.String)
+  @objc public static func location(_ location: CoreLocation.CLLocation)
+  @objc public static func testing(_ testing: Swift.Bool)
+  @objc public static func coppa(_ coppa: Swift.String)
+  @objc public static func desiredAssets(_ desiredAssets: Foundation.NSSet)
+  @objc public static func initNativeAdWithAdUnitIdentifier(_ identifier: Swift.String, _ adViewClass: Swift.AnyClass?)
+  @objc public static func startWithCompletionHandler(_ handler: SantaSDK.STNativeAdRequestHandler?)
+  @objc override dynamic public init()
   @objc deinit
 }
-@objc @_hasMissingDesignatedInitializers final public class STAdTagManager : WebKit.WKUserScript {
-  public init(coppa: SantaSDK.STCoppa? = .False, keywords: [Swift.String : Swift.String]? = nil)
+@objc @_hasMissingDesignatedInitializers @objcMembers final public class STAdTagManager : WebKit.WKUserScript {
+  @objc public init(coppa: Swift.String? = "0", keywords: [Swift.String : Swift.String]? = nil)
   @objc deinit
 }
 extension SantaSDK.STAdTagManager {
-  final public var coppa: SantaSDK.STCoppa {
-    get
-    set
+  @objc final public var coppa: Swift.String {
+    @objc get
+    @objc set
   }
-  final public var yob: Swift.String? {
-    get
-    set
+  @objc final public var yob: Swift.String? {
+    @objc get
+    @objc set
   }
-  final public var gender: SantaSDK.STGender? {
-    get
-    set
+  @objc final public var gender: Swift.String? {
+    @objc get
+    @objc set
   }
-  final public func keywords(_ keywords: [Swift.String : Swift.String]?)
-  final public func keywords(_ key: Swift.String, _ value: Swift.String)
+  @objc final public func keywords(_ keywords: [Swift.String : Swift.String]?)
+  @objc final public func keywords(_ key: Swift.String, _ value: Swift.String)
 }
 extension SantaSDK.STAdTagManager {
-  final public func requestTrackingAuthorization(handler: @escaping (_ uuid: Swift.String?) -> Swift.Void)
-  final public func requestLocation()
-  final public func makeSource(_ data: [Swift.String : Any]? = nil) -> Swift.String
+  @objc final public func requestTrackingAuthorization(handler: @escaping (_ uuid: Swift.String?) -> Swift.Void)
+  @objc final public func requestLocation()
+  @objc final public func makeSource(_ data: [Swift.String : Any]? = nil) -> Swift.String
 }
 extension SantaSDK.STAdTagManager : CoreLocation.CLLocationManagerDelegate {
   @objc final public func locationManagerDidChangeAuthorization(_ manager: CoreLocation.CLLocationManager)
@@ -293,10 +258,10 @@ extension SantaSDK.STAdTagManager : CoreLocation.CLLocationManagerDelegate {
   @objc final public func locationManager(_ manager: CoreLocation.CLLocationManager, didUpdateLocations locations: [CoreLocation.CLLocation])
   @objc final public func locationManager(_ manager: CoreLocation.CLLocationManager, didFailWithError error: any Swift.Error)
 }
-@_hasMissingDesignatedInitializers public class STNativeAdRequest {
+@objc @_hasMissingDesignatedInitializers @objcMembers public class STNativeAdRequest : ObjectiveC.NSObject {
   public var targeting: SantaSDK.STNativeAdRequestTargeting?
   public static func requestWithAdUnitIdentifier(_ identifier: Swift.String?, rendererConfigurations: [SantaSDK.STNativeAdRendererConfiguration]?) -> SantaSDK.STNativeAdRequest
-  public func startWithCompletionHandler(_ handler: SantaSDK.STNativeAdRequestHandler?)
+  @objc public func startWithCompletionHandler(_ handler: SantaSDK.STNativeAdRequestHandler?)
   @objc deinit
 }
 @objc public protocol STNativeAdRenderingDelegate {
@@ -327,29 +292,29 @@ public enum STNativeAdOrientation {
   @objc optional func didLoadViewForAd(_ view: SantaSDK.STAdView?)
   @objc optional func willLeaveApplicationFromAd(_ view: SantaSDK.STAdView?)
 }
-@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class STAdView : UIKit.UIView {
-  @_Concurrency.MainActor(unsafe) public var delegate: (any SantaSDK.STAdViewDelegate)?
-  @_Concurrency.MainActor(unsafe) public var adContentView: UIKit.UIView?
-  @_Concurrency.MainActor(unsafe) public var adUnitId: Swift.String?
+@objc @_hasMissingDesignatedInitializers @objcMembers @_Concurrency.MainActor(unsafe) public class STAdView : UIKit.UIView {
+  @objc @_Concurrency.MainActor(unsafe) public var delegate: (any SantaSDK.STAdViewDelegate)?
+  @objc @_Concurrency.MainActor(unsafe) public var adContentView: UIKit.UIView?
+  @objc @_Concurrency.MainActor(unsafe) public var adUnitId: Swift.String?
   @_Concurrency.MainActor(unsafe) public var allowedNativeAdOrientation: SantaSDK.STNativeAdOrientation
-  @_Concurrency.MainActor(unsafe) public var adFormat: [SantaSDK.STAdFormat]?
-  @_Concurrency.MainActor(unsafe) public var keywords: [Swift.String : Swift.String]?
-  @_Concurrency.MainActor(unsafe) public var location: CoreLocation.CLLocation?
-  @_Concurrency.MainActor(unsafe) public var coppa: SantaSDK.STCoppa
-  @_Concurrency.MainActor(unsafe) public var rewarded: SantaSDK.STReward?
-  @_Concurrency.MainActor(unsafe) public var fullWebView: Swift.Bool
-  @_Concurrency.MainActor(unsafe) public var testing: Swift.Bool
-  @_Concurrency.MainActor(unsafe) public init(adUnitId: Swift.String?, size: CoreFoundation.CGSize?)
-  @_Concurrency.MainActor(unsafe) public func loadAd()
-  @_Concurrency.MainActor(unsafe) public func stopAd()
-  @_Concurrency.MainActor(unsafe) public func forceRefreshAd()
-  @_Concurrency.MainActor(unsafe) public func rotateToOrientation(_ newOrientation: UIKit.UIInterfaceOrientation)
+  @objc @_Concurrency.MainActor(unsafe) public var adFormat: [Swift.String]?
+  @objc @_Concurrency.MainActor(unsafe) public var keywords: [Swift.String : Swift.String]?
+  @objc @_Concurrency.MainActor(unsafe) public var location: CoreLocation.CLLocation?
+  @objc @_Concurrency.MainActor(unsafe) public var coppa: Swift.String
+  @objc @_Concurrency.MainActor(unsafe) public var rewarded: Swift.String?
+  @objc @_Concurrency.MainActor(unsafe) public var fullWebView: Swift.Bool
+  @objc @_Concurrency.MainActor(unsafe) public var testing: Swift.Bool
+  @objc @_Concurrency.MainActor(unsafe) public init(adUnitId: Swift.String, size: CoreFoundation.CGSize)
+  @objc @_Concurrency.MainActor(unsafe) public func loadAd()
+  @objc @_Concurrency.MainActor(unsafe) public func stopAd()
+  @objc @_Concurrency.MainActor(unsafe) public func forceRefreshAd()
+  @objc @_Concurrency.MainActor(unsafe) public func rotateToOrientation(_ newOrientation: UIKit.UIInterfaceOrientation)
   @_Concurrency.MainActor(unsafe) public func lockNativeAdsToOrientation(_ orientation: SantaSDK.STNativeAdOrientation)
-  @_Concurrency.MainActor(unsafe) public func unlockNativeAdsOrientation()
+  @objc @_Concurrency.MainActor(unsafe) public func unlockNativeAdsOrientation()
   @_Concurrency.MainActor(unsafe) public func allowedNativeAdsOrientation() -> SantaSDK.STNativeAdOrientation
   @_Concurrency.MainActor(unsafe) public func adContentViewSize() -> CoreFoundation.CGSize?
-  @_Concurrency.MainActor(unsafe) public func stopAutomaticallyRefreshingContents()
-  @_Concurrency.MainActor(unsafe) public func startAutomaticallyRefreshingContents()
+  @objc @_Concurrency.MainActor(unsafe) public func stopAutomaticallyRefreshingContents()
+  @objc @_Concurrency.MainActor(unsafe) public func startAutomaticallyRefreshingContents()
   @objc deinit
 }
 public typealias ResponseHandler = (_ data: Foundation.Data?, _ response: Foundation.HTTPURLResponse?) -> Swift.Void
@@ -364,17 +329,5 @@ extension SantaSDK.STReachability.NetworkStatus : Swift.Equatable {}
 extension SantaSDK.STReachability.NetworkStatus : Swift.Hashable {}
 extension SantaSDK.STReachability.Connection : Swift.Equatable {}
 extension SantaSDK.STReachability.Connection : Swift.Hashable {}
-extension SantaSDK.STAdFormat : Swift.Equatable {}
-extension SantaSDK.STAdFormat : Swift.Hashable {}
-extension SantaSDK.STAdFormat : Swift.RawRepresentable {}
-extension SantaSDK.STCoppa : Swift.Equatable {}
-extension SantaSDK.STCoppa : Swift.Hashable {}
-extension SantaSDK.STCoppa : Swift.RawRepresentable {}
-extension SantaSDK.STGender : Swift.Equatable {}
-extension SantaSDK.STGender : Swift.Hashable {}
-extension SantaSDK.STGender : Swift.RawRepresentable {}
-extension SantaSDK.STReward : Swift.Equatable {}
-extension SantaSDK.STReward : Swift.Hashable {}
-extension SantaSDK.STReward : Swift.RawRepresentable {}
 extension SantaSDK.STNativeAdOrientation : Swift.Equatable {}
 extension SantaSDK.STNativeAdOrientation : Swift.Hashable {}
