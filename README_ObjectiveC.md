@@ -1,31 +1,7 @@
+# SANTA SDK for ObjectiveC
 
-목차
-===
-
-- [Version History](#version-history)
-- [시작하기 전에](#시작하기-전에)
-    - [SDK 정보](#sdk-정보)
-- [시작하기](#시작하기)
-- [어플리케이션 설정](#어플리케이션-설정)
-  - [Santa SDK 추가하기](#santa-sdk-추가하기)
-    - [CocoaPod](#CocoaPod)
-    - [Swift Package Manager](#swift-package-manager)
-  - [Info.plist 설정](#Info.plist-설정)
-- [광고 적용하기](#광고-적용하기)
-  - [앱 등록](#앱-등록)
-  - [유닛 ID 발급](#유닛-ID-발급)
-  - [배너 광고](#배너-광고)
-  - [전면 광고](#전면-광고)
-  - [네이티브 광고](#네이티브-광고)
-- [광고 인스턴스 추가 옵션](#광고-인스턴스-추가-옵션)
-
-# Version History
-
-- Version 1.0.1
-  - ObjectiveC 호환성 추가
-
-- Version 1.0.0
-
+ObjectiveC 가이드입니다.  
+Swift 가이드는 [README](./README.md)를 참고해주세요.
 
 # 시작하기 전에
 

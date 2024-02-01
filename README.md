@@ -1,3 +1,7 @@
+# SANTA SDK for Swift
+
+Swift 가이드입니다.  
+ObjectiveC 가이드는 [README_ObjectiveC](./README_ObjectiveC.md)를 참고해주세요.
 
 목차
 ===
