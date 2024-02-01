@@ -94,16 +94,16 @@ pod install
 ### 배너 광고
 
 자세한 사항은 배너 광고 샘플을 참고해주세요.  
-- [STBannerAdViewController.swift](./sample-swift/sample-swift/Controller/STBannerAdViewController.swift)
+- [STBannerAdViewController.m](./sample-objc/sample-objc/Controller/STBannerAdViewController.m)
 
 **1. 광고 요청을 위한 변수 선언**  
  
 ```
 // 광고 인스턴스  
-var adView : STAdView?
+@property (nonatomic, strong) STAdView *adView;
 
 // 광고가 표시될 뷰
-var adViewContainer : UIView!
+@property (weak, nonatomic) IBOutlet UIView *adViewContainer;
 ```
 
 **2. 광고 인스턴스 생성**
@@ -112,61 +112,65 @@ var adViewContainer : UIView!
  * @param adUnitId - 광고 유닛 ID
  * @param size - 원하는 광고 크기입니다.
  */
-STAdView(adUnitId: String?, size: CGSize?)
+- (nonnull instancetype)initWithAdUnitId:(NSString * _Nonnull)adUnitId size:(CGSize)size
 ```
 
 예시)
 ```
 // 광고 인스턴스 생성
-self.adView = STAdView(adUnitId: "adUnitId", size: self.adViewContainer.frame.size)
+self.adView = [[STAdView alloc] initWithAdUnitId:@"adUnitId" size:self.adViewContainer.frame.size];
 
-if let adView = self.adView {
-    // 대리자 전달
-    adView.delegate = self
-}
+// 스크린 리사이즈 시 뷰의 리사이즈 여부 설정
+self.adView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
+
+// 대리자 전달
+self.adView.delegate = self;
+
+// 테스트 여부
+self.adView.testing = true;
 ```
 
 **3. 광고 위치에 광고 뷰 추가**
 ```
-self.adViewContainer.addSubview(adView)
+[self.adViewContainer addSubview:self.adView];
 
-// 광고 뷰에 레이아웃 적용
-self.setAutoLayout(view: self.adViewContainer, adView: adView)
+// 광고 뷰를 오토레이아웃 설정 (자세한 함수는 샘플코드 참조)
+[self setAdViewAutolayoutConstraint:self.adViewContainer mine:self.adView];
 ```
 
 **4. 광고 요청**
 ```
-self.adView.loadAd()
+[self.adView loadAd];
 ```
 
 
 #### 배너광고 Protocol (STAdViewDelegate Protocol Reference)
 ```
 // 광고를 성공적으로로드하면 전송됩니다.
-func adViewDidLoadAd(_ view: STAdView?)
+- (void)adViewDidLoadAd:(STAdView *)view;
 
 // 광고로드에 실패 할 때 전송됩니다.
-func adViewDidFailToLoadAd(_ view: STAdView?)
+- (void)adViewDidFailToLoadAd:(STAdView *)view;
 
 // 콘텐츠를로드하려고 할 때 전송됩니다.
-func willLoadViewForAd(_ view: STAdView?)
+- (void)willLoadViewForAd:(STAdView *)view;
 
 // 모달 콘텐츠를 닫았을 때 전송되어 애플리케이션에 제어권을 반환합니다.
-func didLoadViewForAd(_ view: STAdView?)
+- (void)didLoadViewForAd:(STAdView *)view;
 
 // 사용자가 광고를 탭하여 애플리케이션에서 나 가려고 할 때 전송됩니다.
-func willLeaveApplicationFromAd(_ view: STAdView?)
+- (void)willLeaveApplicationFromAd:(STAdView *)view;
 ```
 
 ### 전면 광고
 
 자세한 사항은 전면 광고 샘플을 참고해주세요.
-- [STInterstitialAdViewController.swift](./sample-swift/sample-swift/Controller/STInterstitialAdViewController.swift)
+- [STInterstitialAdViewController.m](./sample-objc/sample-objc/Controller/STInterstitialAdViewController.m)
 
 **1. 전면 광고 요청을 위한 변수 선언**
 ```
 // 전면 광고 인스턴스  
-var interstitial: STInterstitialAdView?
+@property (nonatomic, strong) STInterstitialAdView *interstitial;
 ```
 
 **2. 전면 광고 인스턴스 생성 함수 호출**
@@ -174,23 +178,24 @@ var interstitial: STInterstitialAdView?
 /**
  * @param adUnitId - 광고 유닛 ID
  */
-STInterstitialAdView.interstitialAdControllerForAdUnitId(_ adUnitId: String) -> STInterstitialAdView
++ (STInterstitialAdView * _Nonnull)interstitialAdControllerForAdUnitId:(NSString *)adUnitId
 ```
 
 예시)
 ```
 // 전면 광고 인스턴스 생성
-self.interstitial = STInterstitialAdView.interstitialAdControllerForAdUnitId(adUnitId)
+self.interstitial = [STInterstitialAdView interstitialAdControllerForAdUnitId:@"adUnitId"];
 
-if let interstitial = interstitial {
-    // 대리자 전달
-    interstitial.delegate = self
-}
+// 대리자 전달
+self.interstitial.delegate = self;
+
+// 테스트 여부
+self.interstitial.testing = YES;
 ```
 
 **3. 전면 광고 요청**
 ```
-self.interstitial.loadAd()
+[self.interstitial loadAd];
 ```
 
 **4. 전면 광고 표시**
@@ -198,126 +203,124 @@ self.interstitial.loadAd()
 /**
  * @param controller 전면 광고를 표시하는 데 사용해야하는 UIViewController입니다.
  */
-STInterstitialAdView.showFromViewController(_ controller: UIViewController? = nil)
+- (void)showFromViewController:(UIViewController *)controller;
 ```
 
 예시)
 ```
-self.interstitial?.showFromViewController(self)
+[self.interstitial showFromViewController:self];
 ```
 
 #### 전면 광고 Protocol (STInterstitialAdViewDelegate Protocol Reference)
 ```
-  // 전면 광고를 성공적으로로드하면 전송됩니다.
-  func interstitialDidLoadAd(_ interstitial: STInterstitialAdView?)
+// 전면 광고를 성공적으로로드하면 전송됩니다.
+- (void)interstitialDidLoadAd:(STInterstitialAdView *)interstitial;
 
-  // 광고를로드하지 못할 때 전송됩니다.
-  func interstitialDidFailToLoadAd(_ interstitial: STInterstitialAdView?)
+// 광고를로드하지 못할 때 전송됩니다.
+- (void)interstitialDidFailToLoadAd:(STInterstitialAdView *)interstitial;
 
-  // 전면 광고가 화면에 표시되기 직전에 전송됩니다.
-  func interstitialWillAppear(_ interstitial: STInterstitialAdView?)
+// 전면 광고가 화면에 표시되기 직전에 전송됩니다.
+- (void)interstitialWillAppear:(STInterstitialAdView *)interstitial;
 
-  // 전면 광고가 화면에 표시된 후에 전송됩니다.
-  func interstitialDidAppear(_ interstitial: STInterstitialAdView?)
-  
-  // 전면 광고가 화면에 표시되지 못할때
-  func interstitialDidFailToShow(_ interstitial: STInterstitialAdView?)
+// 전면 광고가 화면에 표시된 후에 전송됩니다.
+- (void)interstitialDidAppear:(STInterstitialAdView *)interstitial;
 
-  // 전면 광고가 화면에서 닫히기 직전에 전송됩니다.
-  func interstitialWillDisappear(_ interstitial: STInterstitialAdView?)
+// 전면 광고가 화면에 표시되지 못할때
+- (void)interstitialDidFailToShow:(STInterstitialAdView *)interstitial;
 
-  // 전면 광고가 화면에서 해제 된 후 전송되어 애플리케이션에 제어권이 반환됩니다.
-  func interstitialDidDisappear(_ interstitial: STInterstitialAdView?)
+// 전면 광고가 화면에서 닫히기 직전에 전송됩니다.
+- (void)interstitialWillDisappear:(STInterstitialAdView *)interstitial;
 
-  // 로드된 전면 광고를 더 이상 표시 할 수 없을 때 전송됩니다.
-  func interstitialDidExpire(_ interstitial: STInterstitialAdView?)
+// 전면 광고가 화면에서 해제 된 후 전송되어 애플리케이션에 제어권이 반환됩니다.
+- (void)interstitialDidDisappear:(STInterstitialAdView *)interstitial;
 
-  // 사용자가 전면 광고를 탭하고 광고가 타겟 작업을 수행하려고 할 때 전송됩니다.
-  func interstitialDidReceiveTapEvent(_ interstitial: STInterstitialAdView?)
+// 로드된 전면 광고를 더 이상 표시 할 수 없을 때 전송됩니다.
+- (void)interstitialDidExpire:(STInterstitialAdView *)interstitial;
+
+// 사용자가 전면 광고를 탭하고 광고가 타겟 작업을 수행하려고 할 때 전송됩니다.
+- (void)interstitialDidReceiveTapEvent:(STInterstitialAdView *)interstitial;
 ```
 
 
 ### 네이티브 광고
 
 자세한 사항은 네이티브 광고 샘플을 참고해주세요.
-- [STNativeAdViewController.swift](./sample-swift/sample-swift/Controller/STNativeAdViewController.swift)
+- [STNativeAdViewController.m](./sample-objc/sample-objc/Controller/STNativeAdViewController.m)
 
 **1. 네이티브 광고 뷰 클래스 선언**  
 
 네이티브 프로토콜을 참고하여 필요한 항목들로 UIView 클래스를 구성한다.  
 자세한 사항은 샘플 코드를 참고해주세요.
 
-- [STNativeAdView.swift](./sample-swift/sample-swift/Views/STNativeAdView.swift)
+- [STNativeAdView.m](./sample-objc/sample-objc/Views/STNativeAdView.m)
 
 네이티브 광고 뷰 Protocol (STNativeAdRenderingDelegate Protocol Reference)
 ```
 // 메인 텍스트에 사용하고있는 UILabel을 반환합니다.
-func nativeMainTextLabel() -> UILabel?
+- (UILabel *)nativeMainTextLabel
 
 // 제목 텍스트에 사용중인 UILabel을 반환합니다.
-func nativeTitleTextLabel() -> UILabel?
+- (UILabel * _Nullable)nativeTitleTextLabel
 
 // 아이콘 이미지에 사용중인 UIImageView를 반환합니다.
-func nativeIconImageView() -> UIImageView?
+- (UIImageView * _Nullable)nativeIconImageView
 
 // 메인 이미지에 사용중인 UIImageView를 반환합니다.
-func nativeMainImageView() -> UIImageView?
+- (UIImageView * _Nullable)nativeMainImageView
 
 // 비디오에 사용하는 UIView를 반환합니다. (동영상 광고를 게재할 때만 이를 구현하면 됩니다.)
-func nativeVideoView() -> UIView?
+- (UIView * _Nullable)nativeVideoView
 
 // 클릭 유도 문안 (cta) 텍스트에 사용중인 UILabel을 반환합니다.
-func nativeCallToActionTextLabel() -> UILabel?
+- (UILabel * _Nullable)nativeCallToActionTextLabel
 
 // 개인 정보 아이콘에 대해 뷰가 사용중인 UIImageView를 반환합니다.
-func nativePrivacyInformationIconImageView() -> UIImageView?
+- (UIImageView * _Nullable)nativePrivacyInformationIconImageView
 ```
 
 **2. 네이트브 광고 인스턴스 변수 선언**
 ```
 // 네이티브 광고 인스턴스 선언  
-var nativeAd: STNativeAd?
+@property (nonatomic, strong) STNativeAd *nativeAd;
 
 // 네이티브 광고가 표시될 뷰 선언
-var adViewContainer : UIView!
+@property (weak, nonatomic) IBOutlet UIView *adViewContainer;
 ```
 
 **3. 네이티브 광고 요청 전처리**
 ```
-STNativeAdManager.initNativeAdWithAdUnitIdentifier(_ identifier: String, _ adViewClass: AnyClass?)
++ (void)initNativeAdWithAdUnitIdentifier:(NSString *)identifier :(Class)adViewClass
 ```
 
 예시)
 ```
-STNativeAdManager.initNativeAdWithAdUnitIdentifier(adUnitId, NativeView.self)
+[STNativeAdManager initNativeAdWithAdUnitIdentifier:@"adUnitId" :[STNativeAdView class]];
 ```
 
 **4. 네이티브 광고 요청 및 표시**
 ```
-STNativeAdManager.startWithCompletionHandler { (request, response, error) in
-    if error != nil {
+[STNativeAdManager startWithCompletionHandler:^(STNativeAdRequest *request, STNativeAd *response, NSError *error) {
+    if (error) {
         // 에러 처리
     } else {
-        self.nativeAd = response
-        self.nativeAd?.delegate = self
+        self.nativeAd = response;
+        self.nativeAd.delegate = self;
         
         // 네이티브 광고 표시
-        self.displayAd()
+        [self displayAd];
     }
-}
+}];
 ```
-```
-func displayAd() {
+``` 
+- (void)displayAd
+{    
     // 기존에 표시되던 View들을 제거
-    adViewContainer.subviews.forEach { subview in
-        subview.removeFromSuperview()
-    }
+    [[self.adViewContainer subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
     
     // 광고 위치에 네이티브 광고 뷰 추가 
-    if let adView = nativeAd?.retrieveAdViewWithError(nil) {
-        adViewContainer.addSubview(adView)
-        setAutoLayout2(view: adViewContainer, adView: adView)
-    }
+    UIView *adView = [self.nativeAd retrieveAdViewWithError:nil];
+    [self.adViewContainer addSubview:adView];
+    adView.frame = self.adViewContainer.bounds;
 }
 ```
 

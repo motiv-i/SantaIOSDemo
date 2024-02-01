@@ -1,0 +1,333 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
+// swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name SantaSDK
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import AdSupport
+import AppTrackingTransparency
+import CoreGraphics
+import CoreLocation
+import CoreTelephony
+import Foundation
+@_exported import SantaSDK
+import StoreKit
+import Swift
+import SystemConfiguration
+import UIKit
+import WebKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public protocol STNativeAdRendererSettings {
+  var viewSizeHandler: ((CoreFoundation.CGFloat) -> CoreFoundation.CGSize)? { get set }
+}
+public class STStaticNativeAdRendererSettings : SantaSDK.STNativeAdRendererSettings {
+  public var renderingViewClass: Swift.AnyClass?
+  public var viewSizeHandler: ((CoreFoundation.CGFloat) -> CoreFoundation.CGSize)?
+  public init()
+  @objc deinit
+}
+public var kAdTitleKey: Swift.String
+public var kAdIconImageKey: Swift.String
+public var kAdMainImageKey: Swift.String
+public var kAdVideo: Swift.String
+public var kAdTextKey: Swift.String
+public var kAdCTATextKey: Swift.String
+public var kAdStarRatingKey: Swift.String
+public var kAdPriceKey: Swift.String
+public class STNativeAdRequestTargeting {
+  public static var targeting: SantaSDK.STNativeAdRequestTargeting
+  public var adFormat: [Swift.String]?
+  public var keywords: [Swift.String : Swift.String]?
+  public var location: CoreLocation.CLLocation?
+  public var desiredAssets: Foundation.NSSet?
+  public var testing: Swift.Bool
+  public var coppa: Swift.String?
+  public init()
+  public func setDesiredAssets(_ desiredAssets: Foundation.NSSet?)
+  @objc deinit
+}
+public enum HTTPMethod : Swift.String {
+  case options
+  case get
+  case head
+  case post
+  case put
+  case patch
+  case delete
+  case trace
+  case connect
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@objc public protocol STNativeAdDelegate {
+  @objc func willLoadForNativeAd(_ nativeAd: SantaSDK.STNativeAd?)
+  @objc func didLoadForNativeAd(_ nativeAd: SantaSDK.STNativeAd?)
+  @objc func willLeaveApplicationFromNativeAd(_ nativeAd: SantaSDK.STNativeAd?)
+  @objc func viewControllerForPresentingModalView() -> UIKit.UIViewController?
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class STNativeAd : ObjectiveC.NSObject {
+  @objc public var delegate: (any SantaSDK.STNativeAdDelegate)?
+  @objc public func retrieveAdViewWithError(_ error: (any Swift.Error)?) -> UIKit.UIView?
+  @objc deinit
+}
+@objc public protocol STInterstitialAdViewDelegate {
+  @objc optional func interstitialDidLoadAd(_ interstitial: SantaSDK.STInterstitialAdView?)
+  @objc optional func interstitialDidFailToLoadAd(_ interstitial: SantaSDK.STInterstitialAdView?)
+  @objc optional func interstitialWillAppear(_ interstitial: SantaSDK.STInterstitialAdView?)
+  @objc optional func interstitialDidAppear(_ interstitial: SantaSDK.STInterstitialAdView?)
+  @objc optional func interstitialDidFailToShow(_ interstitial: SantaSDK.STInterstitialAdView?)
+  @objc optional func interstitialWillDisappear(_ interstitial: SantaSDK.STInterstitialAdView?)
+  @objc optional func interstitialDidDisappear(_ interstitial: SantaSDK.STInterstitialAdView?)
+  @objc optional func interstitialDidExpire(_ interstitial: SantaSDK.STInterstitialAdView?)
+  @objc optional func interstitialDidReceiveTapEvent(_ interstitial: SantaSDK.STInterstitialAdView?)
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers @_Concurrency.MainActor(unsafe) public class STInterstitialAdView : UIKit.UIViewController {
+  @objc @_Concurrency.MainActor(unsafe) public static func interstitialAdControllerForAdUnitId(_ adUnitId: Swift.String) -> SantaSDK.STInterstitialAdView
+  @objc @_Concurrency.MainActor(unsafe) public var delegate: (any SantaSDK.STInterstitialAdViewDelegate)?
+  @objc @_Concurrency.MainActor(unsafe) public var adUnitId: Swift.String?
+  @objc @_Concurrency.MainActor(unsafe) public var adFormat: [Swift.String]?
+  @objc @_Concurrency.MainActor(unsafe) public var keywords: [Swift.String : Swift.String]?
+  @objc @_Concurrency.MainActor(unsafe) public var location: CoreLocation.CLLocation?
+  @objc @_Concurrency.MainActor(unsafe) public var testing: Swift.Bool
+  @objc @_Concurrency.MainActor(unsafe) public var coppa: Swift.String?
+  @objc @_Concurrency.MainActor(unsafe) public func loadAd()
+  @objc @_Concurrency.MainActor(unsafe) public func showFromViewController(_ controller: UIKit.UIViewController? = nil)
+  @objc @_Concurrency.MainActor(unsafe) public func removeSharedInterstitialAdView(_ controller: SantaSDK.STInterstitialAdView)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var prefersStatusBarHidden: Swift.Bool {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor(unsafe) public init(adUnitId: Swift.String)
+  @objc deinit
+}
+extension SantaSDK.STInterstitialAdView {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func getReady() -> Swift.Bool
+}
+@_hasMissingDesignatedInitializers public class STNativeAdRendererConfiguration {
+  public var rendererSettings: (any SantaSDK.STNativeAdRendererSettings)?
+  public var rendererClass: Any?
+  public var supportedCustomEvents: [Swift.String]?
+  @objc deinit
+}
+public enum STNativeAdError : Foundation.LocalizedError {
+  case Unkown
+  case HttpError
+  case NoInventory
+  case ImageDownloadFailed
+  case AdUnitWarmingUp
+  case VASTParsingFailed
+  case VideoConfigInvalid
+  case ContentDisplayError
+  case RenderError
+  case InvalidServerResponse(reason: Swift.String?)
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public enum ReachabilityError : Swift.Error {
+  case failedToCreateWithAddress(Darwin.sockaddr, Swift.Int32)
+  case failedToCreateWithHostname(Swift.String, Swift.Int32)
+  case unableToSetCallback(Swift.Int32)
+  case unableToSetDispatchQueue(Swift.Int32)
+  case unableToGetFlags(Swift.Int32)
+}
+@available(*, unavailable, renamed: "Notification.Name.reachabilityChanged")
+public let ReachabilityChangedNotification: Foundation.NSNotification.Name
+extension Foundation.NSNotification.Name {
+  public static let reachabilityChanged: Foundation.Notification.Name
+}
+public class STReachability {
+  public typealias NetworkReachable = (SantaSDK.STReachability) -> ()
+  public typealias NetworkUnreachable = (SantaSDK.STReachability) -> ()
+  @available(*, unavailable, renamed: "Connection")
+  public enum NetworkStatus : Swift.CustomStringConvertible {
+    case notReachable, reachableViaWiFi, reachableViaWWAN
+    public var description: Swift.String {
+      get
+    }
+    public static func == (a: SantaSDK.STReachability.NetworkStatus, b: SantaSDK.STReachability.NetworkStatus) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public enum Connection : Swift.CustomStringConvertible {
+    case unavailable, wifi, cellular
+    public var description: Swift.String {
+      get
+    }
+    @available(*, deprecated, renamed: "unavailable")
+    public static let none: SantaSDK.STReachability.Connection
+    public static func == (a: SantaSDK.STReachability.Connection, b: SantaSDK.STReachability.Connection) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public var whenReachable: SantaSDK.STReachability.NetworkReachable?
+  public var whenUnreachable: SantaSDK.STReachability.NetworkUnreachable?
+  @available(*, deprecated, renamed: "allowsCellularConnection")
+  final public let reachableOnWWAN: Swift.Bool
+  public var allowsCellularConnection: Swift.Bool
+  public var notificationCenter: Foundation.NotificationCenter
+  @available(*, deprecated, renamed: "connection.description")
+  public var currentReachabilityString: Swift.String {
+    get
+  }
+  @available(*, unavailable, renamed: "connection")
+  public var currentReachabilityStatus: SantaSDK.STReachability.Connection {
+    get
+  }
+  public var connection: SantaSDK.STReachability.Connection {
+    get
+  }
+  required public init(reachabilityRef: SystemConfiguration.SCNetworkReachability, queueQoS: Dispatch.DispatchQoS = .default, targetQueue: Dispatch.DispatchQueue? = nil, notificationQueue: Dispatch.DispatchQueue? = .main)
+  convenience public init(hostname: Swift.String, queueQoS: Dispatch.DispatchQoS = .default, targetQueue: Dispatch.DispatchQueue? = nil, notificationQueue: Dispatch.DispatchQueue? = .main) throws
+  convenience public init(queueQoS: Dispatch.DispatchQoS = .default, targetQueue: Dispatch.DispatchQueue? = nil, notificationQueue: Dispatch.DispatchQueue? = .main) throws
+  @objc deinit
+}
+extension SantaSDK.STReachability {
+  public func startNotifier() throws
+  public func stopNotifier()
+  @available(*, deprecated, message: "Please use `connection != .none`")
+  public var isReachable: Swift.Bool {
+    get
+  }
+  @available(*, deprecated, message: "Please use `connection == .cellular`")
+  public var isReachableViaWWAN: Swift.Bool {
+    get
+  }
+  @available(*, deprecated, message: "Please use `connection == .wifi`")
+  public var isReachableViaWiFi: Swift.Bool {
+    get
+  }
+  public var description: Swift.String {
+    get
+  }
+}
+extension WebKit.WKWebView {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var safeAreaInsets: UIKit.UIEdgeInsets {
+    @objc get
+  }
+}
+public typealias STNativeAdRequestHandler = (_ request: SantaSDK.STNativeAdRequest?, _ response: SantaSDK.STNativeAd?, _ error: (any Swift.Error)?) -> Swift.Void
+@objc @_inheritsConvenienceInitializers @objcMembers final public class STNativeAdManager : ObjectiveC.NSObject {
+  @objc public static func adFormat(_ adForamt: [Swift.String])
+  @objc public static func keywords(_ keywords: [Swift.String : Swift.String]?)
+  @objc public static func keywords(_ key: Swift.String, _ value: Swift.String)
+  @objc public static func location(_ location: CoreLocation.CLLocation)
+  @objc public static func testing(_ testing: Swift.Bool)
+  @objc public static func coppa(_ coppa: Swift.String)
+  @objc public static func desiredAssets(_ desiredAssets: Foundation.NSSet)
+  @objc public static func initNativeAdWithAdUnitIdentifier(_ identifier: Swift.String, _ adViewClass: Swift.AnyClass?)
+  @objc public static func startWithCompletionHandler(_ handler: SantaSDK.STNativeAdRequestHandler?)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers final public class STAdTagManager : WebKit.WKUserScript {
+  @objc public init(coppa: Swift.String? = "0", keywords: [Swift.String : Swift.String]? = nil)
+  @objc deinit
+}
+extension SantaSDK.STAdTagManager {
+  @objc final public var coppa: Swift.String {
+    @objc get
+    @objc set
+  }
+  @objc final public var yob: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc final public var gender: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc final public func keywords(_ keywords: [Swift.String : Swift.String]?)
+  @objc final public func keywords(_ key: Swift.String, _ value: Swift.String)
+}
+extension SantaSDK.STAdTagManager {
+  @objc final public func requestTrackingAuthorization(handler: @escaping (_ uuid: Swift.String?) -> Swift.Void)
+  @objc final public func requestLocation()
+  @objc final public func makeSource(_ data: [Swift.String : Any]? = nil) -> Swift.String
+}
+extension SantaSDK.STAdTagManager : CoreLocation.CLLocationManagerDelegate {
+  @objc final public func locationManagerDidChangeAuthorization(_ manager: CoreLocation.CLLocationManager)
+  @objc final public func locationManager(_ manager: CoreLocation.CLLocationManager, didChangeAuthorization status: CoreLocation.CLAuthorizationStatus)
+  @objc final public func locationManager(_ manager: CoreLocation.CLLocationManager, didUpdateLocations locations: [CoreLocation.CLLocation])
+  @objc final public func locationManager(_ manager: CoreLocation.CLLocationManager, didFailWithError error: any Swift.Error)
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class STNativeAdRequest : ObjectiveC.NSObject {
+  public var targeting: SantaSDK.STNativeAdRequestTargeting?
+  public static func requestWithAdUnitIdentifier(_ identifier: Swift.String?, rendererConfigurations: [SantaSDK.STNativeAdRendererConfiguration]?) -> SantaSDK.STNativeAdRequest
+  @objc public func startWithCompletionHandler(_ handler: SantaSDK.STNativeAdRequestHandler?)
+  @objc deinit
+}
+@objc public protocol STNativeAdRenderingDelegate {
+  @objc optional func nativeMainTextLabel() -> UIKit.UILabel?
+  @objc optional func nativeTitleTextLabel() -> UIKit.UILabel?
+  @objc optional func nativeIconImageView() -> UIKit.UIImageView?
+  @objc optional func nativeMainImageView() -> UIKit.UIImageView?
+  @objc optional func nativeVideoView() -> UIKit.UIView?
+  @objc optional func nativeCallToActionTextLabel() -> UIKit.UILabel?
+  @objc optional func nativePrivacyInformationIconImageView() -> UIKit.UIImageView?
+}
+@_hasMissingDesignatedInitializers public class STStaticNativeAdRenderer {
+  public static func rendererConfigurationWithRendererSettings(_ rendererSettings: any SantaSDK.STNativeAdRendererSettings) -> SantaSDK.STNativeAdRendererConfiguration
+  @objc deinit
+}
+public enum STNativeAdOrientation {
+  case any, portrait, landscape
+  public static func == (a: SantaSDK.STNativeAdOrientation, b: SantaSDK.STNativeAdOrientation) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@objc public protocol STAdViewDelegate {
+  @objc optional func adViewDidLoadAd(_ view: SantaSDK.STAdView?)
+  @objc optional func adViewDidFailToLoadAd(_ view: SantaSDK.STAdView?)
+  @objc optional func willLoadViewForAd(_ view: SantaSDK.STAdView?)
+  @objc optional func didLoadViewForAd(_ view: SantaSDK.STAdView?)
+  @objc optional func willLeaveApplicationFromAd(_ view: SantaSDK.STAdView?)
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers @_Concurrency.MainActor(unsafe) public class STAdView : UIKit.UIView {
+  @objc @_Concurrency.MainActor(unsafe) public var delegate: (any SantaSDK.STAdViewDelegate)?
+  @objc @_Concurrency.MainActor(unsafe) public var adContentView: UIKit.UIView?
+  @objc @_Concurrency.MainActor(unsafe) public var adUnitId: Swift.String?
+  @_Concurrency.MainActor(unsafe) public var allowedNativeAdOrientation: SantaSDK.STNativeAdOrientation
+  @objc @_Concurrency.MainActor(unsafe) public var adFormat: [Swift.String]?
+  @objc @_Concurrency.MainActor(unsafe) public var keywords: [Swift.String : Swift.String]?
+  @objc @_Concurrency.MainActor(unsafe) public var location: CoreLocation.CLLocation?
+  @objc @_Concurrency.MainActor(unsafe) public var coppa: Swift.String
+  @objc @_Concurrency.MainActor(unsafe) public var rewarded: Swift.String?
+  @objc @_Concurrency.MainActor(unsafe) public var fullWebView: Swift.Bool
+  @objc @_Concurrency.MainActor(unsafe) public var testing: Swift.Bool
+  @objc @_Concurrency.MainActor(unsafe) public init(adUnitId: Swift.String, size: CoreFoundation.CGSize)
+  @objc @_Concurrency.MainActor(unsafe) public func loadAd()
+  @objc @_Concurrency.MainActor(unsafe) public func stopAd()
+  @objc @_Concurrency.MainActor(unsafe) public func forceRefreshAd()
+  @objc @_Concurrency.MainActor(unsafe) public func rotateToOrientation(_ newOrientation: UIKit.UIInterfaceOrientation)
+  @_Concurrency.MainActor(unsafe) public func lockNativeAdsToOrientation(_ orientation: SantaSDK.STNativeAdOrientation)
+  @objc @_Concurrency.MainActor(unsafe) public func unlockNativeAdsOrientation()
+  @_Concurrency.MainActor(unsafe) public func allowedNativeAdsOrientation() -> SantaSDK.STNativeAdOrientation
+  @_Concurrency.MainActor(unsafe) public func adContentViewSize() -> CoreFoundation.CGSize?
+  @objc @_Concurrency.MainActor(unsafe) public func stopAutomaticallyRefreshingContents()
+  @objc @_Concurrency.MainActor(unsafe) public func startAutomaticallyRefreshingContents()
+  @objc deinit
+}
+public typealias ResponseHandler = (_ data: Foundation.Data?, _ response: Foundation.HTTPURLResponse?) -> Swift.Void
+public typealias ErrorHandler = (_ error: (any Swift.Error)?) -> Swift.Void
+public typealias ShouldRedirectWithNewRequest = (_ task: Foundation.URLSessionTask?, _ newRequest: Foundation.URLRequest?) -> Swift.Void
+extension SantaSDK.HTTPMethod : Swift.Equatable {}
+extension SantaSDK.HTTPMethod : Swift.Hashable {}
+extension SantaSDK.HTTPMethod : Swift.RawRepresentable {}
+@available(*, unavailable, renamed: "Connection")
+extension SantaSDK.STReachability.NetworkStatus : Swift.Equatable {}
+@available(*, unavailable, renamed: "Connection")
+extension SantaSDK.STReachability.NetworkStatus : Swift.Hashable {}
+extension SantaSDK.STReachability.Connection : Swift.Equatable {}
+extension SantaSDK.STReachability.Connection : Swift.Hashable {}
+extension SantaSDK.STNativeAdOrientation : Swift.Equatable {}
+extension SantaSDK.STNativeAdOrientation : Swift.Hashable {}

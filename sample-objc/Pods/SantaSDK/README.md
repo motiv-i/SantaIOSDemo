@@ -21,9 +21,6 @@
 
 # Version History
 
-- Version 1.0.1
-  - ObjectiveC 호환성 추가
-
 - Version 1.0.0
 
 
@@ -96,8 +93,7 @@ pod install
 자세한 사항은 배너 광고 샘플을 참고해주세요.  
 - [STBannerAdViewController.swift](./sample-swift/sample-swift/Controller/STBannerAdViewController.swift)
 
-**1. 광고 요청을 위한 변수 선언**  
- 
+**1. 광고 요청을 위한 변수 선언**
 ```
 // 광고 인스턴스  
 var adView : STAdView?
@@ -123,6 +119,9 @@ self.adView = STAdView(adUnitId: "adUnitId", size: self.adViewContainer.frame.si
 if let adView = self.adView {
     // 대리자 전달
     adView.delegate = self
+    
+    // 광고 포맷 선택 (adFormat: [SantaSDK.STAdFormat]?)
+    adView.adFormat = [.HTML]
 }
 ```
 
@@ -185,6 +184,9 @@ self.interstitial = STInterstitialAdView.interstitialAdControllerForAdUnitId(adU
 if let interstitial = interstitial {
     // 대리자 전달
     interstitial.delegate = self
+    
+    // 광고 포맷 선택 (adFormat: [SantaSDK.STAdFormat]?)
+    interstitial.adFormat = [.HTML]
 }
 ```
 
@@ -273,6 +275,19 @@ func nativeCallToActionTextLabel() -> UILabel?
 func nativePrivacyInformationIconImageView() -> UIImageView?
 ```
 
+예시)
+```
+class NativeView: UIView {
+    var titleLabel: UILabel!
+    var mainTextLabel: UILabel!
+    var iconImageView: UIImageView!
+    var mainImageView: UIImageView!
+    var mainVideoView: UIView!
+    var privacyInformationIconImageView: UIImageView!
+    var ctaLabel: UILabel!
+}
+```
+
 **2. 네이트브 광고 인스턴스 변수 선언**
 ```
 // 네이티브 광고 인스턴스 선언  
@@ -290,6 +305,9 @@ STNativeAdManager.initNativeAdWithAdUnitIdentifier(_ identifier: String, _ adVie
 예시)
 ```
 STNativeAdManager.initNativeAdWithAdUnitIdentifier(adUnitId, NativeView.self)
+
+// 광고 포맷 선택 (adFormat: [SantaSDK.STAdFormat]?)
+STNativeAdManager.adFormat([.NATIVE])
 ```
 
 **4. 네이티브 광고 요청 및 표시**
@@ -305,8 +323,7 @@ STNativeAdManager.startWithCompletionHandler { (request, response, error) in
         self.displayAd()
     }
 }
-```
-```
+
 func displayAd() {
     // 기존에 표시되던 View들을 제거
     adViewContainer.subviews.forEach { subview in
