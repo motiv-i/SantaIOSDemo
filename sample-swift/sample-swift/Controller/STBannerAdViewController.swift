@@ -21,6 +21,7 @@ class STBannerAdViewController: UIViewController {
 
     // 광고 컨트롤 객체
     var adView : STAdView?
+    var medistions: IndexingIterator<Array<String>>?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +51,6 @@ extension STBannerAdViewController {
 
         if let adView = self.adView {
             adView.delegate = self      // 대리자 전달
-            adView.adFormat = [.HTML]   // 광고 포맷 선택 (adFormat: [SantaSDK.STAdFormat]?)
             adView.keywords = ["test" : "A"]
             adView.testing = true       // 광고 테스트 여부
 
@@ -61,6 +61,30 @@ extension STBannerAdViewController {
             // 직접 처리할 수 있다면 호출할 필요 없음
             self.setAutoLayout(view: self.adViewContainer, adView: adView)
             adView.loadAd()
+        }
+    }
+    
+    func loadMediation() {
+        // 미디에이션 목록이 존재할때
+        if self.medistions != nil {
+            
+            // 미디에이션 목록을 순차로 가져온다
+            if let medistion = self.medistions?.next() {
+                print("loadMediation = \(medistion)")
+                
+                // 사용할 미이데이션에 맞는 광고 호출 코드를 작성
+                switch medistion {
+                case "Mediation Name":
+                    print("Mediation Name")
+                default:
+                    print("Mediation Default")
+                }
+                
+            } else {
+                print("Mediation is Empty")
+            }
+        } else {
+            print("Mediation is Empty")
         }
     }
 }
@@ -103,5 +127,13 @@ extension STBannerAdViewController: STAdViewDelegate {
      */
     func willLeaveApplicationFromAd(_ view: SantaSDK.STAdView?) {
         print("willLeaveApplicationFromAd")
+    }
+    
+    /**
+     * 광고가 비어있으며 미디에이션이 존재할 때 전송됩니다.
+     */
+    func adViewDidLoadMediation(_ mediations: [String]?) {
+        self.medistions = mediations?.makeIterator()
+        self.loadMediation()
     }
 }

@@ -6,6 +6,7 @@
 //
 
 #import "AppDelegate.h"
+#import <SantaSDK/SantaSDK-Swift.h>
 
 @interface AppDelegate ()
 

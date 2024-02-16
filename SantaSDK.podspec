@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name = 'SantaSDK'
-    s.version = '1.0.1'
+    s.version = '1.0.2'
     s.summary = 'SantaSDK'
     s.description = 'SantaSDK for Publisher'
     s.homepage = 'https://github.com/motiv-i/SantaIOSDemo'
@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
 
     s.source = {
         :git => 'https://github.com/motiv-i/SantaIOSDemo.git',
-        :tag => '1.0.1'
+        :tag => '1.0.2'
     }
 
     s.platforms = {
@@ -24,5 +24,5 @@ Pod::Spec.new do |s|
     s.ios.deployment_target = '12.0'
     s.ios.vendored_frameworks = 'xcframework/SantaSDK.xcframework'
 
-    s.framework  = 'Foundation', 'UIKit', 'SystemConfiguration', 'AdSupport', 'AppTrackingTransparency', 'StoreKit', 'CoreGraphics', 'CoreLocation', 'CoreTelephony'
+    s.framework  = 'Foundation', 'UIKit', 'SystemConfiguration', 'AdSupport', 'AppTrackingTransparency', 'StoreKit', 'CoreGraphics', 'CoreTelephony'
 end

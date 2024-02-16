@@ -5,7 +5,6 @@
 import AdSupport
 import AppTrackingTransparency
 import CoreGraphics
-import CoreLocation
 import CoreTelephony
 import Foundation
 @_exported import SantaSDK
@@ -38,7 +37,6 @@ public class STNativeAdRequestTargeting {
   public static var targeting: SantaSDK.STNativeAdRequestTargeting
   public var adFormat: [Swift.String]?
   public var keywords: [Swift.String : Swift.String]?
-  public var location: CoreLocation.CLLocation?
   public var desiredAssets: Foundation.NSSet?
   public var testing: Swift.Bool
   public var coppa: Swift.String?
@@ -76,6 +74,7 @@ public enum HTTPMethod : Swift.String {
 @objc public protocol STInterstitialAdViewDelegate {
   @objc optional func interstitialDidLoadAd(_ interstitial: SantaSDK.STInterstitialAdView?)
   @objc optional func interstitialDidFailToLoadAd(_ interstitial: SantaSDK.STInterstitialAdView?)
+  @objc optional func interstitialDidLoadMediation(_ mediations: [Swift.String]?)
   @objc optional func interstitialWillAppear(_ interstitial: SantaSDK.STInterstitialAdView?)
   @objc optional func interstitialDidAppear(_ interstitial: SantaSDK.STInterstitialAdView?)
   @objc optional func interstitialDidFailToShow(_ interstitial: SantaSDK.STInterstitialAdView?)
@@ -90,7 +89,6 @@ public enum HTTPMethod : Swift.String {
   @objc @_Concurrency.MainActor(unsafe) public var adUnitId: Swift.String?
   @objc @_Concurrency.MainActor(unsafe) public var adFormat: [Swift.String]?
   @objc @_Concurrency.MainActor(unsafe) public var keywords: [Swift.String : Swift.String]?
-  @objc @_Concurrency.MainActor(unsafe) public var location: CoreLocation.CLLocation?
   @objc @_Concurrency.MainActor(unsafe) public var testing: Swift.Bool
   @objc @_Concurrency.MainActor(unsafe) public var coppa: Swift.String?
   @objc @_Concurrency.MainActor(unsafe) public func loadAd()
@@ -218,7 +216,6 @@ public typealias STNativeAdRequestHandler = (_ request: SantaSDK.STNativeAdReque
   @objc public static func adFormat(_ adForamt: [Swift.String])
   @objc public static func keywords(_ keywords: [Swift.String : Swift.String]?)
   @objc public static func keywords(_ key: Swift.String, _ value: Swift.String)
-  @objc public static func location(_ location: CoreLocation.CLLocation)
   @objc public static func testing(_ testing: Swift.Bool)
   @objc public static func coppa(_ coppa: Swift.String)
   @objc public static func desiredAssets(_ desiredAssets: Foundation.NSSet)
@@ -249,16 +246,12 @@ extension SantaSDK.STAdTagManager {
 }
 extension SantaSDK.STAdTagManager {
   @objc final public func requestTrackingAuthorization(handler: @escaping (_ uuid: Swift.String?) -> Swift.Void)
-  @objc final public func requestLocation()
   @objc final public func makeSource(_ data: [Swift.String : Any]? = nil) -> Swift.String
 }
-extension SantaSDK.STAdTagManager : CoreLocation.CLLocationManagerDelegate {
-  @objc final public func locationManagerDidChangeAuthorization(_ manager: CoreLocation.CLLocationManager)
-  @objc final public func locationManager(_ manager: CoreLocation.CLLocationManager, didChangeAuthorization status: CoreLocation.CLAuthorizationStatus)
-  @objc final public func locationManager(_ manager: CoreLocation.CLLocationManager, didUpdateLocations locations: [CoreLocation.CLLocation])
-  @objc final public func locationManager(_ manager: CoreLocation.CLLocationManager, didFailWithError error: any Swift.Error)
-}
 @objc @_hasMissingDesignatedInitializers @objcMembers public class STNativeAdRequest : ObjectiveC.NSObject {
+  @objc public var mediations: [Swift.String]? {
+    @objc get
+  }
   public var targeting: SantaSDK.STNativeAdRequestTargeting?
   public static func requestWithAdUnitIdentifier(_ identifier: Swift.String?, rendererConfigurations: [SantaSDK.STNativeAdRendererConfiguration]?) -> SantaSDK.STNativeAdRequest
   @objc public func startWithCompletionHandler(_ handler: SantaSDK.STNativeAdRequestHandler?)
@@ -288,6 +281,7 @@ public enum STNativeAdOrientation {
 @objc public protocol STAdViewDelegate {
   @objc optional func adViewDidLoadAd(_ view: SantaSDK.STAdView?)
   @objc optional func adViewDidFailToLoadAd(_ view: SantaSDK.STAdView?)
+  @objc optional func adViewDidLoadMediation(_ mediations: [Swift.String]?)
   @objc optional func willLoadViewForAd(_ view: SantaSDK.STAdView?)
   @objc optional func didLoadViewForAd(_ view: SantaSDK.STAdView?)
   @objc optional func willLeaveApplicationFromAd(_ view: SantaSDK.STAdView?)
@@ -299,7 +293,6 @@ public enum STNativeAdOrientation {
   @_Concurrency.MainActor(unsafe) public var allowedNativeAdOrientation: SantaSDK.STNativeAdOrientation
   @objc @_Concurrency.MainActor(unsafe) public var adFormat: [Swift.String]?
   @objc @_Concurrency.MainActor(unsafe) public var keywords: [Swift.String : Swift.String]?
-  @objc @_Concurrency.MainActor(unsafe) public var location: CoreLocation.CLLocation?
   @objc @_Concurrency.MainActor(unsafe) public var coppa: Swift.String
   @objc @_Concurrency.MainActor(unsafe) public var rewarded: Swift.String?
   @objc @_Concurrency.MainActor(unsafe) public var fullWebView: Swift.Bool

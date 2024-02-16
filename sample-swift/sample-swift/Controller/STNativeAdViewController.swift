@@ -16,6 +16,7 @@ class STNativeAdViewController: UIViewController {
 
     var info: STAdInfoModel?
     var nativeAd: STNativeAd?
+    var medistions: IndexingIterator<Array<String>>?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,12 +38,17 @@ extension STNativeAdViewController {
         clearAd()
 
         STNativeAdManager.initNativeAdWithAdUnitIdentifier(adUnitId, STNativeAdView.self)
-        STNativeAdManager.adFormat([.NATIVE])
         STNativeAdManager.testing(true)
 
         STNativeAdManager.startWithCompletionHandler { (request, response, error) in
             if error != nil {
                 self.configureAdLoadFail()
+                
+                if let mediations = request?.mediations {
+                    self.medistions = mediations.makeIterator()
+                    self.loadMediation()
+                }
+                
             } else {
                 self.nativeAd = response
                 self.nativeAd?.delegate = self
@@ -73,6 +79,30 @@ extension STNativeAdViewController {
     func configureAdLoadFail() {
         btnLoadAd.isEnabled = true
         print("Fail Load Ad")
+    }
+    
+    func loadMediation() {
+        // 미디에이션 목록이 존재할때
+        if self.medistions != nil {
+            
+            // 미디에이션 목록을 순차로 가져온다
+            if let medistion = self.medistions?.next() {
+                print("loadMediation = \(medistion)")
+                
+                // 사용할 미이데이션에 맞는 광고 호출 코드를 작성
+                switch medistion {
+                case "Mediation Name":
+                    print("Mediation Name")
+                default:
+                    print("Mediation Default")
+                }
+                
+            } else {
+                print("Mediation is Empty")
+            }
+        } else {
+            print("Mediation is Empty")
+        }
     }
 
 }

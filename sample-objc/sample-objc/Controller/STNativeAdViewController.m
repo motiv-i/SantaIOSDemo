@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnLoadAd;
 
 @property (nonatomic, strong) STNativeAd *nativeAd;
+@property (nonatomic, strong) NSEnumerator<NSString *> *mediations;
 
 
 @end
@@ -47,8 +48,7 @@
 - (IBAction)loadAdClicked:(id)sender
 {
     [self.textKeyword endEditing:YES];
-    
-    self.btnLoadAd.enabled = NO;
+
     [self clearAd];
 
     // Create and configure a renderer configuration for native ads.
@@ -59,7 +59,10 @@
     
     [STNativeAdManager startWithCompletionHandler:^(STNativeAdRequest *request, STNativeAd *response, NSError *error) {
         if (error) {
-            NSLog(@"================> %@", error);
+            if (request.mediations) {
+                self.mediations = [request.mediations objectEnumerator];
+                [self loadMediation];
+            }
             [self configureAdLoadFail];
         } else {
             self.nativeAd = response;
@@ -79,9 +82,10 @@
 
 - (void)displayAd
 {
-    self.btnLoadAd.enabled = YES;
-    
+    // adViewContainer 내 subview들을 제거
     [[self.adViewContainer subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    
+    // 광고뷰 가져오기 및 adViewContainer에 추가
     UIView *adView = [self.nativeAd retrieveAdViewWithError:nil];
     [self.adViewContainer addSubview:adView];
     adView.frame = self.adViewContainer.bounds;
@@ -89,7 +93,28 @@
 
 - (void)configureAdLoadFail
 {
-    self.btnLoadAd.enabled = YES;
+}
+
+- (void)loadMediation
+{
+    // 미디에이션 목록이 존재할때
+    if (self.mediations != nil) {
+        // 미디에이션 목록을 순차로 가져온다
+        NSString *mediation = [self.mediations nextObject];
+        
+        NSLog(@"loadMediation = %@", mediation);
+        
+        // 미디에이션이 비어있다면 목록을 모두 순회함
+        if (mediation != nil) {
+            if ([mediation isEqual: @"Mediation Name"]) {
+                // 사용할 미이데이션에 맞는 광고 호출 코드를 작성
+            }
+        } else {
+            NSLog(@"Mediation is Empty");
+        }
+    } else {
+        NSLog(@"Mediation is Empty");
+    }
 }
 
 #pragma mark - UITextFieldDelegate

@@ -537,13 +537,6 @@
         ]
       },
       {
-        "kind": "Import",
-        "name": "CoreLocation",
-        "printedName": "CoreLocation",
-        "declKind": "Import",
-        "moduleName": "SantaSDK"
-      },
-      {
         "kind": "Var",
         "name": "kAdTitleKey",
         "printedName": "kAdTitleKey",
@@ -1626,117 +1619,6 @@
                 "declKind": "Accessor",
                 "usr": "s:8SantaSDK26STNativeAdRequestTargetingC8keywordsSDyS2SGSgvM",
                 "mangledName": "$s8SantaSDK26STNativeAdRequestTargetingC8keywordsSDyS2SGSgvM",
-                "moduleName": "SantaSDK",
-                "implicit": true,
-                "accessorKind": "_modify"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "location",
-            "printedName": "location",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "CoreLocation.CLLocation?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "CLLocation",
-                    "printedName": "CoreLocation.CLLocation",
-                    "usr": "c:objc(cs)CLLocation"
-                  }
-                ],
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:8SantaSDK26STNativeAdRequestTargetingC8locationSo10CLLocationCSgvp",
-            "mangledName": "$s8SantaSDK26STNativeAdRequestTargetingC8locationSo10CLLocationCSgvp",
-            "moduleName": "SantaSDK",
-            "declAttributes": [
-              "HasInitialValue",
-              "HasStorage",
-              "AccessControl",
-              "RawDocComment"
-            ],
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "CoreLocation.CLLocation?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "CLLocation",
-                        "printedName": "CoreLocation.CLLocation",
-                        "usr": "c:objc(cs)CLLocation"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:8SantaSDK26STNativeAdRequestTargetingC8locationSo10CLLocationCSgvg",
-                "mangledName": "$s8SantaSDK26STNativeAdRequestTargetingC8locationSo10CLLocationCSgvg",
-                "moduleName": "SantaSDK",
-                "implicit": true,
-                "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "CoreLocation.CLLocation?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "CLLocation",
-                        "printedName": "CoreLocation.CLLocation",
-                        "usr": "c:objc(cs)CLLocation"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:8SantaSDK26STNativeAdRequestTargetingC8locationSo10CLLocationCSgvs",
-                "mangledName": "$s8SantaSDK26STNativeAdRequestTargetingC8locationSo10CLLocationCSgvs",
-                "moduleName": "SantaSDK",
-                "implicit": true,
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:8SantaSDK26STNativeAdRequestTargetingC8locationSo10CLLocationCSgvM",
-                "mangledName": "$s8SantaSDK26STNativeAdRequestTargetingC8locationSo10CLLocationCSgvM",
                 "moduleName": "SantaSDK",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -3086,13 +2968,6 @@
       },
       {
         "kind": "Import",
-        "name": "CoreLocation",
-        "printedName": "CoreLocation",
-        "declKind": "Import",
-        "moduleName": "SantaSDK"
-      },
-      {
-        "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
         "declKind": "Import",
@@ -3163,13 +3038,6 @@
         "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
-        "declKind": "Import",
-        "moduleName": "SantaSDK"
-      },
-      {
-        "kind": "Import",
-        "name": "CoreLocation",
-        "printedName": "CoreLocation",
         "declKind": "Import",
         "moduleName": "SantaSDK"
       },
@@ -3246,6 +3114,54 @@
             "declKind": "Func",
             "usr": "c:@M@SantaSDK@objc(pl)STInterstitialAdViewDelegate(im)interstitialDidFailToLoadAd:",
             "mangledName": "$s8SantaSDK28STInterstitialAdViewDelegateP025interstitialDidFailToLoadD0yyAA0cdE0CSgF",
+            "moduleName": "SantaSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : SantaSDK.STInterstitialAdViewDelegate>",
+            "sugared_genericSig": "<Self where Self : SantaSDK.STInterstitialAdViewDelegate>",
+            "protocolReq": true,
+            "declAttributes": [
+              "Optional",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "interstitialDidLoadMediation",
+            "printedName": "interstitialDidLoadMediation(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Swift.String]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@SantaSDK@objc(pl)STInterstitialAdViewDelegate(im)interstitialDidLoadMediation:",
+            "mangledName": "$s8SantaSDK28STInterstitialAdViewDelegateP28interstitialDidLoadMediationyySaySSGSgF",
             "moduleName": "SantaSDK",
             "genericSig": "<τ_0_0 where τ_0_0 : SantaSDK.STInterstitialAdViewDelegate>",
             "sugared_genericSig": "<Self where Self : SantaSDK.STInterstitialAdViewDelegate>",
@@ -4124,125 +4040,6 @@
                 "declKind": "Accessor",
                 "usr": "s:8SantaSDK20STInterstitialAdViewC8keywordsSDyS2SGSgvM",
                 "mangledName": "$s8SantaSDK20STInterstitialAdViewC8keywordsSDyS2SGSgvM",
-                "moduleName": "SantaSDK",
-                "implicit": true,
-                "accessorKind": "_modify"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "location",
-            "printedName": "location",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "CoreLocation.CLLocation?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "CLLocation",
-                    "printedName": "CoreLocation.CLLocation",
-                    "usr": "c:objc(cs)CLLocation"
-                  }
-                ],
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "c:@M@SantaSDK@objc(cs)STInterstitialAdView(py)location",
-            "mangledName": "$s8SantaSDK20STInterstitialAdViewC8locationSo10CLLocationCSgvp",
-            "moduleName": "SantaSDK",
-            "declAttributes": [
-              "HasInitialValue",
-              "Custom",
-              "HasStorage",
-              "AccessControl",
-              "RawDocComment",
-              "ObjC"
-            ],
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "CoreLocation.CLLocation?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "CLLocation",
-                        "printedName": "CoreLocation.CLLocation",
-                        "usr": "c:objc(cs)CLLocation"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "c:@M@SantaSDK@objc(cs)STInterstitialAdView(im)location",
-                "mangledName": "$s8SantaSDK20STInterstitialAdViewC8locationSo10CLLocationCSgvg",
-                "moduleName": "SantaSDK",
-                "implicit": true,
-                "declAttributes": [
-                  "ObjC"
-                ],
-                "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "CoreLocation.CLLocation?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "CLLocation",
-                        "printedName": "CoreLocation.CLLocation",
-                        "usr": "c:objc(cs)CLLocation"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "c:@M@SantaSDK@objc(cs)STInterstitialAdView(im)setLocation:",
-                "mangledName": "$s8SantaSDK20STInterstitialAdViewC8locationSo10CLLocationCSgvs",
-                "moduleName": "SantaSDK",
-                "implicit": true,
-                "declAttributes": [
-                  "ObjC"
-                ],
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:8SantaSDK20STInterstitialAdViewC8locationSo10CLLocationCSgvM",
-                "mangledName": "$s8SantaSDK20STInterstitialAdViewC8locationSo10CLLocationCSgvM",
                 "moduleName": "SantaSDK",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -5808,16 +5605,6 @@
         "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
-        "declKind": "Import",
-        "moduleName": "SantaSDK",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
         "declKind": "Import",
         "moduleName": "SantaSDK",
         "declAttributes": [
@@ -7643,13 +7430,6 @@
       },
       {
         "kind": "Import",
-        "name": "CoreLocation",
-        "printedName": "CoreLocation",
-        "declKind": "Import",
-        "moduleName": "SantaSDK"
-      },
-      {
-        "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
         "declKind": "Import",
@@ -7781,36 +7561,6 @@
             "declAttributes": [
               "Final",
               "AccessControl",
-              "ObjC"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "location",
-            "printedName": "location(_:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "CLLocation",
-                "printedName": "CoreLocation.CLLocation",
-                "usr": "c:objc(cs)CLLocation"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@M@SantaSDK@objc(cs)STNativeAdManager(cm)location:",
-            "mangledName": "$s8SantaSDK17STNativeAdManagerC8locationyySo10CLLocationCFZ",
-            "moduleName": "SantaSDK",
-            "static": true,
-            "declAttributes": [
-              "Final",
-              "AccessControl",
-              "RawDocComment",
               "ObjC"
             ],
             "funcSelfKind": "NonMutating"
@@ -8183,16 +7933,6 @@
       },
       {
         "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "SantaSDK",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
         "declKind": "Import",
@@ -8216,13 +7956,6 @@
         "kind": "Import",
         "name": "AppTrackingTransparency",
         "printedName": "AppTrackingTransparency",
-        "declKind": "Import",
-        "moduleName": "SantaSDK"
-      },
-      {
-        "kind": "Import",
-        "name": "CoreLocation",
-        "printedName": "CoreLocation",
         "declKind": "Import",
         "moduleName": "SantaSDK"
       },
@@ -8881,29 +8614,6 @@
           },
           {
             "kind": "Function",
-            "name": "requestLocation",
-            "printedName": "requestLocation()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@CM@SantaSDK@objc(cs)STAdTagManager(im)requestLocation",
-            "mangledName": "$s8SantaSDK14STAdTagManagerC15requestLocationyyF",
-            "moduleName": "SantaSDK",
-            "declAttributes": [
-              "Final",
-              "AccessControl",
-              "ObjC"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
             "name": "makeSource",
             "printedName": "makeSource(_:)",
             "children": [
@@ -8950,154 +8660,6 @@
               "Final",
               "AccessControl",
               "ObjC"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "locationManagerDidChangeAuthorization",
-            "printedName": "locationManagerDidChangeAuthorization(_:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "CLLocationManager",
-                "printedName": "CoreLocation.CLLocationManager",
-                "usr": "c:objc(cs)CLLocationManager"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@CM@SantaSDK@objc(cs)STAdTagManager(im)locationManagerDidChangeAuthorization:",
-            "mangledName": "$s8SantaSDK14STAdTagManagerC08locationE22DidChangeAuthorizationyySo010CLLocationE0CF",
-            "moduleName": "SantaSDK",
-            "objc_name": "locationManagerDidChangeAuthorization:",
-            "declAttributes": [
-              "Final",
-              "ObjC",
-              "AccessControl",
-              "RawDocComment"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "locationManager",
-            "printedName": "locationManager(_:didChangeAuthorization:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "CLLocationManager",
-                "printedName": "CoreLocation.CLLocationManager",
-                "usr": "c:objc(cs)CLLocationManager"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "CLAuthorizationStatus",
-                "printedName": "CoreLocation.CLAuthorizationStatus",
-                "usr": "c:@E@CLAuthorizationStatus"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@CM@SantaSDK@objc(cs)STAdTagManager(im)locationManager:didChangeAuthorizationStatus:",
-            "mangledName": "$s8SantaSDK14STAdTagManagerC08locationE0_22didChangeAuthorizationySo010CLLocationE0C_So21CLAuthorizationStatusVtF",
-            "moduleName": "SantaSDK",
-            "objc_name": "locationManager:didChangeAuthorizationStatus:",
-            "declAttributes": [
-              "Final",
-              "ObjC",
-              "AccessControl",
-              "RawDocComment"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "locationManager",
-            "printedName": "locationManager(_:didUpdateLocations:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "CLLocationManager",
-                "printedName": "CoreLocation.CLLocationManager",
-                "usr": "c:objc(cs)CLLocationManager"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Array",
-                "printedName": "[CoreLocation.CLLocation]",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "CLLocation",
-                    "printedName": "CoreLocation.CLLocation",
-                    "usr": "c:objc(cs)CLLocation"
-                  }
-                ],
-                "usr": "s:Sa"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@CM@SantaSDK@objc(cs)STAdTagManager(im)locationManager:didUpdateLocations:",
-            "mangledName": "$s8SantaSDK14STAdTagManagerC08locationE0_18didUpdateLocationsySo010CLLocationE0C_SaySo0J0CGtF",
-            "moduleName": "SantaSDK",
-            "objc_name": "locationManager:didUpdateLocations:",
-            "declAttributes": [
-              "Final",
-              "ObjC",
-              "AccessControl"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "locationManager",
-            "printedName": "locationManager(_:didFailWithError:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "CLLocationManager",
-                "printedName": "CoreLocation.CLLocationManager",
-                "usr": "c:objc(cs)CLLocationManager"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Error",
-                "printedName": "Swift.Error",
-                "usr": "s:s5ErrorP"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@CM@SantaSDK@objc(cs)STAdTagManager(im)locationManager:didFailWithError:",
-            "mangledName": "$s8SantaSDK14STAdTagManagerC08locationE0_16didFailWithErrorySo010CLLocationE0C_s0J0_ptF",
-            "moduleName": "SantaSDK",
-            "objc_name": "locationManager:didFailWithError:",
-            "declAttributes": [
-              "Final",
-              "ObjC",
-              "AccessControl"
             ],
             "isFromExtension": true,
             "funcSelfKind": "NonMutating"
@@ -9233,6 +8795,82 @@
         "name": "STNativeAdRequest",
         "printedName": "STNativeAdRequest",
         "children": [
+          {
+            "kind": "Var",
+            "name": "mediations",
+            "printedName": "mediations",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Swift.String]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@SantaSDK@objc(cs)STNativeAdRequest(py)mediations",
+            "mangledName": "$s8SantaSDK17STNativeAdRequestC10mediationsSaySSGSgvp",
+            "moduleName": "SantaSDK",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "[Swift.String]?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[Swift.String]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SantaSDK@objc(cs)STNativeAdRequest(im)mediations",
+                "mangledName": "$s8SantaSDK17STNativeAdRequestC10mediationsSaySSGSgvg",
+                "moduleName": "SantaSDK",
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
           {
             "kind": "Var",
             "name": "targeting",
@@ -9621,23 +9259,6 @@
       },
       {
         "kind": "Import",
-        "name": "CoreLocation",
-        "printedName": "CoreLocation",
-        "declKind": "Import",
-        "moduleName": "SantaSDK"
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "SantaSDK",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
         "declKind": "Import",
@@ -9996,13 +9617,6 @@
         ]
       },
       {
-        "kind": "Import",
-        "name": "CoreLocation",
-        "printedName": "CoreLocation",
-        "declKind": "Import",
-        "moduleName": "SantaSDK"
-      },
-      {
         "kind": "TypeDecl",
         "name": "STNativeAdOrientation",
         "printedName": "STNativeAdOrientation",
@@ -10312,6 +9926,54 @@
             "declKind": "Func",
             "usr": "c:@M@SantaSDK@objc(pl)STAdViewDelegate(im)adViewDidFailToLoadAd:",
             "mangledName": "$s8SantaSDK16STAdViewDelegateP02adD15DidFailToLoadAdyyAA0cD0CSgF",
+            "moduleName": "SantaSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : SantaSDK.STAdViewDelegate>",
+            "sugared_genericSig": "<Self where Self : SantaSDK.STAdViewDelegate>",
+            "protocolReq": true,
+            "declAttributes": [
+              "Optional",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "adViewDidLoadMediation",
+            "printedName": "adViewDidLoadMediation(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Swift.String]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@SantaSDK@objc(pl)STAdViewDelegate(im)adViewDidLoadMediation:",
+            "mangledName": "$s8SantaSDK16STAdViewDelegateP02adD16DidLoadMediationyySaySSGSgF",
             "moduleName": "SantaSDK",
             "genericSig": "<τ_0_0 where τ_0_0 : SantaSDK.STAdViewDelegate>",
             "sugared_genericSig": "<Self where Self : SantaSDK.STAdViewDelegate>",
@@ -11201,125 +10863,6 @@
                 "declKind": "Accessor",
                 "usr": "s:8SantaSDK8STAdViewC8keywordsSDyS2SGSgvM",
                 "mangledName": "$s8SantaSDK8STAdViewC8keywordsSDyS2SGSgvM",
-                "moduleName": "SantaSDK",
-                "implicit": true,
-                "accessorKind": "_modify"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "location",
-            "printedName": "location",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "CoreLocation.CLLocation?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "CLLocation",
-                    "printedName": "CoreLocation.CLLocation",
-                    "usr": "c:objc(cs)CLLocation"
-                  }
-                ],
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "c:@M@SantaSDK@objc(cs)STAdView(py)location",
-            "mangledName": "$s8SantaSDK8STAdViewC8locationSo10CLLocationCSgvp",
-            "moduleName": "SantaSDK",
-            "declAttributes": [
-              "HasInitialValue",
-              "HasStorage",
-              "Custom",
-              "AccessControl",
-              "RawDocComment",
-              "ObjC"
-            ],
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "CoreLocation.CLLocation?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "CLLocation",
-                        "printedName": "CoreLocation.CLLocation",
-                        "usr": "c:objc(cs)CLLocation"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "c:@M@SantaSDK@objc(cs)STAdView(im)location",
-                "mangledName": "$s8SantaSDK8STAdViewC8locationSo10CLLocationCSgvg",
-                "moduleName": "SantaSDK",
-                "implicit": true,
-                "declAttributes": [
-                  "ObjC"
-                ],
-                "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "CoreLocation.CLLocation?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "CLLocation",
-                        "printedName": "CoreLocation.CLLocation",
-                        "usr": "c:objc(cs)CLLocation"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "c:@M@SantaSDK@objc(cs)STAdView(im)setLocation:",
-                "mangledName": "$s8SantaSDK8STAdViewC8locationSo10CLLocationCSgvs",
-                "moduleName": "SantaSDK",
-                "implicit": true,
-                "declAttributes": [
-                  "ObjC"
-                ],
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:8SantaSDK8STAdViewC8locationSo10CLLocationCSgvM",
-                "mangledName": "$s8SantaSDK8STAdViewC8locationSo10CLLocationCSgvM",
                 "moduleName": "SantaSDK",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -13151,70 +12694,70 @@
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Native\/STNativeAdRequestTargeting.swift",
       "kind": "StringLiteral",
-      "offset": 164,
+      "offset": 144,
       "length": 7,
       "value": "\"title\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Native\/STNativeAdRequestTargeting.swift",
       "kind": "StringLiteral",
-      "offset": 222,
+      "offset": 202,
       "length": 6,
       "value": "\"icon\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Native\/STNativeAdRequestTargeting.swift",
       "kind": "StringLiteral",
-      "offset": 279,
+      "offset": 259,
       "length": 6,
       "value": "\"main\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Native\/STNativeAdRequestTargeting.swift",
       "kind": "StringLiteral",
-      "offset": 329,
+      "offset": 309,
       "length": 7,
       "value": "\"video\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Native\/STNativeAdRequestTargeting.swift",
       "kind": "StringLiteral",
-      "offset": 388,
+      "offset": 368,
       "length": 6,
       "value": "\"desc\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Native\/STNativeAdRequestTargeting.swift",
       "kind": "StringLiteral",
-      "offset": 451,
+      "offset": 431,
       "length": 9,
       "value": "\"ctatext\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Native\/STNativeAdRequestTargeting.swift",
       "kind": "StringLiteral",
-      "offset": 533,
+      "offset": 513,
       "length": 8,
       "value": "\"rating\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Native\/STNativeAdRequestTargeting.swift",
       "kind": "StringLiteral",
-      "offset": 582,
+      "offset": 562,
       "length": 7,
       "value": "\"price\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Native\/STNativeAdRequestTargeting.swift",
       "kind": "Array",
-      "offset": 958,
+      "offset": 938,
       "length": 10,
       "value": "[\"NATIVE\"]"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Native\/STNativeAdRequestTargeting.swift",
       "kind": "BooleanLiteral",
-      "offset": 2301,
+      "offset": 2065,
       "length": 5,
       "value": "false"
     },
@@ -13343,13 +12886,6 @@
       "offset": 369,
       "length": 9,
       "value": "\"CONNECT\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/API\/STAPIRequest.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1464,
-      "length": 2,
-      "value": "10"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Native\/Internal\/STTimer.swift",
@@ -13515,469 +13051,329 @@
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 810,
+      "offset": 594,
       "length": 3,
       "value": "\"0\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 835,
+      "offset": 619,
       "length": 3,
       "value": "\"0\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 886,
+      "offset": 641,
       "length": 3,
       "value": "\"0\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 908,
+      "offset": 663,
       "length": 3,
       "value": "\"0\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
       "kind": "BooleanLiteral",
-      "offset": 928,
+      "offset": 683,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 1815,
+      "offset": 1570,
       "length": 5,
       "value": "\"IOS\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 1963,
+      "offset": 1718,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 2134,
+      "offset": 1889,
       "length": 53,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 2186,
+      "offset": 1941,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 2212,
+      "offset": 1967,
       "length": 54,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 2265,
+      "offset": 2020,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 2348,
+      "offset": 2103,
       "length": 17,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 2364,
+      "offset": 2119,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 2397,
+      "offset": 2152,
       "length": 18,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 2414,
+      "offset": 2169,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 2514,
+      "offset": 2269,
       "length": 3,
       "value": "\"1\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 2520,
+      "offset": 2275,
       "length": 3,
       "value": "\"0\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 2551,
+      "offset": 2306,
       "length": 7,
       "value": "\"apple\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 2743,
-      "length": 35,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
-      "kind": "StringLiteral",
-      "offset": 2777,
-      "length": 1,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
-      "kind": "StringLiteral",
-      "offset": 2809,
-      "length": 36,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
-      "kind": "StringLiteral",
-      "offset": 2844,
-      "length": 1,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
-      "kind": "StringLiteral",
-      "offset": 2945,
-      "length": 8,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
-      "kind": "StringLiteral",
-      "offset": 2952,
-      "length": 1,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
-      "kind": "StringLiteral",
-      "offset": 3114,
-      "length": 26,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3137,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
-      "kind": "StringLiteral",
-      "offset": 3139,
-      "length": 1,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
-      "kind": "StringLiteral",
-      "offset": 3184,
-      "length": 3,
-      "value": "\"2\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
-      "kind": "StringLiteral",
-      "offset": 3375,
+      "offset": 2553,
       "length": 3,
       "value": "\"p\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 3381,
+      "offset": 2559,
       "length": 3,
       "value": "\"l\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 3413,
+      "offset": 2591,
       "length": 24,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 3436,
+      "offset": 2614,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 4263,
+      "offset": 3441,
       "length": 3,
       "value": "\"1\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 4269,
+      "offset": 3447,
       "length": 3,
       "value": "\"0\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 4555,
+      "offset": 3692,
       "length": 40,
       "value": "\"Error is \""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 4594,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
-      "kind": "BooleanLiteral",
-      "offset": 4742,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
-      "kind": "StringLiteral",
-      "offset": 5452,
-      "length": 5,
-      "value": "\"IOS\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
-      "kind": "StringLiteral",
-      "offset": 5600,
+      "offset": 3731,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 5683,
-      "length": 3,
-      "value": "\"1\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
-      "kind": "StringLiteral",
-      "offset": 5689,
-      "length": 3,
-      "value": "\"0\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
-      "kind": "StringLiteral",
-      "offset": 6042,
-      "length": 40,
-      "value": "\"Error is \""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
-      "kind": "StringLiteral",
-      "offset": 6081,
+      "offset": 4458,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 6780,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
-      "kind": "StringLiteral",
-      "offset": 6957,
+      "offset": 4635,
       "length": 3,
       "value": "\" \""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 6968,
+      "offset": 4646,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
-      "kind": "IntegerLiteral",
-      "offset": 7546,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 7706,
-      "length": 3,
-      "value": "\"1\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
-      "kind": "FloatLiteral",
-      "offset": 7819,
-      "length": 6,
-      "value": "1000.0"
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
-      "kind": "StringLiteral",
-      "offset": 8102,
+      "offset": 4841,
       "length": 3,
       "value": "\"Z\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 8828,
+      "offset": 5567,
       "length": 3,
       "value": "\"3\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 8911,
+      "offset": 5650,
       "length": 3,
       "value": "\"2\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 8954,
+      "offset": 5693,
       "length": 3,
       "value": "\"0\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 9129,
+      "offset": 5868,
       "length": 5,
       "value": "\"0.7\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 9175,
+      "offset": 5914,
       "length": 5,
       "value": "\"0.8\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 9222,
+      "offset": 5961,
       "length": 5,
       "value": "\"0.9\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 9268,
+      "offset": 6007,
       "length": 5,
       "value": "\"1.0\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 9319,
+      "offset": 6058,
       "length": 5,
       "value": "\"1.1\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 9375,
+      "offset": 6114,
       "length": 5,
       "value": "\"1.2\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 9436,
+      "offset": 6175,
       "length": 5,
       "value": "\"1.3\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 9496,
+      "offset": 6235,
       "length": 5,
       "value": "\"1.4\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 9555,
+      "offset": 6294,
       "length": 5,
       "value": "\"1.5\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 9619,
+      "offset": 6358,
       "length": 5,
       "value": "\"1.6\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 9688,
+      "offset": 6427,
       "length": 5,
       "value": "\"1.7\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 9762,
+      "offset": 6501,
       "length": 5,
       "value": "\"1.8\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 9804,
+      "offset": 6543,
       "length": 5,
       "value": "\"0.0\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 10006,
+      "offset": 6745,
       "length": 3,
       "value": "\",\""
     },
@@ -13993,7 +13389,7 @@
       "kind": "StringLiteral",
       "offset": 234,
       "length": 7,
-      "value": "\"1.0.1\""
+      "value": "\"1.0.2\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STBundle.swift",
@@ -14040,126 +13436,126 @@
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STIdentityProvider.swift",
       "kind": "BooleanLiteral",
-      "offset": 273,
+      "offset": 326,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STIdentityProvider.swift",
       "kind": "BooleanLiteral",
-      "offset": 349,
+      "offset": 410,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STIdentityProvider.swift",
       "kind": "IntegerLiteral",
-      "offset": 398,
+      "offset": 459,
       "length": 2,
       "value": "24"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STIdentityProvider.swift",
       "kind": "IntegerLiteral",
-      "offset": 403,
+      "offset": 464,
       "length": 2,
       "value": "60"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STIdentityProvider.swift",
       "kind": "IntegerLiteral",
-      "offset": 408,
+      "offset": 469,
       "length": 2,
       "value": "60"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STIdentityProvider.swift",
       "kind": "StringLiteral",
-      "offset": 436,
+      "offset": 497,
       "length": 38,
       "value": "\"00000000-0000-0000-0000-000000000000\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STIdentityProvider.swift",
       "kind": "StringLiteral",
-      "offset": 666,
+      "offset": 734,
       "length": 5,
       "value": "\"ifa\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STIdentityProvider.swift",
       "kind": "StringLiteral",
-      "offset": 743,
+      "offset": 811,
       "length": 10,
       "value": "\"deviceid\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STIdentityProvider.swift",
       "kind": "StringLiteral",
-      "offset": 1236,
+      "offset": 1304,
       "length": 12,
       "value": "\"Authorized\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STIdentityProvider.swift",
       "kind": "BooleanLiteral",
-      "offset": 1397,
+      "offset": 1465,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STIdentityProvider.swift",
       "kind": "StringLiteral",
-      "offset": 1637,
+      "offset": 1705,
       "length": 8,
       "value": "\"Denied\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STIdentityProvider.swift",
       "kind": "BooleanLiteral",
-      "offset": 1724,
+      "offset": 1792,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STIdentityProvider.swift",
       "kind": "StringLiteral",
-      "offset": 1898,
+      "offset": 1966,
       "length": 16,
       "value": "\"Not Determined\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STIdentityProvider.swift",
       "kind": "BooleanLiteral",
-      "offset": 1993,
+      "offset": 2061,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STIdentityProvider.swift",
       "kind": "StringLiteral",
-      "offset": 2092,
+      "offset": 2160,
       "length": 12,
       "value": "\"Restricted\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STIdentityProvider.swift",
       "kind": "BooleanLiteral",
-      "offset": 2183,
+      "offset": 2251,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STIdentityProvider.swift",
       "kind": "StringLiteral",
-      "offset": 2282,
+      "offset": 2350,
       "length": 9,
       "value": "\"Unknown\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STIdentityProvider.swift",
       "kind": "BooleanLiteral",
-      "offset": 2370,
+      "offset": 2438,
       "length": 5,
       "value": "false"
     },
@@ -14320,105 +13716,91 @@
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Interstitials\/STInterstitialAdView.swift",
       "kind": "Array",
-      "offset": 5997,
+      "offset": 6324,
       "length": 8,
       "value": "[\"HTML\"]"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Interstitials\/STInterstitialAdView.swift",
       "kind": "BooleanLiteral",
-      "offset": 6816,
+      "offset": 6927,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Interstitials\/STInterstitialAdView.swift",
       "kind": "BooleanLiteral",
-      "offset": 8195,
+      "offset": 8306,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Interstitials\/STInterstitialAdView.swift",
       "kind": "StringLiteral",
-      "offset": 4431,
+      "offset": 4758,
       "length": 20,
       "value": "\"SantaSDK.STInterstitialAdView\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Interstitials\/STInterstitialAdView.swift",
       "kind": "StringLiteral",
-      "offset": 11319,
-      "length": 46,
-      "value": "\"STInterstitialAdView startAd : \""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Interstitials\/STInterstitialAdView.swift",
-      "kind": "StringLiteral",
-      "offset": 11364,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Interstitials\/STInterstitialAdView.swift",
-      "kind": "StringLiteral",
-      "offset": 11668,
+      "offset": 11717,
       "length": 91,
       "value": "\"Attempted to present an interstitial ad in non-key window. The ad may not render properly\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Interstitials\/STInterstitialAdView.swift",
       "kind": "BooleanLiteral",
-      "offset": 12128,
+      "offset": 12177,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Interstitials\/STInterstitialAdView.swift",
       "kind": "StringLiteral",
-      "offset": 12508,
+      "offset": 12557,
       "length": 16,
       "value": "\"STCloseButtonX\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Interstitials\/STInterstitialAdView.swift",
       "kind": "StringLiteral",
-      "offset": 12948,
+      "offset": 12997,
       "length": 23,
       "value": "\"Close Interstitial Ad\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Interstitials\/STInterstitialAdView.swift",
       "kind": "IntegerLiteral",
-      "offset": 13029,
+      "offset": 13078,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Interstitials\/STInterstitialAdView.swift",
       "kind": "IntegerLiteral",
-      "offset": 13050,
+      "offset": 13099,
       "length": 2,
       "value": "-5"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Interstitials\/STInterstitialAdView.swift",
       "kind": "StringLiteral",
-      "offset": 13164,
+      "offset": 13213,
       "length": 24,
       "value": "\"layoutCloseButton Fail\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Interstitials\/STInterstitialAdView.swift",
       "kind": "BooleanLiteral",
-      "offset": 13325,
+      "offset": 13374,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Interstitials\/STInterstitialAdView.swift",
       "kind": "BooleanLiteral",
-      "offset": 13482,
+      "offset": 13531,
       "length": 5,
       "value": "false"
     },
@@ -14950,485 +14332,142 @@
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 2297,
+      "offset": 2296,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 2621,
+      "offset": 2620,
       "length": 29,
       "value": "\">>> Network Error = TimeOut\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 2862,
+      "offset": 2861,
       "length": 61,
       "value": "\">>> Network Error = ResponseCode \""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 2922,
+      "offset": 2921,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 3182,
+      "offset": 3181,
       "length": 34,
       "value": "\">>> Network Error = DataNotFound\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 3475,
+      "offset": 3474,
       "length": 47,
       "value": "\">>> Network Error = HTTPURLResponse Not Found\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 3720,
+      "offset": 3719,
       "length": 3,
       "value": "400"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 3756,
+      "offset": 3755,
       "length": 52,
       "value": "\">>> Network Error = Code:\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 3805,
+      "offset": 3804,
       "length": 1,
       "value": "\" )\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4194,
+      "length": 3,
+      "value": "204"
+    },
+    {
+      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 4171,
+      "offset": 4425,
       "length": 7,
       "value": "\"instl\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 4342,
+      "offset": 4596,
       "length": 3,
       "value": "\"0\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 4536,
+      "offset": 4790,
       "length": 29,
       "value": "\">>> Network Error = parsing\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
-      "kind": "StringLiteral",
-      "offset": 4862,
-      "length": 18,
-      "value": "\">>> params Error\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
-      "kind": "StringLiteral",
-      "offset": 5061,
-      "length": 6,
-      "value": "\"http\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
-      "kind": "StringLiteral",
-      "offset": 5083,
-      "length": 39,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
-      "kind": "StringLiteral",
-      "offset": 5115,
-      "length": 1,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
-      "kind": "StringLiteral",
-      "offset": 5121,
-      "length": 1,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
-      "kind": "StringLiteral",
-      "offset": 5261,
-      "length": 31,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
-      "kind": "StringLiteral",
-      "offset": 5275,
-      "length": 1,
-      "value": "\"&\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
-      "kind": "StringLiteral",
-      "offset": 5282,
-      "length": 1,
-      "value": "\"=\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
-      "kind": "StringLiteral",
-      "offset": 5291,
-      "length": 1,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
-      "kind": "StringLiteral",
-      "offset": 5372,
-      "length": 32,
-      "value": "\">>> requestUrl = \""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
-      "kind": "StringLiteral",
-      "offset": 5403,
+      "kind": "IntegerLiteral",
+      "offset": 5445,
       "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
-      "kind": "StringLiteral",
-      "offset": 5428,
-      "length": 24,
-      "value": "\">>> params = \""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
-      "kind": "StringLiteral",
-      "offset": 5451,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
-      "kind": "StringLiteral",
-      "offset": 5816,
-      "length": 20,
-      "value": "\">>> httpBody Error\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
-      "kind": "StringLiteral",
-      "offset": 5961,
-      "length": 14,
-      "value": "\"Content-Type\""
+      "value": "10"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 6023,
+      "offset": 6077,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 6347,
+      "offset": 6297,
       "length": 29,
       "value": "\">>> Network Error = TimeOut\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 6588,
+      "offset": 6498,
       "length": 61,
       "value": "\">>> Network Error = ResponseCode \""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 6648,
+      "offset": 6558,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 6908,
+      "offset": 6770,
       "length": 34,
       "value": "\">>> Network Error = DataNotFound\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 7201,
-      "length": 47,
-      "value": "\">>> Network Error = HTTPURLResponse Not Found\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
-      "kind": "IntegerLiteral",
-      "offset": 7446,
-      "length": 3,
-      "value": "400"
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
-      "kind": "StringLiteral",
-      "offset": 7482,
-      "length": 52,
-      "value": "\">>> Network Error = Code:\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
-      "kind": "StringLiteral",
-      "offset": 7531,
-      "length": 1,
-      "value": "\" )\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
-      "kind": "StringLiteral",
-      "offset": 7858,
+      "offset": 7057,
       "length": 29,
       "value": "\">>> Network Error = parsing\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
-      "kind": "IntegerLiteral",
-      "offset": 8513,
-      "length": 2,
-      "value": "10"
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
-      "kind": "StringLiteral",
-      "offset": 8957,
-      "length": 18,
-      "value": "\">>> params Error\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
-      "kind": "IntegerLiteral",
-      "offset": 9323,
-      "length": 2,
-      "value": "10"
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
-      "kind": "StringLiteral",
-      "offset": 9668,
-      "length": 29,
-      "value": "\">>> Network Error = TimeOut\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
-      "kind": "StringLiteral",
-      "offset": 9869,
-      "length": 61,
-      "value": "\">>> Network Error = ResponseCode \""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
-      "kind": "StringLiteral",
-      "offset": 9929,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
-      "kind": "StringLiteral",
-      "offset": 10141,
-      "length": 34,
-      "value": "\">>> Network Error = DataNotFound\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
-      "kind": "StringLiteral",
-      "offset": 10429,
-      "length": 29,
-      "value": "\">>> Network Error = parsing\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
-      "kind": "IntegerLiteral",
-      "offset": 11033,
-      "length": 2,
-      "value": "10"
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
-      "kind": "StringLiteral",
-      "offset": 11253,
-      "length": 29,
-      "value": "\">>> Network Error = TimeOut\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
-      "kind": "StringLiteral",
-      "offset": 11454,
-      "length": 61,
-      "value": "\">>> Network Error = ResponseCode \""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
-      "kind": "StringLiteral",
-      "offset": 11514,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
-      "kind": "StringLiteral",
-      "offset": 11726,
-      "length": 34,
-      "value": "\">>> Network Error = DataNotFound\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkManager.swift",
-      "kind": "StringLiteral",
-      "offset": 12013,
-      "length": 29,
-      "value": "\">>> Network Error = parsing\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STSKAdNetworkManager.swift",
-      "kind": "StringLiteral",
-      "offset": 192,
-      "length": 18,
-      "value": "\"SKAdNetworkItems\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STSKAdNetworkManager.swift",
-      "kind": "StringLiteral",
-      "offset": 256,
-      "length": 23,
-      "value": "\"SKAdNetworkIdentifier\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STSKAdNetworkManager.swift",
-      "kind": "IntegerLiteral",
-      "offset": 616,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STSKAdNetworkManager.swift",
-      "kind": "BooleanLiteral",
-      "offset": 643,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STSKAdNetworkManager.swift",
-      "kind": "StringLiteral",
-      "offset": 731,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STSKAdNetworkManager.swift",
-      "kind": "StringLiteral",
-      "offset": 1077,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STSKAdNetworkManager.swift",
-      "kind": "StringLiteral",
-      "offset": 1113,
-      "length": 26,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STSKAdNetworkManager.swift",
-      "kind": "StringLiteral",
-      "offset": 1126,
-      "length": 1,
-      "value": "\",\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STSKAdNetworkManager.swift",
-      "kind": "StringLiteral",
-      "offset": 1138,
-      "length": 1,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STSKAdNetworkManager.swift",
-      "kind": "StringLiteral",
-      "offset": 1543,
-      "length": 3,
-      "value": "\"0\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STSKAdNetworkManager.swift",
-      "kind": "StringLiteral",
-      "offset": 1840,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STSKAdNetworkManager.swift",
-      "kind": "StringLiteral",
-      "offset": 2129,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STSKAdNetworkManager.swift",
-      "kind": "StringLiteral",
-      "offset": 2757,
-      "length": 12,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STSKAdNetworkManager.swift",
-      "kind": "StringLiteral",
-      "offset": 2768,
-      "length": 1,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STSKAdNetworkManager.swift",
-      "kind": "StringLiteral",
-      "offset": 2885,
-      "length": 29,
-      "value": "\"kr.motivi.santa.skadnetwork\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STSKAdNetworkManager.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2922,
-      "length": 2,
-      "value": "-1"
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STSKAdNetworkManager.swift",
-      "kind": "StringLiteral",
-      "offset": 2964,
-      "length": 15,
-      "value": "\"parsing Error\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STSKAdNetworkManager.swift",
-      "kind": "BooleanLiteral",
-      "offset": 3234,
-      "length": 5,
-      "value": "false"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STURLResolver.swift",
@@ -16098,49 +15137,49 @@
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STAdDestinationDisplayAgent.swift",
       "kind": "BooleanLiteral",
-      "offset": 6797,
+      "offset": 6663,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STAdDestinationDisplayAgent.swift",
       "kind": "BooleanLiteral",
-      "offset": 7254,
+      "offset": 7120,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STAdDestinationDisplayAgent.swift",
       "kind": "BooleanLiteral",
-      "offset": 7766,
+      "offset": 7632,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STAdDestinationDisplayAgent.swift",
       "kind": "BooleanLiteral",
-      "offset": 7833,
+      "offset": 7699,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STAdDestinationDisplayAgent.swift",
       "kind": "IntegerLiteral",
-      "offset": 8079,
+      "offset": 7945,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STAdDestinationDisplayAgent.swift",
       "kind": "IntegerLiteral",
-      "offset": 8126,
+      "offset": 7992,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STAdDestinationDisplayAgent.swift",
       "kind": "BooleanLiteral",
-      "offset": 8157,
+      "offset": 8023,
       "length": 4,
       "value": "true"
     },
@@ -16182,56 +15221,56 @@
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdConfiguration.swift",
       "kind": "FloatLiteral",
-      "offset": 393,
+      "offset": 423,
       "length": 4,
       "value": "10.0"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdConfiguration.swift",
       "kind": "StringLiteral",
-      "offset": 892,
+      "offset": 966,
       "length": 6,
       "value": "\"HTML\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdConfiguration.swift",
       "kind": "StringLiteral",
-      "offset": 920,
+      "offset": 994,
       "length": 6,
       "value": "\"HTML\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdConfiguration.swift",
       "kind": "StringLiteral",
-      "offset": 961,
+      "offset": 1035,
       "length": 8,
       "value": "\"NATIVE\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdConfiguration.swift",
       "kind": "IntegerLiteral",
-      "offset": 1333,
+      "offset": 1407,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdConfiguration.swift",
       "kind": "IntegerLiteral",
-      "offset": 1338,
+      "offset": 1412,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdConfiguration.swift",
       "kind": "IntegerLiteral",
-      "offset": 1372,
+      "offset": 1446,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/STAdConfiguration.swift",
       "kind": "IntegerLiteral",
-      "offset": 1377,
+      "offset": 1451,
       "length": 1,
       "value": "0"
     },
@@ -16259,154 +15298,154 @@
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/STAdWebView.swift",
       "kind": "BooleanLiteral",
-      "offset": 1084,
+      "offset": 1085,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/STAdWebView.swift",
       "kind": "StringLiteral",
-      "offset": 1955,
+      "offset": 1956,
       "length": 3,
       "value": "\"1\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/STAdWebView.swift",
       "kind": "IntegerLiteral",
-      "offset": 2142,
+      "offset": 2143,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/STAdWebView.swift",
       "kind": "IntegerLiteral",
-      "offset": 2229,
+      "offset": 2230,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/STAdWebView.swift",
       "kind": "StringLiteral",
-      "offset": 2513,
+      "offset": 2514,
       "length": 3,
       "value": "\"1\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/STAdWebView.swift",
       "kind": "BooleanLiteral",
-      "offset": 2564,
+      "offset": 2565,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/STAdWebView.swift",
       "kind": "StringLiteral",
-      "offset": 2724,
+      "offset": 2725,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/STAdWebView.swift",
       "kind": "StringLiteral",
-      "offset": 3092,
+      "offset": 3093,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/STAdWebView.swift",
       "kind": "StringLiteral",
-      "offset": 3434,
+      "offset": 3435,
       "length": 48,
       "value": "\"request - \""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/STAdWebView.swift",
       "kind": "StringLiteral",
-      "offset": 3478,
+      "offset": 3479,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/STAdWebView.swift",
       "kind": "StringLiteral",
-      "offset": 3481,
+      "offset": 3482,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/STAdWebView.swift",
       "kind": "StringLiteral",
-      "offset": 4580,
+      "offset": 4581,
       "length": 97,
       "value": "\"window.alert = function() { }; window.prompt = function() { }; window.confirm = function() { };\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/STAdWebView.swift",
       "kind": "BooleanLiteral",
-      "offset": 5206,
+      "offset": 5207,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/STAdWebView.swift",
       "kind": "BooleanLiteral",
-      "offset": 5282,
+      "offset": 5283,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/STAdWebView.swift",
       "kind": "BooleanLiteral",
-      "offset": 5312,
+      "offset": 5313,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/STAdWebView.swift",
       "kind": "IntegerLiteral",
-      "offset": 6063,
+      "offset": 6064,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/STAdWebView.swift",
       "kind": "IntegerLiteral",
-      "offset": 6072,
+      "offset": 6073,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/STAdWebView.swift",
       "kind": "IntegerLiteral",
-      "offset": 6083,
+      "offset": 6084,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/STAdWebView.swift",
       "kind": "IntegerLiteral",
-      "offset": 6093,
+      "offset": 6094,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Native\/STNativeAdManager.swift",
       "kind": "Array",
-      "offset": 3444,
+      "offset": 3124,
       "length": 10,
       "value": "[\"NATIVE\"]"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Native\/STNativeAdManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 3576,
+      "offset": 3226,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Native\/STNativeAdManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 4271,
+      "offset": 3898,
       "length": 5,
       "value": "false"
     },
@@ -16429,7 +15468,7 @@
       "kind": "StringLiteral",
       "offset": 178,
       "length": 7,
-      "value": "\"1.0.1\""
+      "value": "\"1.0.2\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STConstants.swift",
@@ -16469,170 +15508,135 @@
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/STAdTagManager.swift",
       "kind": "StringLiteral",
-      "offset": 303,
+      "offset": 283,
       "length": 3,
       "value": "\"0\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/STAdTagManager.swift",
       "kind": "StringLiteral",
-      "offset": 354,
+      "offset": 334,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/STAdTagManager.swift",
       "kind": "StringLiteral",
-      "offset": 719,
+      "offset": 699,
       "length": 7,
       "value": "\"APPLE\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/STAdTagManager.swift",
       "kind": "StringLiteral",
-      "offset": 1076,
+      "offset": 971,
       "length": 3,
       "value": "\"0\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/STAdTagManager.swift",
       "kind": "StringLiteral",
-      "offset": 833,
+      "offset": 813,
       "length": 14,
       "value": "\"SantaSDK.STAdTagManager\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/STAdTagManager.swift",
       "kind": "StringLiteral",
-      "offset": 833,
+      "offset": 813,
       "length": 14,
       "value": "\"SantaSDK.STAdTagManager\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/STAdTagManager.swift",
       "kind": "StringLiteral",
-      "offset": 1913,
+      "offset": 1737,
       "length": 3,
       "value": "\"0\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/STAdTagManager.swift",
       "kind": "StringLiteral",
-      "offset": 2090,
+      "offset": 1914,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/STAdTagManager.swift",
       "kind": "StringLiteral",
-      "offset": 2270,
+      "offset": 2094,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/STAdTagManager.swift",
       "kind": "Array",
-      "offset": 4910,
+      "offset": 4464,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/STAdTagManager.swift",
       "kind": "StringLiteral",
-      "offset": 4978,
+      "offset": 4532,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/STAdTagManager.swift",
       "kind": "StringLiteral",
-      "offset": 5050,
+      "offset": 4604,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/STAdTagManager.swift",
       "kind": "StringLiteral",
-      "offset": 5691,
+      "offset": 5245,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/STAdTagManager.swift",
       "kind": "StringLiteral",
-      "offset": 5932,
+      "offset": 5486,
       "length": 3,
       "value": "\" \""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/STAdTagManager.swift",
       "kind": "StringLiteral",
-      "offset": 5943,
+      "offset": 5497,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/STAdTagManager.swift",
       "kind": "StringLiteral",
-      "offset": 6061,
+      "offset": 5615,
       "length": 28,
       "value": "\"CFBundleShortVersionString\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/STAdTagManager.swift",
       "kind": "StringLiteral",
-      "offset": 6128,
+      "offset": 5682,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/STAdTagManager.swift",
       "kind": "StringLiteral",
-      "offset": 6401,
+      "offset": 5955,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/STAdTagManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 6493,
+      "offset": 6047,
       "length": 1,
       "value": "0"
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/STAdTagManager.swift",
-      "kind": "BooleanLiteral",
-      "offset": 6898,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/STAdTagManager.swift",
-      "kind": "IntegerLiteral",
-      "offset": 8482,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/STAdTagManager.swift",
-      "kind": "IntegerLiteral",
-      "offset": 8550,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/STAdTagManager.swift",
-      "kind": "StringLiteral",
-      "offset": 8917,
-      "length": 66,
-      "value": "\"locationManager didFailWithError - \""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/STAdTagManager.swift",
-      "kind": "StringLiteral",
-      "offset": 8982,
-      "length": 2,
-      "value": "\"\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STHTTPNetworkSession.swift",
@@ -16742,77 +15746,77 @@
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Banner\/STBannerAdManger.swift",
       "kind": "BooleanLiteral",
-      "offset": 2021,
+      "offset": 1962,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Banner\/STBannerAdManger.swift",
       "kind": "BooleanLiteral",
-      "offset": 2078,
+      "offset": 2019,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Banner\/STBannerAdManger.swift",
       "kind": "BooleanLiteral",
-      "offset": 2433,
+      "offset": 2374,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Banner\/STBannerAdManger.swift",
       "kind": "IntegerLiteral",
-      "offset": 2695,
+      "offset": 2636,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Banner\/STBannerAdManger.swift",
       "kind": "BooleanLiteral",
-      "offset": 2836,
+      "offset": 2777,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Banner\/STBannerAdManger.swift",
       "kind": "BooleanLiteral",
-      "offset": 3547,
+      "offset": 3488,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Banner\/STBannerAdManger.swift",
       "kind": "BooleanLiteral",
-      "offset": 3700,
+      "offset": 3641,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Banner\/STBannerAdManger.swift",
       "kind": "IntegerLiteral",
-      "offset": 4873,
+      "offset": 4814,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Banner\/STBannerAdManger.swift",
       "kind": "IntegerLiteral",
-      "offset": 4913,
+      "offset": 4854,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Banner\/STBannerAdManger.swift",
       "kind": "IntegerLiteral",
-      "offset": 5203,
+      "offset": 5144,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Banner\/STBannerAdManger.swift",
       "kind": "IntegerLiteral",
-      "offset": 5209,
+      "offset": 5150,
       "length": 1,
       "value": "0"
     },
@@ -16825,22 +15829,29 @@
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Model\/STResponseModel.swift",
+      "kind": "Array",
+      "offset": 417,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Model\/STResponseModel.swift",
       "kind": "StringLiteral",
-      "offset": 753,
+      "offset": 812,
       "length": 16,
       "value": "\"X-ZeroConfInfo\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Model\/STResponseModel.swift",
       "kind": "StringLiteral",
-      "offset": 753,
+      "offset": 812,
       "length": 16,
       "value": "\"X-ZeroConfInfo\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Model\/STResponseModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 1778,
+      "offset": 1837,
       "length": 1,
       "value": "0"
     },
@@ -16854,56 +15865,56 @@
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Native\/STNativeAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 2393,
+      "offset": 2524,
       "length": 70,
       "value": "\"Native Ad Request did not start - requires completion handler block.\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Native\/STNativeAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 2582,
+      "offset": 2713,
       "length": 14,
       "value": "\"UnitId NULL.\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Native\/STNativeAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 2715,
+      "offset": 2846,
       "length": 16,
       "value": "\"AdFormat NULL.\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Native\/STNativeAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 2848,
+      "offset": 2979,
       "length": 82,
       "value": "\"(\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Native\/STNativeAdRequest.swift",
       "kind": "StringLiteral",
-      "offset": 2869,
+      "offset": 3000,
       "length": 2,
       "value": "\" is already loading an ad. Wait for previous load to finish.\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Native\/STNativeAdRequest.swift",
       "kind": "BooleanLiteral",
-      "offset": 3172,
+      "offset": 3303,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Native\/STNativeAdRequest.swift",
       "kind": "BooleanLiteral",
-      "offset": 3517,
+      "offset": 3583,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Native\/STNativeAdRequest.swift",
       "kind": "BooleanLiteral",
-      "offset": 3672,
+      "offset": 3738,
       "length": 5,
       "value": "false"
     },
@@ -16917,212 +15928,79 @@
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/API\/AD\/GetAd.swift",
       "kind": "StringLiteral",
-      "offset": 4231,
+      "offset": 4158,
       "length": 3,
       "value": "\"?\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkInformation.swift",
       "kind": "StringLiteral",
-      "offset": 269,
+      "offset": 246,
       "length": 25,
       "value": "\"http:\/\/dev.ssanta.ai:86\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkInformation.swift",
       "kind": "StringLiteral",
-      "offset": 338,
+      "offset": 315,
       "length": 25,
       "value": "\"https:\/\/adapi.ssanta.ai\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkInformation.swift",
       "kind": "StringLiteral",
-      "offset": 269,
+      "offset": 246,
       "length": 25,
       "value": "\"http:\/\/dev.ssanta.ai:86\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkInformation.swift",
       "kind": "StringLiteral",
-      "offset": 338,
+      "offset": 315,
       "length": 25,
       "value": "\"https:\/\/adapi.ssanta.ai\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkInformation.swift",
       "kind": "StringLiteral",
-      "offset": 535,
-      "length": 27,
-      "value": "\"http:\/\/dev.exelbid.com:84\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkInformation.swift",
-      "kind": "StringLiteral",
-      "offset": 604,
-      "length": 31,
-      "value": "\"https:\/\/mediation.exelbid.com\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkInformation.swift",
-      "kind": "StringLiteral",
-      "offset": 535,
-      "length": 27,
-      "value": "\"http:\/\/dev.exelbid.com:84\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkInformation.swift",
-      "kind": "StringLiteral",
-      "offset": 604,
-      "length": 31,
-      "value": "\"https:\/\/mediation.exelbid.com\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkInformation.swift",
-      "kind": "StringLiteral",
-      "offset": 719,
+      "offset": 430,
       "length": 18,
       "value": "\"application\/json\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkInformation.swift",
       "kind": "StringLiteral",
-      "offset": 763,
+      "offset": 474,
       "length": 21,
       "value": "\"multipart\/form-data\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkInformation.swift",
       "kind": "StringLiteral",
-      "offset": 719,
+      "offset": 430,
       "length": 18,
       "value": "\"application\/json\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkInformation.swift",
       "kind": "StringLiteral",
-      "offset": 763,
+      "offset": 474,
       "length": 21,
       "value": "\"multipart\/form-data\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkInformation.swift",
       "kind": "StringLiteral",
-      "offset": 1162,
+      "offset": 744,
       "length": 33,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkInformation.swift",
       "kind": "StringLiteral",
-      "offset": 1181,
+      "offset": 763,
       "length": 1,
       "value": "\"\/ssanta\/adsdk\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkInformation.swift",
-      "kind": "StringLiteral",
-      "offset": 1249,
-      "length": 33,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkInformation.swift",
-      "kind": "StringLiteral",
-      "offset": 1268,
-      "length": 1,
-      "value": "\"\/ssanta\/adsdk\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkInformation.swift",
-      "kind": "StringLiteral",
-      "offset": 1347,
-      "length": 29,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkInformation.swift",
-      "kind": "StringLiteral",
-      "offset": 1375,
-      "length": 1,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STLocationInfo.swift",
-      "kind": "BooleanLiteral",
-      "offset": 289,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STLocationInfo.swift",
-      "kind": "BooleanLiteral",
-      "offset": 952,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STLocationInfo.swift",
-      "kind": "BooleanLiteral",
-      "offset": 1015,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STLocationInfo.swift",
-      "kind": "StringLiteral",
-      "offset": 2771,
-      "length": 66,
-      "value": "\"locationManager didFailWithError - \""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STLocationInfo.swift",
-      "kind": "StringLiteral",
-      "offset": 2836,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STLocationInfo.swift",
-      "kind": "BooleanLiteral",
-      "offset": 3509,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STLocationInfo.swift",
-      "kind": "BooleanLiteral",
-      "offset": 3614,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STLocationInfo.swift",
-      "kind": "BooleanLiteral",
-      "offset": 3737,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STLocationInfo.swift",
-      "kind": "BooleanLiteral",
-      "offset": 3777,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STLocationInfo.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3916,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STLocationInfo.swift",
-      "kind": "IntegerLiteral",
-      "offset": 4092,
-      "length": 1,
-      "value": "0"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Extension\/STUIView.swift",
@@ -17386,42 +16264,42 @@
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Banner\/STAdView.swift",
       "kind": "Array",
-      "offset": 2485,
+      "offset": 2751,
       "length": 8,
       "value": "[\"HTML\"]"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Banner\/STAdView.swift",
       "kind": "StringLiteral",
-      "offset": 3170,
+      "offset": 3308,
       "length": 3,
       "value": "\"0\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Banner\/STAdView.swift",
       "kind": "BooleanLiteral",
-      "offset": 3366,
+      "offset": 3504,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Banner\/STAdView.swift",
       "kind": "BooleanLiteral",
-      "offset": 3545,
+      "offset": 3683,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Banner\/STAdView.swift",
       "kind": "BooleanLiteral",
-      "offset": 4120,
+      "offset": 4258,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Banner\/STAdView.swift",
       "kind": "StringLiteral",
-      "offset": 2120,
+      "offset": 2386,
       "length": 8,
       "value": "\"SantaSDK.STAdView\""
     },
@@ -17441,267 +16319,260 @@
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Interstitials\/STInterstitialAdManager.swift",
-      "kind": "StringLiteral",
-      "offset": 1009,
-      "length": 50,
-      "value": "\"STInterstitialAdManager loadAd : \""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Interstitials\/STInterstitialAdManager.swift",
-      "kind": "StringLiteral",
-      "offset": 1058,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Interstitials\/STInterstitialAdManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 1101,
+      "offset": 1035,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Interstitials\/STInterstitialAdManager.swift",
       "kind": "StringLiteral",
-      "offset": 1295,
+      "offset": 1229,
       "length": 102,
       "value": "\"Banner view (\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Interstitials\/STInterstitialAdManager.swift",
       "kind": "StringLiteral",
-      "offset": 1333,
+      "offset": 1267,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Interstitials\/STInterstitialAdManager.swift",
       "kind": "StringLiteral",
-      "offset": 1336,
+      "offset": 1270,
       "length": 2,
       "value": "\" is already loading an ad. Wait for previous load to finish.\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Interstitials\/STInterstitialAdManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 1905,
+      "offset": 1839,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Interstitials\/STInterstitialAdManager.swift",
       "kind": "StringLiteral",
-      "offset": 2264,
+      "offset": 2139,
       "length": 3,
       "value": "\"1\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Interstitials\/STInterstitialAdManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 2327,
+      "offset": 2202,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Interstitials\/STInterstitialAdManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 2384,
+      "offset": 2259,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Interstitials\/STInterstitialAdManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 2734,
+      "offset": 2609,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Interstitials\/STInterstitialAdManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 3114,
+      "offset": 2989,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Interstitials\/STInterstitialAdManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 3645,
+      "offset": 3520,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Interstitials\/STInterstitialAdManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 3798,
+      "offset": 3673,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Interstitials\/STInterstitialAdManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 4536,
+      "offset": 4411,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Interstitials\/STInterstitialAdManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 4576,
+      "offset": 4451,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Interstitials\/STInterstitialAdManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 4861,
+      "offset": 4736,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Interstitials\/STInterstitialAdManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 4960,
+      "offset": 4835,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Interstitials\/STInterstitialAdManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 5247,
+      "offset": 5122,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Interstitials\/STInterstitialAdManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 5253,
+      "offset": 5128,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Interstitials\/STInterstitialAdManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 5477,
+      "offset": 5352,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Interstitials\/STInterstitialAdManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 5687,
+      "offset": 5562,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Web\/Interstitials\/STInterstitialAdManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 5726,
+      "offset": 5601,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkError.swift",
       "kind": "StringLiteral",
-      "offset": 588,
+      "offset": 607,
       "length": 47,
       "value": "\"알수없는 오류가 발생하였습니다.\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkError.swift",
       "kind": "StringLiteral",
-      "offset": 664,
+      "offset": 683,
       "length": 41,
       "value": "\"파라메터에 오류가 있습니다.\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkError.swift",
       "kind": "StringLiteral",
-      "offset": 736,
+      "offset": 755,
       "length": 47,
       "value": "\"네트워크 오류가 발생하였습니다.\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkError.swift",
       "kind": "StringLiteral",
-      "offset": 814,
+      "offset": 833,
       "length": 44,
       "value": "\"요청한 시간을 초과하였습니다.\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkError.swift",
       "kind": "StringLiteral",
-      "offset": 894,
+      "offset": 913,
       "length": 25,
       "value": "\"Response Data Not Found\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkError.swift",
       "kind": "StringLiteral",
-      "offset": 963,
+      "offset": 982,
       "length": 60,
       "value": "\"네트워크 오류가 발생하였습니다.: \n(\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkError.swift",
       "kind": "StringLiteral",
-      "offset": 1021,
+      "offset": 1040,
       "length": 1,
       "value": "\")\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkError.swift",
       "kind": "StringLiteral",
-      "offset": 1054,
+      "offset": 1073,
       "length": 40,
       "value": "\"파싱 에러가 발생하였습니다\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkError.swift",
       "kind": "StringLiteral",
-      "offset": 1196,
+      "offset": 1146,
+      "length": 14,
+      "value": "\"No Inventory\""
+    },
+    {
+      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkError.swift",
+      "kind": "StringLiteral",
+      "offset": 1262,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkError.swift",
       "kind": "IntegerLiteral",
-      "offset": 1341,
+      "offset": 1407,
       "length": 3,
       "value": "103"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkError.swift",
       "kind": "IntegerLiteral",
-      "offset": 1371,
+      "offset": 1437,
       "length": 3,
       "value": "303"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkError.swift",
       "kind": "IntegerLiteral",
-      "offset": 1341,
+      "offset": 1407,
       "length": 3,
       "value": "103"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkError.swift",
       "kind": "IntegerLiteral",
-      "offset": 1371,
+      "offset": 1437,
       "length": 3,
       "value": "303"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkError.swift",
       "kind": "IntegerLiteral",
-      "offset": 1341,
+      "offset": 1407,
       "length": 3,
       "value": "103"
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkError.swift",
       "kind": "IntegerLiteral",
-      "offset": 1371,
+      "offset": 1437,
       "length": 3,
       "value": "303"
     },

@@ -278,7 +278,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
 @import CoreFoundation;
-@import CoreLocation;
 @import Foundation;
 @import ObjectiveC;
 @import UIKit;
@@ -320,18 +319,7 @@ SWIFT_CLASS("_TtC8SantaSDK14STAdTagManager")
 
 @interface STAdTagManager (SWIFT_EXTENSION(SantaSDK))
 - (void)requestTrackingAuthorizationWithHandler:(void (^ _Nonnull)(NSString * _Nullable))handler;
-- (void)requestLocation;
 - (NSString * _Nonnull)makeSource:(NSDictionary<NSString *, id> * _Nullable)data SWIFT_WARN_UNUSED_RESULT;
-@end
-
-@class CLLocationManager;
-@class CLLocation;
-
-@interface STAdTagManager (SWIFT_EXTENSION(SantaSDK)) <CLLocationManagerDelegate>
-- (void)locationManagerDidChangeAuthorization:(CLLocationManager * _Nonnull)manager;
-- (void)locationManager:(CLLocationManager * _Nonnull)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status;
-- (void)locationManager:(CLLocationManager * _Nonnull)manager didUpdateLocations:(NSArray<CLLocation *> * _Nonnull)locations;
-- (void)locationManager:(CLLocationManager * _Nonnull)manager didFailWithError:(NSError * _Nonnull)error;
 @end
 
 
@@ -362,8 +350,6 @@ SWIFT_CLASS("_TtC8SantaSDK8STAdView")
 /// 관련성이 더 높은 광고를 수신하기 위해 광고 서버로 전달되어야하는 키워드 세트를 나타내는 딕셔너리입니다..
 /// 키워드는 일반적으로 특정 사용자 세그먼트에서 광고 캠페인을 타겟팅하는 데 사용됩니다.
 @property (nonatomic, copy) NSDictionary<NSString *, NSString *> * _Nullable keywords;
-/// 사용자의 위치를 나타내는<code>CLLocation</code> 개체입니다.
-@property (nonatomic, strong) CLLocation * _Nullable location;
 /// Children’s Online Privacy Protection Rule
 /// 아동 온라인 프라이버시 보호법 여부를 결정하는 값입니다. (0 : No, 1: Yes)
 @property (nonatomic, copy) NSString * _Nonnull coppa;
@@ -419,16 +405,20 @@ SWIFT_PROTOCOL("_TtP8SantaSDK16STAdViewDelegate_")
 @optional
 /// 광고를 성공적으로로드하면 전송됩니다.
 /// 아직 삽입하지 않은 경우이 메소드를 구현하여보기 계층 구조에 광고보기를 삽입해야합니다.
-/// @param  광고뷰
+/// @param  view 광고뷰
 - (void)adViewDidLoadAd:(STAdView * _Nullable)view;
 /// 광고로드에 실패 할 때 전송됩니다.
 /// 빈 광고가 표시되지 않도록하려면이 메시지에 대한 응답으로 광고보기를 숨겨야합니다.
-/// @param  광고뷰
+/// @param  view 광고뷰
 - (void)adViewDidFailToLoadAd:(STAdView * _Nullable)view;
+/// 광고가 비어있으며 미디에이션이 존재할 때 전송됩니다.
+/// 빈 광고가 표시되지 않도록 전송된 미디에이션 목록을 활용해야합니다.
+/// @param mediations 미디에이션 목록
+- (void)adViewDidLoadMediation:(NSArray<NSString *> * _Nullable)mediations;
 /// 콘텐츠를로드하려고 할 때 전송됩니다.
 /// 이 메서드는 사용자가 광고보기를 탭할 때 호출됩니다.
 /// 이 메서드의 구현은 사용자 상호 작용이 필요한 모든 애플리케이션 활동을 일시 중지해야합니다.
-/// @param 광고뷰
+/// @param  view 광고뷰
 /// @see <code>didLoadViewForAd:</code>
 - (void)willLoadViewForAd:(STAdView * _Nullable)view;
 /// 모달 콘텐츠를 닫았을 때 전송되어 애플리케이션에 제어권을 반환합니다.
@@ -463,8 +453,6 @@ SWIFT_CLASS("_TtC8SantaSDK20STInterstitialAdView")
 /// 관련성이 더 높은 광고를 수신하기 위해 광고 서버로 전달되어야하는 키워드 세트를 나타내는 딕셔너리입니다..
 /// 키워드는 일반적으로 특정 사용자 세그먼트에서 광고 캠페인을 타겟팅하는 데 사용됩니다.
 @property (nonatomic, copy) NSDictionary<NSString *, NSString *> * _Nullable keywords;
-/// 더 관련성 높은 광고를 수신하기 위해 광고 서버로 전달되어야하는 사용자의 위치를 나타내는<code>CLLocation</code> 개체입니다.
-@property (nonatomic, strong) CLLocation * _Nullable location;
 /// 광고보기가 테스트 모드에서 광고를 요청해야하는지 여부를 결정하는 Boolean 값입니다.
 /// The default value is NO.
 @property (nonatomic) BOOL testing;
@@ -516,6 +504,10 @@ SWIFT_PROTOCOL("_TtP8SantaSDK28STInterstitialAdViewDelegate_")
 /// 광고를로드하지 못할 때 전송됩니다.
 /// @param interstitial 메시지를 보내는 전면 광고 클래스입니다.
 - (void)interstitialDidFailToLoadAd:(STInterstitialAdView * _Nullable)interstitial;
+/// 광고가 비어있으며 미디에이션이 존재할 때 전송됩니다.
+/// 빈 광고가 표시되지 않도록 전송된 미디에이션 목록을 활용해야합니다.
+/// @param mediations 미디에이션 목록
+- (void)interstitialDidLoadMediation:(NSArray<NSString *> * _Nullable)mediations;
 /// 전면 광고가 화면에 표시되기 직전에 전송됩니다.
 /// 이 메소드의 구현은 사용자 상호 작용이 필요한 모든 애플리케이션 활동을 일시 중지해야합니다.
 /// @param interstitial 메시지를 보내는 전면 광고 클래스입니다.
@@ -592,8 +584,6 @@ SWIFT_CLASS("_TtC8SantaSDK17STNativeAdManager")
 /// 웹 사이트의 키워드 타겟팅 옵션은 캠페인 관리시 “고급 타겟팅”섹션에서 찾을 수 있습니다.
 + (void)keywords:(NSDictionary<NSString *, NSString *> * _Nullable)keywords;
 + (void)keywords:(NSString * _Nonnull)key :(NSString * _Nonnull)value;
-/// 더 관련성 높은 광고를 수신하기 위해 광고 서버로 전달되어야하는 사용자의 위치를 나타내는<code>CLLocation</code> 개체입니다.
-+ (void)location:(CLLocation * _Nonnull)location;
 /// 광고보기가 테스트 모드에서 광고를 요청해야하는지 여부를 결정하는 Boolean 값입니다.
 /// The default value is NO.
 + (void)testing:(BOOL)testing;
@@ -663,6 +653,7 @@ SWIFT_PROTOCOL("_TtP8SantaSDK27STNativeAdRenderingDelegate_")
 /// </ul>
 SWIFT_CLASS("_TtC8SantaSDK17STNativeAdRequest")
 @interface STNativeAdRequest : NSObject
+@property (nonatomic, readonly, copy) NSArray<NSString *> * _Nullable mediations;
 /// 광고 서버에 대한 요청을 실행합니다.
 /// @param handler 요청이 완료되면 실행할 블록. 블록에 매개 변수로 요청 자체와 실패의 유효한 STNativeAd 또는 NSError 객체 중 하나가 포함됩니다.
 - (void)startWithCompletionHandler:(void (^ _Nullable)(STNativeAdRequest * _Nullable, STNativeAd * _Nullable, NSError * _Nullable))handler;

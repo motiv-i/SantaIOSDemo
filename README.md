@@ -11,10 +11,8 @@ ObjectiveC 가이드는 [README_ObjectiveC](./README_ObjectiveC.md)를 참고해
     - [SDK 정보](#sdk-정보)
 - [시작하기](#시작하기)
 - [어플리케이션 설정](#어플리케이션-설정)
-  - [Santa SDK 추가하기](#santa-sdk-추가하기)
-    - [CocoaPod](#CocoaPod)
-    - [Swift Package Manager](#swift-package-manager)
-  - [Info.plist 설정](#Info.plist-설정)
+  - [Santa SDK 추가하기](#santa-sdk-추가하기-for-cocoapods)
+  - [Info.plist 설정](#infoplist-설정)
 - [광고 적용하기](#광고-적용하기)
   - [앱 등록](#앱-등록)
   - [유닛 ID 발급](#유닛-ID-발급)
@@ -24,6 +22,9 @@ ObjectiveC 가이드는 [README_ObjectiveC](./README_ObjectiveC.md)를 참고해
 - [광고 인스턴스 추가 옵션](#광고-인스턴스-추가-옵션)
 
 # Version History
+
+- Version 1.0.2
+  - 위치 정보 제거
 
 - Version 1.0.1
   - ObjectiveC 호환성 추가
@@ -79,12 +80,17 @@ pod install
 
 ### Info.plist 설정
 
-| Key                                                         | Value                                    | Description                     |
-|-------------------------------------------------------------|------------------------------------------|---------------------------------|
-| Privacy - Tracking Usage Description                        | EX) 맞춤형 광고 제공을 위해 디바이스 식별 데이터를 사용하려 합니다. | 앱이 디바이스 추적 데이터에 액세스 해야하는 이유     |
-| Privacy - Location Always and When In Use Usage Description | EX) 맞춤형 광고 제공을 위해 사용자의 위치 데이터를 사용하려 합니다. | 앱이 사용자의 위치정보를 항상 액세스 해야하는 이유    |
-| Privacy - Location When In Use Usage Description            | EX) 맞춤형 광고 제공을 위해 사용자의 위치 데이터를 사용하려 합니다. | 앱이 실행중일때 사용자의 위치정보를 액세스 해야하는 이유 |
-| Privacy - Location Default Accuracy Reduced                 | EX) YES or NO                            | 앱이 정교한 위치정보를 사용하는지에 대한 값        |
+| Key                                                          | Required | Value                                    | Description                 |
+|--------------------------------------------------------------|----------|------------------------------------------|-----------------------------|
+| Privacy - Tracking Usage Description                         | 필수       | EX) 맞춤형 광고 제공을 위해 디바이스 식별 데이터를 사용하려 합니다. | 앱이 디바이스 추적 데이터에 액세스 해야하는 이유 |
+| App Transport Security Settings<br/> > Allow Arbitrary Loads | 선택       | EX) YES or NO                            | HTTP 프로토콜 임의 로드 여부 설정       |
+
+[//]: # (| Privacy - Location Always and When In Use Usage Description  | 선택       | EX&#41; 맞춤형 광고 제공을 위해 사용자의 위치 데이터를 사용하려 합니다. | 앱이 사용자의 위치정보를 항상 액세스 해야하는 이유    |)
+
+[//]: # (| Privacy - Location When In Use Usage Description             | 선택       | EX&#41; 맞춤형 광고 제공을 위해 사용자의 위치 데이터를 사용하려 합니다. | 앱이 실행중일때 사용자의 위치정보를 액세스 해야하는 이유 |)
+
+[//]: # (| Privacy - Location Default Accuracy Reduced                  | 선택       | EX&#41; YES or NO                            | 앱이 정교한 위치정보를 사용하는지에 대한 값        |)
+
 
 
 ## 광고 적용하기
@@ -330,7 +336,6 @@ func displayAd() {
 
 - 필요에 따라 광고 인스턴스에 추가 설정이 가능합니다.
   -	`testing` : 테스트 광고 요청 여부.
-  -	`location` : 위치 정보를 설정합니다. 좀 더 관련성 있는 광고가 노출 됩니다.
   -	`keywords` : Custom 메타 데이터를 설정합니다.
   - `coppa` : 미국 아동 온라인 사생활 보호법에 따라 13세 미만의 사용자를 설정하면 개인 정보를 제한하여 광고 입찰 처리됩니다. (IP, Device ID, Geo 정보등)
   -	`rewarded` : 지면의 리워드 여부를 설정합니다.

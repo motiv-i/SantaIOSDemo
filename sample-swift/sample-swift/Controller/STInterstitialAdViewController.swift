@@ -16,6 +16,7 @@ class STInterstitialAdViewController: UIViewController {
 
     var info: STAdInfoModel?
     var interstitial: STInterstitialAdView?
+    var medistions: IndexingIterator<Array<String>>?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +37,6 @@ extension STInterstitialAdViewController {
 
             if let interstitial = interstitial {
                 interstitial.delegate = self        // 대리자 전달
-                interstitial.adFormat = [.HTML]     // 광고 포맷 선택 (adFormat: [SantaSDK.STAdFormat]?)
                 interstitial.testing = true         // 광고 테스트 여부
                 interstitial.loadAd()
             }
@@ -45,6 +45,30 @@ extension STInterstitialAdViewController {
 
     @IBAction func showAdClick(_ sender: UIButton) {
         self.interstitial?.showFromViewController(self)
+    }
+    
+    func loadMediation() {
+        // 미디에이션 목록이 존재할때
+        if self.medistions != nil {
+            
+            // 미디에이션 목록을 순차로 가져온다
+            if let medistion = self.medistions?.next() {
+                print("loadMediation = \(medistion)")
+                
+                // 사용할 미이데이션에 맞는 광고 호출 코드를 작성
+                switch medistion {
+                case "Mediation Name":
+                    print("Mediation Name")
+                default:
+                    print("Mediation Default")
+                }
+                
+            } else {
+                print("Mediation is Empty")
+            }
+        } else {
+            print("Mediation is Empty")
+        }
     }
 }
 
@@ -111,5 +135,10 @@ extension STInterstitialAdViewController: STInterstitialAdViewDelegate {
      */
     func interstitialDidReceiveTapEvent(_ interstitial: SantaSDK.STInterstitialAdView?) {
         print("interstitialDidReceiveTapEvent")
+    }
+    
+    func interstitialDidLoadMediation(_ mediations: [String]?) {
+        self.medistions = mediations?.makeIterator()
+        self.loadMediation()
     }
 }

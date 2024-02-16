@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D1C6B202B7EF1A200BC2DCC /* SantaSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D1C6B1F2B7EF1A200BC2DCC /* SantaSDK.xcframework */; };
 		1D9C1BF02B68B1D4007B78FF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9C1BEF2B68B1D4007B78FF /* AppDelegate.m */; };
 		1D9C1BF32B68B1D4007B78FF /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9C1BF22B68B1D4007B78FF /* SceneDelegate.m */; };
-		1D9C1BF62B68B1D4007B78FF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9C1BF52B68B1D4007B78FF /* ViewController.m */; };
 		1D9C1BF92B68B1D4007B78FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D9C1BF72B68B1D4007B78FF /* Main.storyboard */; };
 		1D9C1BFB2B68B1D6007B78FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D9C1BFA2B68B1D6007B78FF /* Assets.xcassets */; };
 		1D9C1BFE2B68B1D6007B78FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D9C1BFC2B68B1D6007B78FF /* LaunchScreen.storyboard */; };
@@ -25,15 +25,27 @@
 		BB26915820283F33A68313B0 /* Pods_sample_objc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFB36955FB4D9E2585E36995 /* Pods_sample_objc.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		1D5DF1C12B7E041D000A631F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0A50B770A1CC483A8C6F57B0 /* Pods-sample-objc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sample-objc.release.xcconfig"; path = "Target Support Files/Pods-sample-objc/Pods-sample-objc.release.xcconfig"; sourceTree = "<group>"; };
+		1D1C6B1F2B7EF1A200BC2DCC /* SantaSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SantaSDK.xcframework; path = "../../santa-ios-sdk/SantaSDK.xcframework"; sourceTree = "<group>"; };
 		1D9C1BEB2B68B1D4007B78FF /* sample-objc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sample-objc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D9C1BEE2B68B1D4007B78FF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1D9C1BEF2B68B1D4007B78FF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1D9C1BF12B68B1D4007B78FF /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		1D9C1BF22B68B1D4007B78FF /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		1D9C1BF42B68B1D4007B78FF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		1D9C1BF52B68B1D4007B78FF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		1D9C1BF82B68B1D4007B78FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1D9C1BFA2B68B1D6007B78FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D9C1BFD2B68B1D6007B78FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -63,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D1C6B202B7EF1A200BC2DCC /* SantaSDK.xcframework in Frameworks */,
 				BB26915820283F33A68313B0 /* Pods_sample_objc.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,6 +86,7 @@
 		1D9C1BE22B68B1D4007B78FF = {
 			isa = PBXGroup;
 			children = (
+				1D1C6B1F2B7EF1A200BC2DCC /* SantaSDK.xcframework */,
 				1D9C1BED2B68B1D4007B78FF /* sample-objc */,
 				1D9C1BEC2B68B1D4007B78FF /* Products */,
 				534238F28414DD0A66F42272 /* Frameworks */,
@@ -99,8 +113,6 @@
 				1D9C1BEF2B68B1D4007B78FF /* AppDelegate.m */,
 				1D9C1BF12B68B1D4007B78FF /* SceneDelegate.h */,
 				1D9C1BF22B68B1D4007B78FF /* SceneDelegate.m */,
-				1D9C1BF42B68B1D4007B78FF /* ViewController.h */,
-				1D9C1BF52B68B1D4007B78FF /* ViewController.m */,
 				1D9C1BF72B68B1D4007B78FF /* Main.storyboard */,
 				1D9C1BFA2B68B1D6007B78FF /* Assets.xcassets */,
 				1D9C1BFC2B68B1D6007B78FF /* LaunchScreen.storyboard */,
@@ -181,7 +193,7 @@
 				1D9C1BE72B68B1D4007B78FF /* Sources */,
 				1D9C1BE82B68B1D4007B78FF /* Frameworks */,
 				1D9C1BE92B68B1D4007B78FF /* Resources */,
-				FF1065B1E3AC35544FF927A8 /* [CP] Embed Pods Frameworks */,
+				1D5DF1C12B7E041D000A631F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -261,23 +273,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FF1065B1E3AC35544FF927A8 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-sample-objc/Pods-sample-objc-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-sample-objc/Pods-sample-objc-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-sample-objc/Pods-sample-objc-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -288,7 +283,6 @@
 				1D9C1C0D2B68B383007B78FF /* STBannerAdViewController.m in Sources */,
 				1D9C1C2A2B68E10E007B78FF /* STNativeAdView.m in Sources */,
 				1D9C1C0A2B68B35F007B78FF /* STAdTableViewController.m in Sources */,
-				1D9C1BF62B68B1D4007B78FF /* ViewController.m in Sources */,
 				1D9C1C1A2B68B58C007B78FF /* STAdInfo.m in Sources */,
 				1D9C1BF02B68B1D4007B78FF /* AppDelegate.m in Sources */,
 				1D9C1C102B68B399007B78FF /* STInterstitialAdViewController.m in Sources */,
@@ -450,9 +444,6 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "sample-objc/Info.plist";
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "맞춤형 광고 제공을 위해 사용자의 위치 데이터를 사용하려 합니다.";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "맞춤형 광고 제공을 위해 사용자의 위치 데이터를 사용하려 합니다.";
-				INFOPLIST_KEY_NSUserTrackingUsageDescription = "맞춤형 광고 제공을 위해 디바이스 식별 데이터를 사용하려 합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -485,9 +476,6 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "sample-objc/Info.plist";
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "맞춤형 광고 제공을 위해 사용자의 위치 데이터를 사용하려 합니다.";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "맞춤형 광고 제공을 위해 사용자의 위치 데이터를 사용하려 합니다.";
-				INFOPLIST_KEY_NSUserTrackingUsageDescription = "맞춤형 광고 제공을 위해 디바이스 식별 데이터를 사용하려 합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

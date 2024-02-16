@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnShowAd;
 
 @property (nonatomic, strong) STInterstitialAdView *interstitial;
+@property (nonatomic, strong) NSEnumerator<NSString *> *mediations;
 
 @end
 
@@ -35,10 +36,9 @@
 - (IBAction)didTapLoadButton:(id)sender
 {
     [self.textKeyword endEditing:YES];
-    
-    self.btnShowAd.hidden = YES;
-    self.btnLoadAd.enabled = NO;
-    
+
+    self.btnShowAd.hidden = NO;
+
     self.interstitial = [STInterstitialAdView interstitialAdControllerForAdUnitId:self.textKeyword.text];
 
     self.interstitial.delegate = self;
@@ -51,22 +51,40 @@
     [self.interstitial showFromViewController:self];
 }
 
+- (void)loadMediation
+{
+    // 미디에이션 목록이 존재할때
+    if (self.mediations != nil) {
+        // 미디에이션 목록을 순차로 가져온다
+        NSString *mediation = [self.mediations nextObject];
+        
+        NSLog(@"loadMediation = %@", mediation);
+        
+        // 미디에이션이 비어있다면 목록을 모두 순회함
+        if (mediation != nil) {
+            if ([mediation isEqual: @"Mediation Name"]) {
+                // 사용할 미이데이션에 맞는 광고 호출 코드를 작성
+            }
+        } else {
+            NSLog(@"Mediation is Empty");
+        }
+    } else {
+        NSLog(@"Mediation is Empty");
+    }
+}
+
 #pragma mark - <EBInterstitialAdControllerDelegate>
 
 - (void)interstitialDidLoadAd:(STInterstitialAdView *)interstitial
 {
-    self.btnShowAd.hidden = NO;
-    self.btnLoadAd.enabled = YES;
 }
 
 - (void)interstitialDidFailToLoadAd:(STInterstitialAdView *)interstitial
 {
-    self.btnLoadAd.enabled = YES;
 }
 
 - (void)interstitialDidExpire:(STInterstitialAdView *)interstitial
 {
-    self.btnLoadAd.enabled = YES;
     self.btnShowAd.hidden = YES;
 }
 
@@ -91,5 +109,10 @@
 {
 }
 
+- (void)interstitialDidLoadMediation:(NSArray<NSString *> *)mediations
+{
+    self.mediations = [mediations objectEnumerator];
+    [self loadMediation];
+}
 
 @end
