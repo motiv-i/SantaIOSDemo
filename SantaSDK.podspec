@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name = 'SantaSDK'
-    s.version = '1.0.2'
+    s.version = '1.0.3'
     s.summary = 'SantaSDK'
     s.description = 'SantaSDK for Publisher'
     s.homepage = 'https://github.com/motiv-i/SantaIOSDemo'
@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
 
     s.source = {
         :git => 'https://github.com/motiv-i/SantaIOSDemo.git',
-        :tag => '1.0.2'
+        :tag => '1.0.3'
     }
 
     s.platforms = {

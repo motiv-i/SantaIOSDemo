@@ -17,6 +17,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    // SDK 테스트 설정
+    SantaKit.testing = YES;
+    
     return YES;
 }
 

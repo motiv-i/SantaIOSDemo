@@ -11,6 +11,7 @@ Swift 가이드는 [README](./README.md)를 참고해주세요.
 - [시작하기](#시작하기)
 - [어플리케이션 설정](#어플리케이션-설정)
   - [Santa SDK 추가하기](#santa-sdk-추가하기-for-cocoapods)
+  - [AppDelegate 설정](#appdelegate)
   - [Info.plist 설정](#infoplist-설정)
 - [광고 적용하기](#광고-적용하기)
   - [앱 등록](#앱-등록)
@@ -65,6 +66,19 @@ end
 Podfile 설치
 ```
 pod install
+```
+
+### AppDelegate
+```
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    ...
+        
+    // SDK 테스트 설정
+    // 앱 배포시 설정을 제거해주세요
+    SantaKit.testing = true
+    
+    ...
+}
 ```
 
 ### Info.plist 설정

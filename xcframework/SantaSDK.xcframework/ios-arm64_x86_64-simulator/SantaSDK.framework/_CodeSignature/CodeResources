@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/SantaSDK-Swift.h</key>
 		<data>
-		HlsZlCZJsrqi3EDCn48RXwj/IYU=
+		S5IAuXw9H+Z8SgrYs3LdszPNzk8=
 		</data>
 		<key>Headers/SantaSDK.h</key>
 		<data>
@@ -14,15 +14,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Yjtfm6gFp7OyAC7nQcK1ynNlb9k=
+		4hHyAiSnbE8DkToh2RoTTQHl8oE=
 		</data>
 		<key>Modules/SantaSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		U79DIjOCaJFD1hobQE0vApP7sq4=
+		f7rsaLqcBM9EPWBCnm+HMeJwd6o=
 		</data>
 		<key>Modules/SantaSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		3a3Q++I8bXOIhi7hyRJbFpYYiOk=
+		8fZ0bsTCY4cCBZqV3Qy3LljiEQs=
 		</data>
 		<key>Modules/SantaSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -30,19 +30,19 @@
 		</data>
 		<key>Modules/SantaSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		3a3Q++I8bXOIhi7hyRJbFpYYiOk=
+		8fZ0bsTCY4cCBZqV3Qy3LljiEQs=
 		</data>
 		<key>Modules/SantaSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		qpnzMmXO5rZNy5CUcb1P6zly1sU=
+		KCbpLVQ6E7XjO0YFjn6FBX5ryJQ=
 		</data>
 		<key>Modules/SantaSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		U79DIjOCaJFD1hobQE0vApP7sq4=
+		f7rsaLqcBM9EPWBCnm+HMeJwd6o=
 		</data>
 		<key>Modules/SantaSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		8vvzmhTozk4/D86pEVbs31iOtJ0=
+		0Rnx5xVtxIQW0BgLfl/oF0+cTio=
 		</data>
 		<key>Modules/SantaSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -50,11 +50,11 @@
 		</data>
 		<key>Modules/SantaSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		8vvzmhTozk4/D86pEVbs31iOtJ0=
+		0Rnx5xVtxIQW0BgLfl/oF0+cTio=
 		</data>
 		<key>Modules/SantaSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		O+L+tfvg02X/EM36g2VbCSaVayU=
+		fihToGk0j1U+6FcngH208uo1NIw=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -91,7 +91,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			tnLeSWdy0myJ4aHlFAPQZpz6QIPHMG2y0IYKh1p6aCU=
+			LZ3LrPTI+tnlj8AjAZdxj42AoHckMSXU8xaChOpMU7w=
 			</data>
 		</dict>
 		<key>Headers/SantaSDK.h</key>
@@ -105,14 +105,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			VhjnHWHZYMqvETvMj0YEjsnErRCjICM8OZ1niHgN/nw=
+			uJrQ+jQ0rKGfZz6zsEWI5BTWEnWy7/HDvUqJ1d9IGoc=
 			</data>
 		</dict>
 		<key>Modules/SantaSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			a5Mbcn1KUUE15LToV3nkdleByLypEul+UlNpdSdoIis=
+			ENqFTIoBKpRgP3cFuG/OAi5LmJ7meJivNPjSDZJtnrM=
 			</data>
 		</dict>
 		<key>Modules/SantaSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -126,28 +126,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			a5Mbcn1KUUE15LToV3nkdleByLypEul+UlNpdSdoIis=
+			ENqFTIoBKpRgP3cFuG/OAi5LmJ7meJivNPjSDZJtnrM=
 			</data>
 		</dict>
 		<key>Modules/SantaSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			GBlJe9M2FvnxiRDpK4WXzp3/cfDtq8rG8w97gP+X2y8=
+			z0eOspOvj4kjhCVwaYPiUnzioaGlHL6i0hOAwZoFIT4=
 			</data>
 		</dict>
 		<key>Modules/SantaSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			VhjnHWHZYMqvETvMj0YEjsnErRCjICM8OZ1niHgN/nw=
+			uJrQ+jQ0rKGfZz6zsEWI5BTWEnWy7/HDvUqJ1d9IGoc=
 			</data>
 		</dict>
 		<key>Modules/SantaSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			wwzZXKEKKjL+KQJDeUzmhlAuK/km0aKcrYi3/Uoge34=
+			te29nzS++du2fVZQtcZ9PdO380pY80tnj3UpH2RLiuc=
 			</data>
 		</dict>
 		<key>Modules/SantaSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -161,14 +161,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			wwzZXKEKKjL+KQJDeUzmhlAuK/km0aKcrYi3/Uoge34=
+			te29nzS++du2fVZQtcZ9PdO380pY80tnj3UpH2RLiuc=
 			</data>
 		</dict>
 		<key>Modules/SantaSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			7axf4QEqFSpvpjcyImJJXAoRyJrkyxk8zmJXPRspkCA=
+			nluyzcyc6TMAk65cLqNrMlXX4NZtKfAJyP1gaNsIEmc=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

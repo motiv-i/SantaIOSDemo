@@ -125,6 +125,18 @@ public enum STNativeAdError : Foundation.LocalizedError {
     get
   }
 }
+@objc @_inheritsConvenienceInitializers @objcMembers public class SantaKit : ObjectiveC.NSObject {
+  @objc public static var appId: Swift.String {
+    @objc get
+    @objc set
+  }
+  @objc public static var testing: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc deinit
+}
 public enum ReachabilityError : Swift.Error {
   case failedToCreateWithAddress(Darwin.sockaddr, Swift.Int32)
   case failedToCreateWithHostname(Swift.String, Swift.Int32)

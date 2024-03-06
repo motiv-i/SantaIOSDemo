@@ -12,6 +12,7 @@ ObjectiveC 가이드는 [README_ObjectiveC](./README_ObjectiveC.md)를 참고해
 - [시작하기](#시작하기)
 - [어플리케이션 설정](#어플리케이션-설정)
   - [Santa SDK 추가하기](#santa-sdk-추가하기-for-cocoapods)
+  - [AppDelegate 설정](#appdelegate)
   - [Info.plist 설정](#infoplist-설정)
 - [광고 적용하기](#광고-적용하기)
   - [앱 등록](#앱-등록)
@@ -22,6 +23,9 @@ ObjectiveC 가이드는 [README_ObjectiveC](./README_ObjectiveC.md)를 참고해
 - [광고 인스턴스 추가 옵션](#광고-인스턴스-추가-옵션)
 
 # Version History
+
+- Version 1.0.3
+  - 테스트 모드 설정
 
 - Version 1.0.2
   - 위치 정보 제거
@@ -76,6 +80,19 @@ end
 Podfile 설치
 ```
 pod install
+```
+
+### AppDelegate
+```
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    ...
+    
+    // SDK 테스트 설정
+    // 앱 배포시 설정을 제거해주세요
+    SantaKit.testing = YES;
+    
+    ...
+}
 ```
 
 ### Info.plist 설정

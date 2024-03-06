@@ -2,6 +2,7 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=macos,swift,xcode,cocoapods
 
 ### User Custom ###
+**/Podfile.lock
 
 ### CocoaPods ###
 ## CocoaPods GitIgnore Template
@@ -51,6 +52,7 @@ Temporary Items
 
 ## User settings
 xcuserdata/
+**/xcuserdata/
 
 ## compatibility with Xcode 8 and earlier (ignoring not required starting Xcode 9)
 *.xcscmblueprint

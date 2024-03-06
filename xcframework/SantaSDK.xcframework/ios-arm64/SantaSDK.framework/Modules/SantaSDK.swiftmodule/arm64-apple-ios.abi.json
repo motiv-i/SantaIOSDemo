@@ -5650,6 +5650,310 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SantaSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "SantaKit",
+        "printedName": "SantaKit",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "appId",
+            "printedName": "appId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@SantaSDK@objc(cs)SantaKit(cpy)appId",
+            "mangledName": "$s8SantaSDK0A3KitC5appIdSSvpZ",
+            "moduleName": "SantaSDK",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SantaSDK@objc(cs)SantaKit(cm)appId",
+                "mangledName": "$s8SantaSDK0A3KitC5appIdSSvgZ",
+                "moduleName": "SantaSDK",
+                "static": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SantaSDK@objc(cs)SantaKit(cm)setAppId:",
+                "mangledName": "$s8SantaSDK0A3KitC5appIdSSvsZ",
+                "moduleName": "SantaSDK",
+                "static": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SantaSDK0A3KitC5appIdSSvMZ",
+                "mangledName": "$s8SantaSDK0A3KitC5appIdSSvMZ",
+                "moduleName": "SantaSDK",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "testing",
+            "printedName": "testing",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@SantaSDK@objc(cs)SantaKit(cpy)testing",
+            "mangledName": "$s8SantaSDK0A3KitC7testingSbvpZ",
+            "moduleName": "SantaSDK",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SantaSDK@objc(cs)SantaKit(cm)testing",
+                "mangledName": "$s8SantaSDK0A3KitC7testingSbvgZ",
+                "moduleName": "SantaSDK",
+                "static": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SantaSDK@objc(cs)SantaKit(cm)setTesting:",
+                "mangledName": "$s8SantaSDK0A3KitC7testingSbvsZ",
+                "moduleName": "SantaSDK",
+                "static": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8SantaSDK0A3KitC7testingSbvMZ",
+                "mangledName": "$s8SantaSDK0A3KitC7testingSbvMZ",
+                "moduleName": "SantaSDK",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "SantaKit",
+                "printedName": "SantaSDK.SantaKit",
+                "usr": "c:@M@SantaSDK@objc(cs)SantaKit"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@SantaSDK@objc(cs)SantaKit(im)init",
+            "mangledName": "$s8SantaSDK0A3KitCACycfc",
+            "moduleName": "SantaSDK",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@SantaSDK@objc(cs)SantaKit",
+        "mangledName": "$s8SantaSDK0A3KitC",
+        "moduleName": "SantaSDK",
+        "declAttributes": [
+          "AccessControl",
+          "ObjCMembers",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "SystemConfiguration",
         "printedName": "SystemConfiguration",
         "declKind": "Import",
@@ -13389,7 +13693,7 @@
       "kind": "StringLiteral",
       "offset": 234,
       "length": 7,
-      "value": "\"1.0.2\""
+      "value": "\"1.0.0\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STBundle.swift",
@@ -14736,6 +15040,20 @@
       "value": "[]"
     },
     {
+      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/SantaKit.swift",
+      "kind": "StringLiteral",
+      "offset": 327,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/SantaKit.swift",
+      "kind": "BooleanLiteral",
+      "offset": 383,
+      "length": 5,
+      "value": "false"
+    },
+    {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/ThirdParty\/STReachability.swift",
       "kind": "StringLiteral",
       "offset": 530,
@@ -15468,7 +15786,7 @@
       "kind": "StringLiteral",
       "offset": 178,
       "length": 7,
-      "value": "\"1.0.2\""
+      "value": "\"1.0.3\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Common\/STConstants.swift",
@@ -15991,14 +16309,28 @@
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkInformation.swift",
       "kind": "StringLiteral",
-      "offset": 744,
+      "offset": 571,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkInformation.swift",
+      "kind": "BooleanLiteral",
+      "offset": 605,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkInformation.swift",
+      "kind": "StringLiteral",
+      "offset": 774,
       "length": 33,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/jaeukjeong\/work_santa\/santa-ios-sdk\/SantaSDK\/Core\/Network\/STNetworkInformation.swift",
       "kind": "StringLiteral",
-      "offset": 763,
+      "offset": 793,
       "length": 1,
       "value": "\"\/ssanta\/adsdk\""
     },

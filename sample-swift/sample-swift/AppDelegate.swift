@@ -6,12 +6,16 @@
 //
 
 import UIKit
+import SantaSDK
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // SDK 테스트 설정
+        SantaKit.testing = true
         
         return true
     }

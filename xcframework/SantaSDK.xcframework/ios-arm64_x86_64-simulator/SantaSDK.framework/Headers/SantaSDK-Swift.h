@@ -663,6 +663,18 @@ SWIFT_CLASS("_TtC8SantaSDK17STNativeAdRequest")
 
 
 
+SWIFT_CLASS("_TtC8SantaSDK8SantaKit")
+@interface SantaKit : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSString * _Nonnull appId;)
++ (NSString * _Nonnull)appId SWIFT_WARN_UNUSED_RESULT;
++ (void)setAppId:(NSString * _Nonnull)newValue;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL testing;)
++ (BOOL)testing SWIFT_WARN_UNUSED_RESULT;
++ (void)setTesting:(BOOL)newValue;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 
 
 
@@ -1342,6 +1354,18 @@ SWIFT_CLASS("_TtC8SantaSDK17STNativeAdRequest")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+
+
+SWIFT_CLASS("_TtC8SantaSDK8SantaKit")
+@interface SantaKit : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSString * _Nonnull appId;)
++ (NSString * _Nonnull)appId SWIFT_WARN_UNUSED_RESULT;
++ (void)setAppId:(NSString * _Nonnull)newValue;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL testing;)
++ (BOOL)testing SWIFT_WARN_UNUSED_RESULT;
++ (void)setTesting:(BOOL)newValue;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
 
 
 
